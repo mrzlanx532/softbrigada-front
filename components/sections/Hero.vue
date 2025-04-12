@@ -12,7 +12,7 @@ import Button from '~/components/Button.vue'
       <span>— от идеи до запуска</span>
     </h1>
     <div class="hero__buttons">
-      <Button class="--white">Получить решение</Button>
+      <Button icon="lightning" class="--white">Получить решение</Button>
       <Button>Смотреть кейсы</Button>
     </div>
   </section>

@@ -4,8 +4,16 @@
   background: var(--bg-color);
   border: 1.5px solid var(--bg-color-alt);
 
+  svg {
+    margin-left: 16px;
+  }
+
   &.--white {
     background: white;
     color: #000;
+  }
+
+  &.--with-icon {
+    display: inline-flex;
   }
 }
