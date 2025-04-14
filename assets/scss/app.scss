@@ -6,10 +6,12 @@
 /* sections */
 @use 'sections/hero';
 @use 'sections/dev-types';
+@use 'sections/offer';
 
 * {
   color: white;
   font-family: 'Hauora', sans-serif;
+  box-sizing: border-box;
 }
 
 a {
@@ -28,6 +30,7 @@ h1 {
 
 h2 {
   font-size: 80px;
+  margin: 0 0 64px 0;
 }
 
 h3 {
