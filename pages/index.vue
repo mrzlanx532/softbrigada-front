@@ -2,11 +2,13 @@
 import Hero from '~/components/sections/Hero.vue'
 import DevTypes from '~/components/sections/DevTypes.vue'
 import Offer from '~/components/sections/Offer.vue'
+import ReadyToDiscuss from '~/components/sections/ReadyToDiscuss.vue'
 </script>
 
 <template>
   <Hero />
   <DevTypes />
   <Offer />
+  <ReadyToDiscuss />
   <div style="height: 200px; background: black; text-align: center;"></div>
 </template>

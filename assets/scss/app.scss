@@ -7,11 +7,13 @@
 @use 'sections/hero';
 @use 'sections/dev-types';
 @use 'sections/offer';
+@use 'sections/ready-to-discuss';
 
 * {
   color: white;
   font-family: 'Hauora', sans-serif;
   box-sizing: border-box;
+  line-height: 1;
 }
 
 a {
