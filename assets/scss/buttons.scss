@@ -6,11 +6,17 @@
 
   svg {
     margin-left: 16px;
+    height: 32px;
+    width: 32px;
   }
 
   &.--white {
     background: white;
     color: #000;
+
+    div {
+      color: black;
+    }
   }
 
   &.--with-icon {

@@ -1,0 +1,64 @@
+.dev-types {
+  margin: 160px auto 0 auto;
+  max-width: var(--container-width);
+
+  &__wrapper {
+    display: flex;
+
+    > div {
+      width: calc(50% - 25px);
+
+      &:last-child {
+        aspect-ratio: 1 / 1;
+        margin-left: 25px;
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    button {
+      padding: 24px;
+      color: white;
+      background: var(--color-2);
+      border-radius: 100px;
+      font-size: 15px;
+      border: none;
+      font-weight: bold;
+
+      &.--active {
+        background: white;
+        color: black;
+      }
+    }
+  }
+
+  &__detail {
+    border-radius: 80px;
+    background:
+      linear-gradient(180deg, rgba(20, 21, 24, 80%) 0%, rgba(20, 21, 24, 0%) 100%),
+      url("/images/dev-types/1.png");
+    background-size: 100%;
+    box-shadow: inset 0 0 120px 11px rgba(255, 255, 255, 0.15);
+    padding: 64px;
+
+    div:first-child {
+      font-size: 24px;
+    }
+
+    div:last-child {
+      margin-top: 16px;
+      font-size: 15px;
+    }
+  }
+
+  &__lead {
+    padding: 32px;
+    margin-top: 64px;
+    font-size: 24px;
+  }
+}

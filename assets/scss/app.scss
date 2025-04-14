@@ -1,8 +1,11 @@
 @use 'fonts';
 @use 'variables';
 @use 'header';
-@use 'hero';
 @use 'buttons';
+
+/* sections */
+@use 'sections/hero';
+@use 'sections/dev-types';
 
 * {
   color: white;
