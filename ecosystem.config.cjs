@@ -5,7 +5,7 @@ module.exports = {
    */
   apps: [
     {
-      name: 'SOFT_FRONT:PROD',
+      name: 'SOFT_FRONT:DEV',
       script: './.output/server/index.mjs',
       port: 4000,
       watch: false,
