@@ -1,0 +1,23 @@
+.trust-us {
+  max-width: var(--container-width);
+  margin: 160px auto 0 auto;
+
+  &__wrapper {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 24px;
+    box-shadow: var(--box-shadow-1);
+    border-radius: 40px;
+
+    div {
+      margin-top: 32px;
+      font-size: 24px;
+    }
+  }
+}

@@ -5,6 +5,8 @@ import Offer from '~/components/sections/Offer.vue'
 import ReadyToDiscuss from '~/components/sections/ReadyToDiscuss.vue'
 import Roadmap from '~/components/sections/Roadmap.vue'
 import Cases from '~/components/sections/Cases.vue'
+import TrustUs from '~/components/sections/TrustUs.vue'
+import Benefits from '~/components/sections/Benefits.vue'
 </script>
 
 <template>
@@ -14,5 +16,7 @@ import Cases from '~/components/sections/Cases.vue'
   <ReadyToDiscuss />
 <!--  <Roadmap />-->
   <Cases />
+  <TrustUs />
+  <Benefits />
   <div style="height: 200px; background: black; text-align: center;"></div>
 </template>
