@@ -1,0 +1,51 @@
+.cases {
+  max-width: var(--container-width);
+  margin: 158px auto 0 auto;
+
+  h2 {
+    text-align: center;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__case {
+    border-radius: 80px;
+    padding: 64px;
+    aspect-ratio: 1 / 1;
+    background-size: cover;
+    grid-gap: 16px;
+    width: calc(50% - 8px);
+    cursor: pointer;
+
+    &.--full {
+      width: 100%;
+      aspect-ratio: 2 / 1;
+    }
+
+    h3 {
+      max-width: 575px;
+      color: white;
+    }
+
+    p {
+      max-width: 472px;
+      color: white;
+      font-size: 15px;
+    }
+  }
+
+  &__button-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button {
+    padding: 32px;
+    font-size: 24px;
+    margin: 64px auto 0 auto;
+  }
+}
