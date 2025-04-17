@@ -1,0 +1,44 @@
+.reviews {
+  width: var(--container-width);
+  margin: 160px auto 0 auto;
+
+  &__reviews {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__review-wrapper {
+    position: relative;
+    flex: 1;
+    box-shadow: var(--box-shadow-1);
+    border-radius: 72px;
+    padding: 32px;
+  }
+
+  &__review {
+    position: relative;
+
+    img {
+      width: 191px;
+    }
+
+    div:nth-child(2) {
+      margin-top: 16px;
+      color: var(--color-2);
+      font-size: 16px;
+      text-align: center;
+    }
+
+    p {
+      margin-top: 16px;
+      font-size: 24px;
+      color: white;
+    }
+  }
+
+  &__review-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

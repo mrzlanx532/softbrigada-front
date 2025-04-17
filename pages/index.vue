@@ -7,6 +7,7 @@ import Roadmap from '~/components/sections/Roadmap.vue'
 import Cases from '~/components/sections/Cases.vue'
 import TrustUs from '~/components/sections/TrustUs.vue'
 import Benefits from '~/components/sections/Benefits.vue'
+import Reviews from '~/components/sections/Reviews.vue'
 </script>
 
 <template>
@@ -18,5 +19,6 @@ import Benefits from '~/components/sections/Benefits.vue'
   <Cases />
   <TrustUs />
   <Benefits />
+<!--  <Reviews />-->
   <div style="height: 200px; background: black; text-align: center;"></div>
 </template>
