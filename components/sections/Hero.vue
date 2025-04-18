@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Header from '~/components/Header.vue'
+import Menu from '~/components/Menu.vue'
 import Button from '~/components/Button.vue'
 
 const offerPoints = [
@@ -31,8 +31,9 @@ const offerPoints = [
 </script>
 
 <template>
-  <Header />
+
   <section id="hero" class="hero">
+    <Menu />
     <h1>
       <span>Разрабатываем</span>
       <span>IT-решения для бизнеса</span>

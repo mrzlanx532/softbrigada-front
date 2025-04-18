@@ -10,6 +10,8 @@ import Benefits from '~/components/sections/Benefits.vue'
 import Reviews from '~/components/sections/Reviews.vue'
 import OpenForm from '~/components/sections/OpenForm.vue'
 import FAQ from '~/components/sections/FAQ.vue'
+import Footer from '~/components/sections/Footer.vue'
+import SoftBrigada from '~/components/sections/SoftBrigada.vue'
 </script>
 
 <template>
@@ -24,5 +26,7 @@ import FAQ from '~/components/sections/FAQ.vue'
 <!--  <Reviews />-->
   <OpenForm />
   <FAQ />
-  <div style="height: 200px; background: black; text-align: center;"></div>
+  <ReadyToDiscuss :is-second-block="true"/>
+  <SoftBrigada />
+  <Footer />
 </template>

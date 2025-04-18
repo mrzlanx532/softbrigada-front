@@ -1,4 +1,8 @@
 <script setup lang="ts">
+const props = defineProps<{
+  isSecondBlock?: boolean
+}>()
+
 import Input from '~/components/Input.vue'
 import Button from '~/components/Button.vue'
 </script>
@@ -14,7 +18,7 @@ import Button from '~/components/Button.vue'
           <Input name="phone" label="Номер телефона" />
         </div>
         <Input name="email" label="Email" />
-        <Button class="ready-to-discuss__button" icon="send">Заказать консультацию</Button>
+        <Button class="ready-to-discuss__button" :class="{'--blue': props.isSecondBlock}" icon="send">Заказать консультацию</Button>
       </form>
     </div>
   </section>

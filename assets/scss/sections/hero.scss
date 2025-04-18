@@ -1,8 +1,13 @@
 .hero {
   max-width: var(--container-width);
-  margin: 63px auto 0 auto;
+  margin: 0 auto;
+
+  .menu {
+    margin-top: 16px;
+  }
 
   h1 {
+    margin: 64px 0;
     line-height: 1;
     text-align: center;
     letter-spacing: -4px;
