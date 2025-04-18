@@ -10,7 +10,7 @@
 
   &__divider {
     height: 384px;
-    background: var(--bg-color-alt);
+    background: var(--bg-color-2);
     border-radius: 4px;
     width: 1.5px;
   }
@@ -35,7 +35,7 @@
   &__divider {
     margin-top: 128px;
     height: 384px;
-    background: var(--bg-color-alt);
+    background: var(--bg-color-2);
     width: 1px;
   }
 }
@@ -92,7 +92,7 @@
 
   &__progress-bar {
     width: 100%;
-    background: var(--bg-color-alt);
+    background: var(--bg-color-2);
     height: 16px;
     position: absolute;
     bottom: 0;
