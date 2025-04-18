@@ -15,12 +15,17 @@
 @use 'sections/benefits';
 @use 'sections/reviews';
 @use 'sections/open-form';
+@use 'sections/faq';
 
 * {
   color: white;
   font-family: 'Hauora', sans-serif;
   box-sizing: border-box;
   line-height: 1;
+}
+
+svg use {
+  color: inherit;
 }
 
 a {

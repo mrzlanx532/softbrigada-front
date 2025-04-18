@@ -9,6 +9,7 @@ import TrustUs from '~/components/sections/TrustUs.vue'
 import Benefits from '~/components/sections/Benefits.vue'
 import Reviews from '~/components/sections/Reviews.vue'
 import OpenForm from '~/components/sections/OpenForm.vue'
+import FAQ from '~/components/sections/FAQ.vue'
 </script>
 
 <template>
@@ -22,5 +23,6 @@ import OpenForm from '~/components/sections/OpenForm.vue'
   <Benefits />
 <!--  <Reviews />-->
   <OpenForm />
+  <FAQ />
   <div style="height: 200px; background: black; text-align: center;"></div>
 </template>
