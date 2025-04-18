@@ -1,0 +1,157 @@
+.form {
+  width: 100%;
+  padding: 64px;
+  background: white;
+  border-radius: 80px;
+
+  &__group {
+
+    > div {
+      color: black;
+
+      &:first-child {
+        font-size: 15px;
+        font-weight: bold;
+      }
+
+      &:last-child {
+        margin-top: 16px;
+      }
+    }
+  }
+
+  form {
+    > * {
+      margin-top: 32px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-top: 64px;
+      }
+    }
+  }
+
+  > div {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    margin-top: 32px;
+  }
+}
+
+.input__wrapper {
+  display: flex;
+  gap: 16px;
+
+  .input {
+    flex: 1;
+  }
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--color-3);
+    color: black;
+    padding-bottom: 16px;
+    font-weight: bold;
+    font-size: 13px;
+
+    &:focus {
+      border-bottom: 1px solid black;
+    }
+  }
+
+  label {
+    font-size: 13px;
+    color: var(--color-2);
+  }
+}
+
+.radio {
+  display: flex;
+  gap: 16px;
+
+  div {
+    padding: 12px;
+    color: black;
+    border: 1px solid var(--color-3);
+    border-radius: 64px;
+    font-size: 13px;
+    cursor: pointer;
+    text-wrap: nowrap;
+    transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
+    user-select: none;
+
+    &.--active {
+      background: black;
+      color: white;
+      border: 1px solid black;
+    }
+  }
+}
+
+.input-file {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  color: black;
+
+  &.--attached {
+    overflow: hidden;
+
+    > svg {
+      transform: rotate(45deg);
+    }
+
+    > div > div:last-child {
+      max-width: 136px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-top: 4px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  > div {
+    margin-left: 8px;
+    color: inherit;
+    line-height: 1.2;
+
+    div {
+      color: black;
+
+      &:last-child {
+        font-size: 13px;
+        line-height: 1.2;
+        color: var(--bg-color-3);
+        text-align: center;
+      }
+    }
+  }
+
+  svg {
+    width: 32px;
+    height: 32px;
+    color: inherit;
+    transition: transform .3s ease-in-out;
+
+    use {
+      color: inherit;
+    }
+  }
+}
+

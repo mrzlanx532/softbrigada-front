@@ -2,6 +2,7 @@
 @use 'variables';
 @use 'header';
 @use 'buttons';
+@use 'form';
 
 /* sections */
 @use 'sections/hero';
@@ -13,6 +14,7 @@
 @use 'sections/trust-us';
 @use 'sections/benefits';
 @use 'sections/reviews';
+@use 'sections/open-form';
 
 * {
   color: white;

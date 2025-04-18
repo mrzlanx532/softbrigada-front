@@ -6,10 +6,10 @@ import Button from '~/components/Button.vue'
 <template>
   <section id="ready-to-discuss" class="ready-to-discuss">
     <h2>Готовы обсудить проект?</h2>
-    <div>
+    <div class="form">
       <h3>Получить консультацию прямо сейчас</h3>
-      <form>
-        <div class="ready-to-discuss__input-container">
+      <form class="ready-to-discuss__form">
+        <div class="input__wrapper">
           <Input name="name" label="Имя" />
           <Input name="phone" label="Номер телефона" />
         </div>
