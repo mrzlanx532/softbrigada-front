@@ -52,7 +52,7 @@ const questions = ref([
 
 const selectedQuestion: Ref<number|undefined> = ref(undefined)
 
-const onClickOutside = () => {
+const onClickOutside = (e) => {
   if (selectedQuestion.value !== undefined) {
     answerRef.value[selectedQuestion.value].style.height = 0
   }
@@ -60,7 +60,6 @@ const onClickOutside = () => {
 }
 
 const onClickQuestion = (index: number) => {
-
   if (index === selectedQuestion.value) {
     selectedQuestion.value = undefined
     answerRef.value[index].style.height = 0
@@ -88,14 +87,13 @@ onMounted(() => {
 <template>
   <section id="faq" class="faq">
     <h2>Часто задаваемые вопросы</h2>
-    <div class="faq__questions">
+    <div class="faq__questions" v-on-click-outside="onClickOutside">
       <div
           v-for="(question, index) in questions"
           :key="index"
           class="faq__question-wrapper"
           :class="{'--open': index === selectedQuestion}"
           @click="onClickQuestion(index)"
-          v-on-click-outside="onClickOutside"
       >
         <div class="faq__question">
           <div>
