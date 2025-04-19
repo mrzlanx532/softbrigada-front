@@ -1,6 +1,7 @@
 .reviews {
   width: var(--container-width);
   margin: 160px auto 0 auto;
+  overflow: hidden;
 
   &__reviews {
     display: flex;
@@ -28,6 +29,13 @@
       background: linear-gradient(to bottom, transparent 0%, transparent 80%, black 95%, black 100%);
       box-shadow: var(--box-shadow-1), var(--box-shadow-2);
       overflow: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
 
       img {
         height: 60px;
@@ -58,6 +66,7 @@
     color: white;
     position: relative;
     z-index: 1;
+    user-select: none;
   }
 
   &__review-filter {
