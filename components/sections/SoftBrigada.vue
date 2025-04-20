@@ -15,6 +15,7 @@ const mouseMoveListener = (event) => {
 
 onMounted(() => {
   softbrigadaSectionRef.value.style.visibility = 'visible'
+  softbrigadaSectionRef.value.children[1].style.height = softbrigadaSectionRef.value.offsetHeight + 'px'
 
   const io = new IntersectionObserver((entries) => {
     entries[0].isIntersecting ?
