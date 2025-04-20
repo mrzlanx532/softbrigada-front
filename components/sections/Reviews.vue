@@ -2,13 +2,11 @@
 import { type Ref } from 'vue'
 
 const reviewRef = useTemplateRef('reviewRef')
-const reviewsRef = useTemplateRef('reviewsRef')
 
 const selectedReview: Ref<number | undefined> = ref(undefined)
 const sliderOptions = ref({
   perPage: 3,
   rewind : true,
-  type: 'loop',
   arrows: false,
   gap: '16px'
 })
@@ -40,7 +38,6 @@ const reviews = ref([
   }
 ])
 const onClickReview = (index: number) => {
-
   if (selectedReview.value === index) {
     reviewRef.value[index].scrollTop = 0
     selectedReview.value = undefined
@@ -53,23 +50,16 @@ const onClickReview = (index: number) => {
 
   selectedReview.value = index
 }
-
-const onSplideMounted = () => {
-  /*reviewRef.value.forEach(el => {
-    el.children[0].style.width = window.getComputedStyle(el.offsetParent).width
-  })*/
-}
 </script>
 
 <template>
   <section id="reviews" class="reviews">
     <h2>Отзывы</h2>
-    <div class="reviews__reviews" ref="reviewsRef">
+    <div class="reviews__reviews">
       <ClientOnly>
-        <splide @splide:mounted="onSplideMounted" class="reviews__reviews-splide" :options="sliderOptions">
-          <splide-slide v-for="(review, index) in reviews" :key="index">
+        <splide class="reviews__reviews-splide" :options="sliderOptions">
+          <splide-slide v-for="(review, index) in reviews" :key="index" @click="onClickReview(index)">
             <div
-                @click="onClickReview(index)"
                 class="reviews__review"
                 ref="reviewRef"
                 :class="{'--open': selectedReview === index}"
