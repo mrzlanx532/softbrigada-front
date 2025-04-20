@@ -2,13 +2,17 @@
   width: var(--container-width);
   margin: 160px auto 0 auto;
   overflow: hidden;
+  opacity: 0;
 
   &__reviews {
-    display: flex;
-    gap: 16px;
+    display: block;
+    transition: transform .5s ease-in-out;
   }
 
   &__review {
+    user-select: none;
+    margin-right: 16px;
+    display: inline-block;
     position: relative;
     flex: 1;
     border-radius: 72px;
@@ -19,10 +23,15 @@
     box-shadow: 0 0 transparent;
     transition: box-shadow .5s ease-in-out;
 
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+
     img {
       aspect-ratio: 1 / 1;
       height: 191px;
       transition: height .5s ease-in-out;
+      user-select: none;
     }
 
     &.--open {
@@ -56,6 +65,7 @@
       margin-top: 16px;
       color: var(--color-2);
       font-size: 16px;
+      user-select: none;
       text-align: center;
     }
   }
@@ -79,5 +89,26 @@
     z-index: 2;
     background: linear-gradient(to bottom, transparent 0%, transparent 80%, black 95%, black 100%);
     box-shadow: var(--box-shadow-1), var(--box-shadow-2);
+  }
+
+  &__paginator {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  &__paginator-pages {
+    width: 32px;
+    height: 32px;
+    background-color: var(--bg-color-5);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+
+    &.--active {
+      cursor: default;
+      background-color: var(--bg-color-3);
+    }
   }
 }
