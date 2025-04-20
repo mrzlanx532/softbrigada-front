@@ -2,6 +2,10 @@
   width: var(--container-width);
   margin: 160px auto 0 auto;
 
+  h2 {
+    text-align: center;
+  }
+
   &__reviews {
     display: block;
     transition: transform .5s ease-in-out;
