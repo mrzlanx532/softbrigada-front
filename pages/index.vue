@@ -23,7 +23,7 @@ import SoftBrigada from '~/components/sections/SoftBrigada.vue'
   <Cases />
   <TrustUs />
   <Benefits />
-<!--  <Reviews />-->
+  <Reviews />
   <OpenForm />
   <FAQ />
   <ReadyToDiscuss :is-second-block="true"/>
