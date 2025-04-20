@@ -1,8 +1,6 @@
 .reviews {
   width: var(--container-width);
   margin: 160px auto 0 auto;
-  overflow: hidden;
-  opacity: 0;
 
   &__reviews {
     display: block;
@@ -11,7 +9,6 @@
 
   &__review {
     user-select: none;
-    margin-right: 16px;
     display: inline-block;
     position: relative;
     flex: 1;
@@ -22,10 +19,6 @@
     cursor: pointer;
     box-shadow: 0 0 transparent;
     transition: box-shadow .5s ease-in-out;
-
-    &:nth-child(3n) {
-      margin-right: 0;
-    }
 
     img {
       aspect-ratio: 1 / 1;
@@ -109,6 +102,28 @@
     &.--active {
       cursor: default;
       background-color: var(--bg-color-3);
+    }
+  }
+
+  &__reviews-splide {
+    .splide__pagination {
+      bottom: -67px;
+    }
+
+    .splide__pagination__page {
+      height: 32px;
+      width: 32px;
+      background: var(--bg-color-5);
+      opacity: 1;
+
+      &:focus {
+        outline: none;
+      }
+
+      &.is-active {
+        background: var(--bg-color-3);
+        transform: none;
+      }
     }
   }
 }

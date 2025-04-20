@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@splidejs/vue-splide": "^0.6.12",
     "@vueuse/components": "^13.1.0",
     "@vueuse/core": "^13.1.0",
     "nuxt": "^3.16.2",
