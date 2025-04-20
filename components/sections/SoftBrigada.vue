@@ -9,25 +9,24 @@ const updateBackground = (x: number, y: number) => {
 
 const mouseMoveListener = (event) => {
   setTimeout(() => {
-    updateBackground(event.clientX, event.clientY - softbrigadaSectionRef.value.getBoundingClientRect().top - 193);
+    updateBackground(event.clientX, event.clientY - softbrigadaSectionRef.value.getBoundingClientRect().top);
   }, 90);
 }
 
-const onMouseEnter = () => {
-  document.body.addEventListener('mousemove', mouseMoveListener)
-}
-
-const onMouseLeave = () => {
-  document.body.removeEventListener('mousemove', mouseMoveListener)
-}
-
 onMounted(() => {
-  document.querySelector('#softbrigada').style.visibility = 'visible'
+  softbrigadaSectionRef.value.style.visibility = 'visible'
+
+  const io = new IntersectionObserver((entries) => {
+    entries[0].isIntersecting ?
+        document.body.addEventListener('mousemove', mouseMoveListener) :
+        document.body.removeEventListener('mousemove', mouseMoveListener)
+  })
+  io.observe(softbrigadaSectionRef.value)
 })
 </script>
 
 <template>
-  <section ref="softbrigadaSectionRef" id="softbrigada" class="softbrigaga" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
+  <section ref="softbrigadaSectionRef" id="softbrigada" class="softbrigaga">
     <h1 ref="labelRef">SoftBrigada</h1>
     <div ref="spotlightRef" class="softbrigaga__spotlight" />
   </section>
