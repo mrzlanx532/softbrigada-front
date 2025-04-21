@@ -19,7 +19,7 @@ import SoftBrigada from '~/components/sections/SoftBrigada.vue'
   <DevTypes />
   <Offer />
   <ReadyToDiscuss />
-<!--  <Roadmap />-->
+  <Roadmap />
   <Cases />
   <TrustUs />
   <Benefits />

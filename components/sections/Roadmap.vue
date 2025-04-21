@@ -1,98 +1,79 @@
 <script setup lang="ts">
-const marginLeft = ref< undefined | string >(undefined)
+import { useGSAP } from '#imports'
+
 const tableContainerRef = useTemplateRef('tableContainerRef')
-const tableStepsRef = useTemplateRef('tableStepsRef')
-const tableRef = useTemplateRef('tableRef')
-const roadmapRef = useTemplateRef('roadmapRef')
+const pinnedContentRef = useTemplateRef('pinnedContentRef')
+
+const marginLeft = ref<undefined | string>(undefined)
+const dividerLength = ref(15)
 
 onMounted(() => {
 
   marginLeft.value = window.getComputedStyle(document.querySelector('#ready-to-discuss')).marginLeft
 
-  const rect = tableRef.value.getBoundingClientRect()
+  const rect = tableContainerRef.value.children[1].getBoundingClientRect()
 
-  tableStepsRef.value.style.width = rect.width + 'px'
-  tableStepsRef.value.style.height = rect.height + 'px'
+  tableContainerRef.value.children[0].style.width = rect.width + 'px'
+  tableContainerRef.value.children[0].style.height = rect.height + 'px'
 
-  const options = {
-    root: null,
-    threshold: 1.0,
-  };
+  tableContainerRef.value.children[2].style.width = rect.width + 'px'
+  tableContainerRef.value.children[3].style.width = rect.width + 'px'
 
-  const scrollTo = (e) => {
-    //
-  }
+  const scrollDelta = tableContainerRef.value.scrollWidth - tableContainerRef.value.clientWidth
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && entry.intersectionRatio === 1) {
-
-        const rect = tableContainerRef.value.getBoundingClientRect()
-
-
-        tableContainerRef.value.style.width = '100%'
-
-        //tableContainerRef.value.style.top = rect.top + 'px'
-        //tableContainerRef.value.style.left = rect.left + 'px'
-        //tableContainerRef.value.style.position = 'fixed'
-
-        window.addEventListener('scroll', scrollTo)
-
-        console.log('✅ Элемент полностью виден в окне!');
-      } else {
-        //tableContainerRef.value.style.position = 'fixed'
-        console.log('❌ Элемент не полностью виден.');
+  useGSAP().timeline({
+    scrollTrigger: {
+      trigger: pinnedContentRef.value,
+      pin: true,
+      start: 'center center',
+      end: '+=1000',
+      onUpdate: (self) => {
+        tableContainerRef.value.scrollLeft = self.progress.toFixed(3) * scrollDelta
       }
-    });
-  }, options);
-
-  observer.observe(tableContainerRef.value)
+    }
+  })
 })
 </script>
 
 <template>
   <section id="roadmap" class="roadmap" :style="{ 'margin-left': marginLeft }">
-    <div>
+    <div ref="pinnedContentRef">
       <h2>
-        <span>Дорожная</span>
-        <span>карта</span>
+        Дорожная карта
       </h2>
-      <div class="roadmap__pin-spacer">
-        <div id="test" ref="tableContainerRef" style="position: relative; height: 588px; overflow-x: hidden;">
-          <div ref="tableStepsRef" style="position: absolute; ">
-            <div class="roadmap__step --1">Аналитика и проектирование</div>
-            <div class="roadmap__step --2">Дизайн</div>
-            <div class="roadmap__step --3">Верстка</div>
-            <div class="roadmap__step --4">Программирование и ввод в эксплуатацию</div>
-          </div>
-          <table ref="tableRef" style="position: absolute; ">
-            <tbody>
-              <tr>
-                <td v-for="(_, index) in 15">
-                  <template v-if="index === 0">
-                    Начало
-                  </template>
-                  <template v-else-if="index === 14">
-                    Сдача
-                  </template>
-                  <template v-else>
-                    {{ index * 2 }} нед.
-                  </template>
-                </td>
-              </tr>
-              <tr>
-                <td v-for="(_, index) in 10">
-                  <div class="roadmap__divider-wrapper">
-                    <div class="roadmap__divider" />
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="roadmap__progress-bar">
-            <!-- TODO -->
-          </div>
+      <div class="roadmap__table-container" ref="tableContainerRef">
+        <div class="roadmap__steps">
+          <div class="roadmap__step --1">Аналитика и проектирование</div>
+          <div class="roadmap__step --2">Дизайн</div>
+          <div class="roadmap__step --3">Верстка</div>
+          <div class="roadmap__step --4">Программирование и ввод в эксплуатацию</div>
         </div>
+        <table>
+          <tbody>
+          <tr>
+            <td v-for="(_, index) in dividerLength">
+              <template v-if="index === 0">
+                Начало
+              </template>
+              <template v-else-if="index === 14">
+                Сдача
+              </template>
+              <template v-else>
+                {{ index * 2 }} нед.
+              </template>
+            </td>
+          </tr>
+          <tr>
+            <td v-for="n in dividerLength">
+              <div class="roadmap__divider-wrapper">
+                <div class="roadmap__divider"/>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <div class="roadmap__timeline --top"/>
+        <div class="roadmap__timeline"/>
       </div>
     </div>
   </section>

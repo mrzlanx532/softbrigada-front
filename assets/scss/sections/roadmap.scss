@@ -1,5 +1,6 @@
 .roadmap {
   margin: 194px auto 0 auto;
+  overflow-x: hidden;
 
   h2 {
     span {
@@ -33,16 +34,17 @@
   }
 
   &__divider {
-    margin-top: 128px;
-    height: 384px;
+    margin-top: 35px;
+    height: 484px;
     background: var(--bg-color-2);
     width: 1px;
   }
 }
 
-
 .roadmap {
   table {
+    position: absolute;
+
     td {
       text-align: center;
       min-width: 176px;
@@ -54,15 +56,21 @@
     justify-content: center;
   }
 
+  &__steps {
+    position: absolute;
+  }
+
   &__step {
     position: absolute;
     border-radius: 100px;
     padding: 32px;
     z-index: 1;
+    font-size: 24px;
 
     &.--1 {
       background: blue;
       top: 62px;
+      left: 30px;
       width: 704px;
     }
 
@@ -90,16 +98,22 @@
     }
   }
 
-  &__progress-bar {
-    width: 100%;
-    background: var(--bg-color-2);
-    height: 16px;
-    position: absolute;
-    bottom: 0;
-    border-radius: 24px;
+  &__table-container {
+    position: relative;
+    height: 588px;
+    overflow-x: hidden;
   }
 
-  &__pin-spacer {
-    height: 2000px;
+  &__timeline {
+    width: 100%;
+    background: var(--bg-color-2);
+    height: 1px;
+    position: absolute;
+    bottom: 40px;
+    border-radius: 24px;
+
+    &.--top {
+      top: 50px;
+    }
   }
 }
