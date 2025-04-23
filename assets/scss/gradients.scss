@@ -1,0 +1,26 @@
+.i1995283791__blue-gradient {
+  color: #054BFE;
+  animation-name: appearance;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  width: 1403px;
+  height: 1001px;
+
+  @keyframes appearance {
+    0% {
+      opacity: 0;
+    }
+
+    30% {
+      opacity: 1;
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+}

@@ -3,6 +3,7 @@
 @use 'menu';
 @use 'buttons';
 @use 'form';
+@use 'gradients';
 
 /* sections */
 @use 'sections/hero';
@@ -26,7 +27,7 @@
   line-height: 1;
 }
 
-svg use {
+svg, svg * {
   color: inherit;
 }
 

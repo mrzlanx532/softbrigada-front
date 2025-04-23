@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Menu from '~/components/Menu.vue'
 import Button from '~/components/Button.vue'
+import Gradient from '~/assets/svg/blue-hero-gradient/1.svg?component'
 
 const offerPoints = [
   {
@@ -33,6 +34,9 @@ const offerPoints = [
 <template>
 
   <section id="hero" class="hero">
+    <div class="hero__gradient">
+      <Gradient ref="blueGradient" />
+    </div>
     <Menu />
     <h1>
       <span>Разрабатываем</span>
