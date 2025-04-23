@@ -15,6 +15,24 @@
       width: 1019px;
       height: 1050px;
       color: #c13448;
+
+      animation-name: shimmer;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+      
+      @keyframes shimmer {
+        0% {
+          color: #c13448;
+        }
+
+        50% {
+          color: #524dd8;
+        }
+
+        100% {
+          color: #c13448;
+        }
+      }
     }
   }
 
