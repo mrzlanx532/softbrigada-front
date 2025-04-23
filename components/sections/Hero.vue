@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Menu from '~/components/Menu.vue'
 import Button from '~/components/Button.vue'
-import Gradient from '~/assets/svg/blue-hero-gradient/1.svg?component'
+import Gradient from '~/assets/svg/hero-section-blue-gradient.svg?component'
 
 const offerPoints = [
   {
