@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Gradient from '~/assets/svg/offer-section-yellow-gradient.svg'
+import Gradient from '~/assets/svg/offer-section-gradient.svg'
 </script>
 
 <template>
