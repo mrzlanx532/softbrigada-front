@@ -5,11 +5,26 @@
     line-height: 1;
   }
 
+  &__gradient {
+    position: absolute;
+    top: -44%;
+    left: 2%;
+    z-index: 0;
+
+    svg {
+      width: 1019px;
+      height: 1050px;
+      color: #c13448;
+    }
+  }
+
   &__wrapper {
     max-width: var(--container-width);
     margin: 0 auto;
 
     &.--best {
+      position: relative;
+      z-index: 1;
       display: flex;
       max-width: initial;
       margin: initial;
@@ -51,10 +66,12 @@
     box-shadow: var(--box-shadow-1);
 
     &.--best {
+      position: relative;
       max-width: var(--container-width-2);
       margin: 64px auto;
       width: 100%;
       padding: 64px 104px;
+      overflow: hidden;
     }
   }
 

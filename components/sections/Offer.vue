@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import Gradient from '~/assets/svg/offer-section-yellow-gradient.svg'
+</script>
+
 <template>
   <section id="offer" class="offer">
     <div class="offer__wrapper">
@@ -37,6 +41,9 @@
       </div>
     </div>
     <div class="offer__solution --best">
+      <div class="offer__gradient">
+        <Gradient />
+      </div>
       <div class="offer__wrapper --best">
         <div>
           <div class="offer__tag">Вариант 3</div>
