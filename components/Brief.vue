@@ -68,7 +68,7 @@ const onFormSubmit = () => {
         <Radio v-model="formData.source" :options="sourcesOptions" />
       </div>
       <div class="form__action">
-        <Button type="submit">Отправить</Button>
+        <Button type="submit" class="--white">Отправить</Button>
       </div>
     </form>
   </div>

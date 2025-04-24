@@ -1,16 +1,9 @@
 .brief {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
   overflow: auto;
   position: fixed;
   top: 0;
   right: 0;
-  transform: translateX(700px);
+  transform: translateX(800px);
   transition: transform .5s ease-in-out;
   width: 700px;
   height: 100vh;
@@ -18,7 +11,15 @@
   max-width: 100%;
   opacity: 1;
   padding: 60px 80px;
-  background: teal;
+  background: radial-gradient(ellipse at 40px 40px, #30324c 10%, #973333 100%);
+  box-shadow: -50px 0px 75px black;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   &.--is-open {
     transform: translateX(0);
@@ -38,7 +39,7 @@
   }
 
   &__form {
-    background: inherit;
+    background: transparent;
     border-radius: 0;
     padding: 0;
     margin-top: 32px;

@@ -28,10 +28,12 @@
 
   &::selection {
     background: var(--selection-color);
+    color: white;
   }
 
   &::-moz-selection {
     background: var(--selection-color);
+    color: white;
   }
 }
 
