@@ -6,6 +6,12 @@ const { goToAnchor } = useAnchor()
 const onClickLink = (id: string) => {
   goToAnchor(id)
 }
+
+const openBrief = () => {
+  const { briefIsOpen } = useBrief()
+
+  briefIsOpen.value = true
+}
 </script>
 
 <template>
@@ -26,7 +32,7 @@ const onClickLink = (id: string) => {
         <a>info@gmail.com</a>
         <a>+7 (910) 292-03-10</a>
       </div>
-      <Button class="menu__button">Заполнить бриф</Button>
+      <Button class="menu__button" @click="openBrief">Заполнить бриф</Button>
     </div>
   </div>
 </template>
