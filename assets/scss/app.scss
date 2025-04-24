@@ -3,6 +3,7 @@
 @use 'menu';
 @use 'buttons';
 @use 'form';
+@use 'brief';
 
 /* sections */
 @use 'sections/hero';
@@ -24,6 +25,14 @@
   font-family: 'Hauora', sans-serif;
   box-sizing: border-box;
   line-height: 1;
+
+  &::selection {
+    background: var(--selection-color);
+  }
+
+  &::-moz-selection {
+    background: var(--selection-color);
+  }
 }
 
 svg, svg * {
@@ -38,6 +47,10 @@ a {
 
 button {
   cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
 }
 
 h1 {

@@ -13,6 +13,10 @@ const formData = ref({
 
 const budgetOptions = ref(_budgetOptions)
 const deadlineOptions = ref(_deadlineOptions)
+
+const onFormSubmit = () => {
+  alert('TODO')
+}
 </script>
 
 <template>
@@ -34,7 +38,7 @@ const deadlineOptions = ref(_deadlineOptions)
     </div>
     <div>
       <div class="form">
-        <form>
+        <form @submit.prevent="onFormSubmit">
           <div class="input__wrapper">
             <Input name="name" label="Имя" />
             <Input name="phone" label="Номер телефона" />
@@ -50,7 +54,7 @@ const deadlineOptions = ref(_deadlineOptions)
             <Radio v-model="formData.deadline" :options="deadlineOptions" />
           </div>
           <div class="form__action">
-            <Button class="open-form__button" icon="send">Отправить</Button>
+            <Button type="submit" class="open-form__button" icon="send">Отправить</Button>
             <InputFile v-model="formData.file"/>
           </div>
         </form>
