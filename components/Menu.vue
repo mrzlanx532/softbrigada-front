@@ -1,5 +1,11 @@
 <script setup lang="ts">
 import Button from '~/components/Button.vue'
+
+const { goToAnchor } = useAnchor()
+
+const onClickLink = (id: string) => {
+  goToAnchor(id)
+}
 </script>
 
 <template>
@@ -7,8 +13,8 @@ import Button from '~/components/Button.vue'
     <div class="menu__container">
       <div class="menu__logo">logo</div>
       <div class="menu__menu">
-        <a>что мы делаем</a>
-        <a>наши кейсы <span>+3</span></a>
+        <a @click="onClickLink('dev-types')">что мы делаем</a>
+        <a @click="onClickLink('cases')">наши кейсы <span>+3</span></a>
       </div>
     </div>
     <div class="menu__container --right">

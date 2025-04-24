@@ -31,11 +31,9 @@ const offerPoints = [
 ]
 
 const onClickLookCases = () => {
-  const a = document.createElement('a')
-  a.href='#cases'
-  a.click()
+  const { goToAnchor } = useAnchor()
 
-  window.history.pushState('', document.title, window.location.pathname)
+  goToAnchor('cases')
 }
 </script>
 
