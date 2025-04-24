@@ -28,6 +28,7 @@
 
 svg, svg * {
   color: inherit;
+  shape-rendering: geometricPrecision;
 }
 
 a {

@@ -64,7 +64,7 @@ import Gradient from '~/assets/svg/offer-section-gradient.svg'
             <div class="offer__point">
               <svg><use href="/sprite.svg#bracket" /></svg>
               <div>02</div>
-              <svg><use href="/sprite.svg#cursor" /></svg>
+              <svg><use href="/sprite.svg#code" /></svg>
               <svg><use href="/sprite.svg#bracket" /></svg>
             </div>
             <div class="offer__point-content">Разработаем, внедрим и обучим персонал использовать новую систему</div>
@@ -73,7 +73,7 @@ import Gradient from '~/assets/svg/offer-section-gradient.svg'
             <div class="offer__point">
               <svg><use href="/sprite.svg#bracket" /></svg>
               <div>03</div>
-              <svg><use href="/sprite.svg#human" /></svg>
+              <svg><use href="/sprite.svg#handshake" /></svg>
               <svg><use href="/sprite.svg#bracket" /></svg>
             </div>
             <div class="offer__point-content">
