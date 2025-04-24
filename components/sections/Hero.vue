@@ -29,6 +29,14 @@ const offerPoints = [
     subtitle: 'Не бросаем проект после релиза — остаёмся с вами на техподдержке, улучшаем, обновляем, растём вместе.'
   },
 ]
+
+const onClickLookCases = () => {
+  const a = document.createElement('a')
+  a.href='#cases'
+  a.click()
+
+  window.history.pushState('', document.title, window.location.pathname)
+}
 </script>
 
 <template>
@@ -45,7 +53,7 @@ const offerPoints = [
     </h1>
     <div class="hero__buttons">
       <Button icon="lightning" class="--white">Получить решение</Button>
-      <Button>Смотреть кейсы</Button>
+      <Button @click="onClickLookCases">Смотреть кейсы</Button>
     </div>
     <div class="hero__offer-points-wrapper">
       <div class="hero__offer-points">
