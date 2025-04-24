@@ -9,7 +9,12 @@ const updateBackground = (x: number, y: number) => {
 
 const mouseMoveListener = (event) => {
   setTimeout(() => {
-    updateBackground(event.clientX, event.clientY - softbrigadaSectionRef.value.getBoundingClientRect().top);
+    window.requestAnimationFrame(
+        updateBackground.bind(
+            undefined,
+            event.clientX,
+            event.clientY - softbrigadaSectionRef.value.getBoundingClientRect().top
+        ));
   }, 90);
 }
 
