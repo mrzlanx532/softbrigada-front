@@ -46,13 +46,14 @@ const onFormSubmit = () => {
     <form class="brief__form form" @submit.prevent="onFormSubmit">
       <div class="form__group">
         <div>Услуги</div>
-        <Radio style="width: 540px; flex-wrap: wrap;" v-model="formData.service" :options="servicesOptions" />
+        <Radio style="flex-wrap: wrap;" v-model="formData.service" :options="servicesOptions" />
       </div>
       <div class="form__group">
         <div>Описание задачи</div>
         <Input label="Напишите о вашей задаче в двух словах"/>
+        <div style="font-size: 12px; color: var(--color-2);">или прикрепите файл с ТЗ</div>
+        <InputFile v-model="formData.file" style="font-size: 14px;"/>
       </div>
-      <InputFile v-model="formData.file"/>
       <div class="form__group">
         <div>Бюджет</div>
         <Radio v-model="formData.budget" :options="budgetOptions" />
