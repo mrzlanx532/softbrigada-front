@@ -66,7 +66,7 @@ const onFormSubmit = () => {
 
       <div class="form__group">
         <div>Контактные данные</div>
-        <Input :is-required="true" name="contacts_name" v-model="formData.contacts_name" label="Имя"/>
+        <Input style="margin-top: 32px;" :is-required="true" name="contacts_name" v-model="formData.contacts_name" label="Имя"/>
         <Input :is-required="true" name="contacts_phone" v-model="formData.contacts_phone" label="Телефон"/>
         <Input name="contacts_email" v-model="formData.contacts_email" label="Email"/>
       </div>
