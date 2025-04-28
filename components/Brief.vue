@@ -15,8 +15,13 @@ const briefRef = useTemplateRef('briefRef')
 
 const formData = ref({
   service: undefined,
-  file: undefined,
-  source: undefined
+  source: undefined,
+  task_description: undefined,
+  task_file: undefined,
+  contacts_company_name: undefined,
+  contacts_name: undefined,
+  contacts_phone: undefined,
+  contacts_email: undefined,
 })
 
 const servicesOptions = ref(_servicesOptions)
@@ -50,9 +55,9 @@ const onFormSubmit = () => {
       </div>
       <div class="form__group">
         <div>Описание задачи</div>
-        <Input label="Напишите о вашей задаче в двух словах"/>
+        <Input name="task_description" v-model="formData.task_description" label="Напишите о вашей задаче в двух словах"/>
         <div style="font-size: 12px; color: var(--color-2);">или прикрепите файл с ТЗ</div>
-        <InputFile v-model="formData.file" style="font-size: 14px;"/>
+        <InputFile v-model="formData.task_file" style="font-size: 14px;"/>
       </div>
       <div class="form__group">
         <div>Бюджет</div>
@@ -60,10 +65,10 @@ const onFormSubmit = () => {
       </div>
       <div class="form__group">
         <div>Контактные данные</div>
-        <Input label="Название компании"/>
-        <Input label="Имя"/>
-        <Input label="Телефон"/>
-        <Input label="Email"/>
+        <Input name="contacts_company_name" v-model="formData.contacts_company_name" label="Название компании"/>
+        <Input name="contacts_name" v-model="formData.contacts_name" label="Имя"/>
+        <Input name="contacts_phone" v-model="formData.contacts_phone" label="Телефон"/>
+        <Input name="contacts_email" v-model="formData.contacts_email" label="Email"/>
       </div>
       <div class="form__group">
         <div>Откуда вы о нас узнали?</div>

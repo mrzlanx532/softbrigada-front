@@ -6,7 +6,7 @@ type IOption = {
 
 const props = defineProps<{
   options: IOption[]
-  modelValue: string | number
+  modelValue?: string | number
 }>()
 
 const emit = defineEmits<{
