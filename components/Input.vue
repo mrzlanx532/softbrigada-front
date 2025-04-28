@@ -3,7 +3,7 @@ const props = withDefaults(defineProps<{
   modelValue?: string
   name: string,
   label: string,
-  isRequired: boolean
+  isRequired?: boolean
 }>(), {
   isRequired: false
 })
