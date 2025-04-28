@@ -1,3 +1,20 @@
+.brief__overlay {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  position: fixed;
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease-out;
+
+  &.--is-open {
+    opacity: 0.5;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+}
+
 .brief {
   overflow: auto;
   position: fixed;
@@ -7,7 +24,7 @@
   transition: transform .5s ease-in-out;
   width: 700px;
   height: 100vh;
-  z-index: 2;
+  z-index: 3;
   max-width: 100%;
   opacity: 1;
   padding: 60px 80px;

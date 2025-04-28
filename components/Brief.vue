@@ -33,6 +33,7 @@ const onFormSubmit = () => {
 </script>
 
 <template>
+  <div class="brief__overlay" :class="{'--is-open': briefIsOpen}"/>
   <div
       ref="briefRef"
       v-on-click-outside="closeBrief"

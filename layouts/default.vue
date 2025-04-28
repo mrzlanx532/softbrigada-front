@@ -3,8 +3,6 @@ import Brief from '~/components/Brief.vue'
 </script>
 
 <template>
-  <div>
-    <Brief />
-    <slot />
-  </div>
+  <Brief />
+  <slot />
 </template>
