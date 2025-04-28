@@ -1,9 +1,12 @@
 <script setup lang="ts">
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   modelValue?: string
   name: string,
   label: string,
-}>()
+  isRequired: boolean
+}>(), {
+  isRequired: false
+})
 
 const inputRef = useTemplateRef('inputRef')
 
@@ -14,7 +17,10 @@ const onClickLabel = () => {
 
 <template>
   <div class="input">
-    <label @click="onClickLabel" :for="props.name">{{ props.label }}</label>
+    <label @click="onClickLabel" :for="props.name">
+      {{ props.label }}
+      <span v-if="props.isRequired">*</span>
+    </label>
     <input
         v-model="props.modelValue"
         ref="inputRef"

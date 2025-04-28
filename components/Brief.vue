@@ -54,20 +54,20 @@ const onFormSubmit = () => {
         <Radio style="flex-wrap: wrap;" v-model="formData.service" :options="servicesOptions" />
       </div>
       <div class="form__group">
+        <div>Бюджет</div>
+        <Radio v-model="formData.budget" :options="budgetOptions" />
+      </div>
+      <div class="form__group">
         <div>Описание задачи</div>
         <Input name="task_description" v-model="formData.task_description" label="Напишите о вашей задаче в двух словах"/>
         <div style="font-size: 12px; color: var(--color-2);">или прикрепите файл с ТЗ</div>
         <InputFile v-model="formData.task_file" style="font-size: 14px;"/>
       </div>
-      <div class="form__group">
-        <div>Бюджет</div>
-        <Radio v-model="formData.budget" :options="budgetOptions" />
-      </div>
+
       <div class="form__group">
         <div>Контактные данные</div>
-        <Input name="contacts_company_name" v-model="formData.contacts_company_name" label="Название компании"/>
-        <Input name="contacts_name" v-model="formData.contacts_name" label="Имя"/>
-        <Input name="contacts_phone" v-model="formData.contacts_phone" label="Телефон"/>
+        <Input :is-required="true" name="contacts_name" v-model="formData.contacts_name" label="Имя"/>
+        <Input :is-required="true" name="contacts_phone" v-model="formData.contacts_phone" label="Телефон"/>
         <Input name="contacts_email" v-model="formData.contacts_email" label="Email"/>
       </div>
       <div class="form__group">
@@ -76,6 +76,7 @@ const onFormSubmit = () => {
       </div>
       <div class="form__action">
         <Button type="submit">Отправить</Button>
+        <div>Нажимая на кнопку вы даете согласие на обработку персональных данных</div>
       </div>
     </form>
   </div>

@@ -64,5 +64,20 @@
     border-radius: 0;
     padding: 0;
     margin-top: 32px;
+
+    .form__action {
+      .button {
+        font-size: 16px;
+        width: 100%;
+        margin-top: 32px;
+      }
+
+      > div:last-child {
+        color: grey;
+        font-size: 12px;
+        margin-top: 12px;
+        text-align: center;
+      }
+    }
   }
 }
