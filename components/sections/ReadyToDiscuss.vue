@@ -13,6 +13,7 @@ const onFormSubmit = () => {
 
 <template>
   <section id="ready-to-discuss" class="ready-to-discuss">
+    <div class="ready-to-discuss__gradient" />
     <h2>Готовы обсудить проект?</h2>
     <form class="form" @submit.prevent="onFormSubmit">
       <h3>Получить консультацию прямо сейчас</h3>
