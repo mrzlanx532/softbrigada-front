@@ -51,8 +51,8 @@ const onFormSubmit = () => {
       <div class="form__group">
         <div>Описание задачи</div>
         <Input label="Напишите о вашей задаче в двух словах"/>
-        <InputFile v-model="formData.file"/>
       </div>
+      <InputFile v-model="formData.file"/>
       <div class="form__group">
         <div>Бюджет</div>
         <Radio v-model="formData.budget" :options="budgetOptions" />
@@ -69,7 +69,7 @@ const onFormSubmit = () => {
         <Radio v-model="formData.source" :options="sourcesOptions" />
       </div>
       <div class="form__action">
-        <Button type="submit" class="--white">Отправить</Button>
+        <Button type="submit">Отправить</Button>
       </div>
     </form>
   </div>

@@ -9,7 +9,7 @@
   transition: opacity .3s ease-out;
 
   &.--is-open {
-    opacity: 0.5;
+    opacity: 0.7;
     pointer-events: auto;
     cursor: pointer;
   }
@@ -28,9 +28,9 @@
   max-width: 100%;
   opacity: 1;
   padding: 60px 80px;
-  background: radial-gradient(ellipse at 40px 40px, #30324c 10%, #973333 100%);
+  background: white;
+  color: black;
   box-shadow: -50px 0px 75px black;
-
   -ms-overflow-style: none;
   scrollbar-width: none;
 
@@ -42,8 +42,13 @@
     transform: translateX(0);
   }
 
+  h3 {
+    color: black;
+  }
+
   p {
     margin-top: 20px;
+    color: black;
   }
 
   &__close {
@@ -56,13 +61,8 @@
   }
 
   &__form {
-    background: transparent;
     border-radius: 0;
     padding: 0;
     margin-top: 32px;
-
-    div {
-      color: white;
-    }
   }
 }

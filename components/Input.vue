@@ -1,16 +1,16 @@
 <script setup lang="ts">
 const props = defineProps<{
   name: string,
-  label: string
+  label: string,
 }>()
 </script>
 
 <template>
   <div class="input">
+    <label :for="props.name">{{ props.label }}</label>
     <input
         :name="props.name"
-        type="text"
-        :placeholder="props.label"
+        :placeholder="props.placeholder"
         :label="props.name"/>
   </div>
 </template>
