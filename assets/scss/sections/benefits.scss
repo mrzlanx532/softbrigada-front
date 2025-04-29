@@ -1,6 +1,20 @@
 .benefits {
-  max-width: var(--container-width);
-  margin: 204px auto 0 auto;
+  position: relative;
+  overflow: visible;
+
+  &__container {
+    max-width: var(--container-width);
+    margin: 204px auto 0 auto;
+  }
+
+  > svg {
+    width: 1745px;
+    height: 1327px;
+    position: absolute;
+    top: 220px;
+    left: 0;
+    z-index: 0;
+  }
 
   h2 {
     span {
