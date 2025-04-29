@@ -1,5 +1,19 @@
 <script setup lang="ts">
 import Gradient from '~/assets/svg/offer-section-gradient.svg'
+
+const svgRef = useTemplateRef('svgRef')
+const offerSolutionBestRef = useTemplateRef('offerSolutionBestRef')
+
+onMounted(() => {
+  const io = new IntersectionObserver((entries) => {
+    const svg = svgRef.value.$el as SVGElement
+
+    entries[0].isIntersecting ?
+        svg.unpauseAnimations() :
+        svg.pauseAnimations()
+  })
+  io.observe(offerSolutionBestRef.value)
+})
 </script>
 
 <template>
@@ -21,13 +35,17 @@ import Gradient from '~/assets/svg/offer-section-gradient.svg'
           </ul>
           <div class="offer__question">
             Готовы ли вы вложить эти средства именно в сайт/сервис?
-            <svg><use href="/sprite.svg#question-comma" /></svg>
+            <svg>
+              <use href="/sprite.svg#question-comma"/>
+            </svg>
           </div>
         </div>
         <div class="offer__solution">
           <div class="offer__tag">Вариант 2</div>
           <h3>Нанять фрилансеров по отдельности</h3>
-          <ul><li>Классный вариант сэкономить. Но это дополнительная головная боль</li></ul>
+          <ul>
+            <li>Классный вариант сэкономить. Но это дополнительная головная боль</li>
+          </ul>
           <div class="offer__clouds">
             <div>А что с сайтом?</div>
             <div>А как внедрить сервис?</div>
@@ -35,14 +53,16 @@ import Gradient from '~/assets/svg/offer-section-gradient.svg'
           </div>
           <div class="offer__question">
             Готовы ли вы так экономить, рискуя деньгами и временем?
-            <svg><use href="/sprite.svg#question-comma" /></svg>
+            <svg>
+              <use href="/sprite.svg#question-comma"/>
+            </svg>
           </div>
         </div>
       </div>
     </div>
-    <div class="offer__solution --best">
+    <div ref="offerSolutionBestRef" class="offer__solution --best">
       <div class="offer__gradient">
-        <Gradient />
+        <Gradient ref="svgRef"/>
       </div>
       <div class="offer__wrapper --best">
         <div>
@@ -53,34 +73,55 @@ import Gradient from '~/assets/svg/offer-section-gradient.svg'
         <div>
           <div class="offer__point-wrapper">
             <div class="offer__point">
-              <svg><use href="/sprite.svg#bracket" /></svg>
+              <svg>
+                <use href="/sprite.svg#bracket"/>
+              </svg>
               <div>01</div>
-              <svg><use href="/sprite.svg#cursor" /></svg>
-              <svg><use href="/sprite.svg#bracket" /></svg>
+              <svg>
+                <use href="/sprite.svg#cursor"/>
+              </svg>
+              <svg>
+                <use href="/sprite.svg#bracket"/>
+              </svg>
             </div>
-            <div class="offer__point-content">Погрузимся в ваши бизнес-процессы, спроектируем и создадим ваш проект</div>
+            <div class="offer__point-content">Погрузимся в ваши бизнес-процессы, спроектируем и создадим ваш проект
+            </div>
           </div>
           <div class="offer__point-wrapper">
             <div class="offer__point">
-              <svg><use href="/sprite.svg#bracket" /></svg>
+              <svg>
+                <use href="/sprite.svg#bracket"/>
+              </svg>
               <div>02</div>
-              <svg><use href="/sprite.svg#code" /></svg>
-              <svg><use href="/sprite.svg#bracket" /></svg>
+              <svg>
+                <use href="/sprite.svg#code"/>
+              </svg>
+              <svg>
+                <use href="/sprite.svg#bracket"/>
+              </svg>
             </div>
             <div class="offer__point-content">Разработаем, внедрим и обучим персонал использовать новую систему</div>
           </div>
           <div class="offer__point-wrapper">
             <div class="offer__point">
-              <svg><use href="/sprite.svg#bracket" /></svg>
+              <svg>
+                <use href="/sprite.svg#bracket"/>
+              </svg>
               <div>03</div>
-              <svg><use href="/sprite.svg#handshake" /></svg>
-              <svg><use href="/sprite.svg#bracket" /></svg>
+              <svg>
+                <use href="/sprite.svg#handshake"/>
+              </svg>
+              <svg>
+                <use href="/sprite.svg#bracket"/>
+              </svg>
             </div>
             <div class="offer__point-content">
               <div>У вас будет один подрядчик для всех вопросов и вам не придется искать</div>
-              <svg><use href="/sprite.svg#branches"/></svg>
+              <svg>
+                <use href="/sprite.svg#branches"/>
+              </svg>
               <div>
-                <div>Копирайтеров для наполнения </div>
+                <div>Копирайтеров для наполнения</div>
                 <div>Дизайнеров и программистов</div>
               </div>
             </div>

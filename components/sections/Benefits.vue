@@ -1,10 +1,23 @@
 <script setup lang="ts">
 import Gradient from '~/assets/svg/benefits-section-gradient.svg'
+
+const svgRef = useTemplateRef('svgRef')
+
+onMounted(() => {
+  const io = new IntersectionObserver((entries) => {
+    const svg = svgRef.value.$el as SVGElement
+
+    entries[0].isIntersecting ?
+        svg.unpauseAnimations() :
+        svg.pauseAnimations()
+  })
+  io.observe(document.querySelector('#benefits'))
+})
 </script>
 
 <template>
   <section id="benefits" class="benefits">
-    <Gradient filled/>
+    <Gradient ref="svgRef" filled/>
     <div class="benefits__container">
       <div style="position: relative; z-index: 3">
         <h2>
