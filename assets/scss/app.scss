@@ -20,6 +20,9 @@
 @use 'sections/softbrigada';
 @use 'sections/footer';
 
+/* widgets */
+@use 'widgets/discuss';
+
 * {
   color: white;
   font-family: 'Hauora', sans-serif;
@@ -37,7 +40,7 @@
   }
 }
 
-svg, svg * {
+svg, svg *, symbol * {
   color: inherit;
   shape-rendering: geometricPrecision;
 }
