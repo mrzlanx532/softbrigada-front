@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import Gradient from '~/assets/svg/offer-section-gradient.svg'
 
+let io: IntersectionObserver | undefined = undefined
+
 const svgRef = useTemplateRef('svgRef')
 const offerSolutionBestRef = useTemplateRef('offerSolutionBestRef')
 const isAnimationWork = ref(false)
 
 onMounted(() => {
-  const io = new IntersectionObserver((entries) => {
+  io = new IntersectionObserver((entries) => {
     const svg = svgRef.value.$el as SVGElement
 
     if (entries[0].isIntersecting) {
@@ -19,6 +21,10 @@ onMounted(() => {
     isAnimationWork.value = false
   })
   io.observe(document.querySelector('#offer'))
+})
+
+onUnmounted(() => {
+  io.disconnect()
 })
 </script>
 

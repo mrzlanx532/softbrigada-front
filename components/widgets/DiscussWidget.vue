@@ -2,6 +2,7 @@
 import { vOnClickOutside } from '@vueuse/components'
 import Button from '~/components/Button.vue'
 
+let io: IntersectionObserver | undefined = undefined
 const isOpen = ref(false)
 const liteMode = ref(true)
 
@@ -10,19 +11,20 @@ const onClickButton = () => {
 }
 
 const closeWidget = () => {
-
-  console.log(123)
-
   isOpen.value = false
 }
 
 onMounted(() => {
-  const io = new IntersectionObserver((entries) => {
+  io = new IntersectionObserver((entries) => {
     entries[0].isIntersecting ?
         liteMode.value = true :
         liteMode.value = false
   })
   io.observe(document.querySelector('#hero'))
+})
+
+onUnmounted(() => {
+  io.disconnect()
 })
 </script>
 

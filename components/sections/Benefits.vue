@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import Gradient from '~/assets/svg/benefits-section-gradient.svg'
 
+let io: IntersectionObserver | undefined = undefined
 const svgRef = useTemplateRef('svgRef')
 
 onMounted(() => {
-  const io = new IntersectionObserver((entries) => {
+  io = new IntersectionObserver((entries) => {
     const svg = svgRef.value.$el as SVGElement
 
     entries[0].isIntersecting ?
@@ -12,6 +13,10 @@ onMounted(() => {
         svg.pauseAnimations()
   })
   io.observe(document.querySelector('#benefits'))
+})
+
+onUnmounted(() => {
+  io.disconnect()
 })
 </script>
 
