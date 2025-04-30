@@ -3,16 +3,22 @@ import Gradient from '~/assets/svg/offer-section-gradient.svg'
 
 const svgRef = useTemplateRef('svgRef')
 const offerSolutionBestRef = useTemplateRef('offerSolutionBestRef')
+const isAnimationWork = ref(false)
 
 onMounted(() => {
   const io = new IntersectionObserver((entries) => {
     const svg = svgRef.value.$el as SVGElement
 
-    entries[0].isIntersecting ?
-        svg.unpauseAnimations() :
-        svg.pauseAnimations()
+    if (entries[0].isIntersecting) {
+      svg.unpauseAnimations()
+      isAnimationWork.value = true
+      return
+    }
+
+    svg.pauseAnimations()
+    isAnimationWork.value = false
   })
-  io.observe(offerSolutionBestRef.value)
+  io.observe(document.querySelector('#offer'))
 })
 </script>
 
@@ -46,7 +52,7 @@ onMounted(() => {
           <ul>
             <li>Классный вариант сэкономить. Но это дополнительная головная боль</li>
           </ul>
-          <div class="offer__clouds">
+          <div class="offer__clouds" :class="{'--is-active': isAnimationWork}">
             <div>А что с сайтом?</div>
             <div>А как внедрить сервис?</div>
             <div>А как грамотно наполнить сайт?</div>
