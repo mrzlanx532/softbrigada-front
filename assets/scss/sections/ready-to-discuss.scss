@@ -11,12 +11,12 @@
     position: absolute;
     top: -185px;
     left: -189px;
-    animation: shine 5s linear infinite;
+    animation: shine 8s linear infinite;
 
     @keyframes shine {
       0% {
         opacity: 0.8;
-        color: #e42a2a;
+        color: #c13448;
         transform: scale(1);
       }
 
@@ -28,7 +28,7 @@
 
       100% {
         opacity: 0.8;
-        color: #e42a2a;
+        color: #c13448;
         transform: scale(1);
       }
     }
