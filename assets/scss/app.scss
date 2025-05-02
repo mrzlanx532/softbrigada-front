@@ -59,8 +59,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 112px;
+  font-size: 38px;
   font-weight: normal;
+
+  @media (min-width: 640px) {
+    font-size: 112px;
+  }
 }
 
 h2 {
