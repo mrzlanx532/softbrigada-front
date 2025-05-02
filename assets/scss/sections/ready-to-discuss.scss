@@ -11,25 +11,23 @@
     position: absolute;
     top: -185px;
     left: -189px;
-    animation: shine 8s linear infinite;
+    color: #c13448;
+
+    &.--is-active {
+      animation: shine 8s linear infinite;
+    }
 
     @keyframes shine {
       0% {
-        opacity: 0.8;
         color: #c13448;
-        transform: scale(1);
       }
 
       50% {
-        opacity: 1;
         color: #ea6060;
-        transform: scale(1);
       }
 
       100% {
-        opacity: 0.8;
         color: #c13448;
-        transform: scale(1);
       }
     }
   }

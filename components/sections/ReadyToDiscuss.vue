@@ -3,6 +3,11 @@ const props = defineProps<{
   isSecondBlock?: boolean
 }>()
 
+let io: IntersectionObserver | undefined = undefined
+
+const readyToDiscussRef = useTemplateRef('readyToDiscussRef')
+const animationIsActive = ref(false)
+
 import Input from '~/components/Input.vue'
 import Button from '~/components/Button.vue'
 import Gradient from '~/assets/svg/ready-to-discuss-section-gradient.svg'
@@ -10,11 +15,24 @@ import Gradient from '~/assets/svg/ready-to-discuss-section-gradient.svg'
 const onFormSubmit = () => {
   alert('TODO')
 }
+
+onMounted(() => {
+  io = new IntersectionObserver((entries) => {
+    entries[0].isIntersecting ?
+        animationIsActive.value = true :
+        animationIsActive.value = false
+  })
+  io.observe(readyToDiscussRef.value)
+})
+
+onUnmounted(() => {
+  io.disconnect()
+})
 </script>
 
 <template>
-  <section id="ready-to-discuss" class="ready-to-discuss">
-    <Gradient v-if="isSecondBlock" filled />
+  <section ref="readyToDiscussRef" :id="isSecondBlock ? 'ready-to-discuss' : undefined" class="ready-to-discuss">
+    <Gradient v-if="isSecondBlock" :class="{'--is-active': animationIsActive}" filled />
     <h2>Готовы обсудить проект?</h2>
     <form class="form" @submit.prevent="onFormSubmit">
       <h3>Получить консультацию прямо сейчас</h3>
