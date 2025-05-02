@@ -75,7 +75,7 @@ onMounted(() => {
       isFirstAnimationIntermediateStopped = true
     }
   }, {
-    rootMargin: '0px 0px -150px 0px'
+    rootMargin: '0px 0px -300px 0px'
   })
   firstIO.observe(spotlightRef.value)
 })
