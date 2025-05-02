@@ -7,7 +7,11 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [{ rel: 'icon', href: '/favicon.png' }],
-      title: 'Разрабатываем IT-решения для бизнеса — от идеи до запуска'
+      title: 'Разрабатываем IT-решения для бизнеса — от идеи до запуска',
+      meta: [{
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+      }]
     }
   },
   svgo: {
