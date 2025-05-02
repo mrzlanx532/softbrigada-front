@@ -4,6 +4,12 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: ['v-gsap-nuxt', 'nuxt-svgo'],
   css: ['~/assets/scss/app.scss'],
+  app: {
+    head: {
+      link: [{ rel: 'icon', href: '/favicon.png' }],
+      title: 'SoftBrigada'
+    }
+  },
   svgo: {
     global: false,
     autoImportPath: false
