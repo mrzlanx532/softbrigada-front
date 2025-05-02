@@ -5,6 +5,7 @@ const props = defineProps<{
 
 import Input from '~/components/Input.vue'
 import Button from '~/components/Button.vue'
+import Gradient from '~/assets/svg/ready-to-discuss-section-gradient.svg'
 
 const onFormSubmit = () => {
   alert('TODO')
@@ -13,7 +14,7 @@ const onFormSubmit = () => {
 
 <template>
   <section id="ready-to-discuss" class="ready-to-discuss">
-    <div class="ready-to-discuss__gradient" />
+    <Gradient v-if="isSecondBlock" filled />
     <h2>Готовы обсудить проект?</h2>
     <form class="form" @submit.prevent="onFormSubmit">
       <h3>Получить консультацию прямо сейчас</h3>

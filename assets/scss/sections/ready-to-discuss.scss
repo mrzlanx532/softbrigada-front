@@ -5,6 +5,35 @@
   gap: 16px;
   position: relative;
 
+  > svg {
+    width: 1088px;
+    height: 1028px;
+    position: absolute;
+    top: -185px;
+    left: -189px;
+    animation: shine 5s linear infinite;
+
+    @keyframes shine {
+      0% {
+        opacity: 0.8;
+        color: #e42a2a;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        color: #ea6060;
+        transform: scale(1);
+      }
+
+      100% {
+        opacity: 0.8;
+        color: #e42a2a;
+        transform: scale(1);
+      }
+    }
+  }
+
   &__gradient {
     border-radius: 3000px 3000px 3000px 3000px;
     opacity: 0.2;
