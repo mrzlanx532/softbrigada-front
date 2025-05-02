@@ -1,0 +1,130 @@
+<svg width="192" height="148" viewBox="0 0 192 148" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0_1035_1114)">
+        <!--<rect width="192" height="148" rx="40" fill="black"/>-->
+        <g style="mix-blend-mode:luminosity" clip-path="url(#clip1_1035_1114)">
+            <rect width="358" height="358" transform="translate(-163 -124)" fill="url(#paint0_linear_1035_1114)" />
+            <g style="mix-blend-mode:hue">
+                <foreignObject x="-115.847" y="-228.401" width="229.088" height="324.555">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(7.65px);clip-path:url(#bgblur_2_1035_1114_clip_path);height:100%;width:100%" />                </foreignObject>
+                <g filter="url(#filter0_f_1035_1114)" data-figma-bg-blur-radius="15.3091">
+                    <ellipse cx="-1.30325" cy="-66.1233" rx="68.6167" ry="116.35" fill="#8673FF"/>
+                </g>
+                <g filter="url(#filter1_f_1035_1114)">
+                    <ellipse cx="225.964" cy="76.6954" rx="225.964" ry="76.6954"
+                             transform="matrix(0.590979 0.806687 -0.734249 0.67888 -199.54 -146.673)" fill="#0066FF"/>
+                </g>
+                <foreignObject x="-176.707" y="-67.3007" width="546.515" height="260.115">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(7.65px);clip-path:url(#bgblur_3_1035_1114_clip_path);height:100%;width:100%" />
+                </foreignObject>
+                <g filter="url(#filter2_f_1035_1114)" data-figma-bg-blur-radius="15.3091">
+                    <ellipse cx="96.5502" cy="62.7567" rx="227.33" ry="84.13" fill="#F00000"/>
+                </g>
+                <g filter="url(#filter3_f_1035_1114)" data-figma-bg-blur-radius="15.3091">
+                    <ellipse cx="207.918" cy="87.8088" rx="207.918" ry="87.8088"
+                             transform="matrix(0.767158 0.641458 -0.280489 0.959857 0.820312 -113.26)" fill="#3DC127"
+                             fill-opacity="0.7">
+
+                    </ellipse>
+                </g>
+                <foreignObject x="38.0926" y="-44.6273" width="331.715" height="199.255">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(7.65px);clip-path:url(#bgblur_5_1035_1114_clip_path);height:100%;width:100%"/>
+                </foreignObject>
+                <g filter="url(#filter4_f_1035_1114)">
+                    <ellipse cx="203.95" cy="55" rx="119.93" ry="53.7" fill="#8673FF">
+                        <animateTransform
+                                attributeName="transform"
+                                attributeType="XML"
+                                type="rotate"
+                                values="0 70 70; 180 70 70; 360 70 70"
+                                dur="20s"
+                                repeatCount="indefinite"
+                        />
+                    </ellipse>
+                </g>
+                <foreignObject x="-329.841" y="-167.778" width="448.053" height="292.797">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(7.65px);clip-path:url(#bgblur_6_1035_1114_clip_path);height:100%;width:100%"/>
+                </foreignObject>
+                <g filter="url(#filter5_f_1035_1114)" data-figma-bg-blur-radius="15.3091">
+                    <ellipse cx="184.655" cy="87.8088" rx="184.655" ry="87.8088"
+                             transform="matrix(0.962283 0.272051 0.136147 0.990689 -295.46 -158.607)" fill="#A3C127"
+                             fill-opacity="0.7"/>
+                </g>
+            </g>
+            <g style="mix-blend-mode:overlay">
+                <rect x="-163" y="-124" width="360.387" height="358" fill="#52BDFA"/>
+            </g>
+            <g style="mix-blend-mode:overlay">
+                <rect x="-163" y="-124" width="716" height="716" fill="#5277FA"/>
+            </g>
+            <g style="mix-blend-mode:difference">
+                <rect x="-163" y="-124" width="358" height="358" fill="#30EE00"/>
+            </g>
+        </g>
+    </g>
+    <defs>
+        <filter id="filter0_f_1035_1114" x="-115.847" y="-228.401" width="229.088" height="324.555"
+                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="22.9637" result="effect1_foregroundBlur_1035_1114"/>
+        </filter>
+        <clipPath id="bgblur_2_1035_1114_clip_path" transform="translate(115.847 228.401)">
+            <ellipse cx="-1.30325" cy="-66.1233" rx="68.6167" ry="116.35"/>
+        </clipPath>
+        <filter id="filter1_f_1035_1114" x="-313.207" y="-147.873" width="381.786" height="471.097"
+                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="22.9637" result="effect1_foregroundBlur_1035_1114"/>
+        </filter>
+        <filter id="filter2_f_1035_1114" x="-176.707" y="-67.3007" width="546.515" height="260.115"
+                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="22.9637" result="effect1_foregroundBlur_1035_1114"/>
+        </filter>
+        <clipPath id="bgblur_3_1035_1114_clip_path" transform="translate(176.707 67.3007)">
+            <ellipse cx="96.5502" cy="62.7567" rx="227.33" ry="84.13"/>
+        </clipPath>
+        <filter id="filter3_f_1035_1114" x="-71.6495" y="-99.3236" width="414.693" height="407.437"
+                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="22.9637" result="effect1_foregroundBlur_1035_1114"/>
+        </filter>
+        <clipPath id="bgblur_4_1035_1114_clip_path" transform="translate(71.6495 99.3236)">
+            <ellipse cx="207.918" cy="87.8088" rx="207.918" ry="87.8088"
+                     transform="matrix(0.767158 0.641458 -0.280489 0.959857 0.820312 -113.26)"/>
+        </clipPath>
+        <filter id="filter4_f_1035_1114" x="0" y="-44.6273" width="331.715" height="199.255"
+                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="22.9637" result="effect1_foregroundBlur_1035_1114"/>
+        </filter>
+        <clipPath id="bgblur_5_1035_1114_clip_path" transform="translate(-38.0926 44.6273)">
+            <ellipse cx="203.95" cy="55" rx="119.93" ry="53.7"/>
+        </clipPath>
+        <filter id="filter5_f_1035_1114" x="-329.841" y="-167.778" width="448.053" height="292.797"
+                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="22.9637" result="effect1_foregroundBlur_1035_1114"/>
+        </filter>
+        <clipPath id="bgblur_6_1035_1114_clip_path" transform="translate(329.841 167.778)">
+            <ellipse cx="184.655" cy="87.8088" rx="184.655" ry="87.8088"
+                     transform="matrix(0.962283 0.272051 0.136147 0.990689 -295.46 -158.607)"/>
+        </clipPath>
+        <linearGradient id="paint0_linear_1035_1114" x1="179" y1="358" x2="179" y2="-3.51751e-06"
+                        gradientUnits="userSpaceOnUse">
+            <stop stop-color="#0BFF06"/>
+            <stop offset="1" stop-color="#00A4AE"/>
+        </linearGradient>
+        <clipPath id="clip0_1035_1114">
+            <rect width="192" height="148" rx="40" fill="white"/>
+        </clipPath>
+        <clipPath id="clip1_1035_1114">
+            <rect width="358" height="358" fill="white" transform="translate(-163 -124)"/>
+        </clipPath>
+    </defs>
+</svg>
