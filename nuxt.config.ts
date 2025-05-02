@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [{ rel: 'icon', href: '/favicon.png' }],
-      title: 'SoftBrigada'
+      title: 'Разрабатываем IT-решения для бизнеса — от идеи до запуска'
     }
   },
   svgo: {
