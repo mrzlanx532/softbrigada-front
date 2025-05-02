@@ -17,7 +17,9 @@ const openBrief = () => {
 <template>
   <div class="menu">
     <div class="menu__container">
-      <div class="menu__logo">logo</div>
+      <div class="menu__logo">
+        <img height="40" src="/images/logo/43.svg" alt="logo">
+      </div>
       <div class="menu__menu">
         <a @click="onClickLink('dev-types')">что мы делаем</a>
         <a @click="onClickLink('cases')">наши кейсы <span>+3</span></a>

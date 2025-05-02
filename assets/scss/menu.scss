@@ -8,6 +8,11 @@
   position: relative;
   z-index: 1;
 
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
   & * {
     font-size: 15px;
     font-weight: bold;
@@ -43,7 +48,7 @@
 
   &__menu {
     display: inline-block;
-    margin-left: 175px;
+    margin-left: 50px;
 
     > a {
       display: inline-block;

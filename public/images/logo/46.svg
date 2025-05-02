@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg fill="#FFFFFF" id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488.51 190.57">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: .09em;
+      }
+
+      .cls-2 {
+        font-family: Bedstead-Extended, Bedstead;
+        font-size: 87.82px;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+
+      .cls-3 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-4 {
+        letter-spacing: .09em;
+      }
+    </style>
+  </defs>
+  <g id="_Слой_1-2" data-name="Слой 1">
+    <text class="cls-2" transform="translate(1 75.64)"><tspan class="cls-4"><tspan x="0" y="0">SOFT</tspan></tspan><tspan class="cls-4" x="0" y="96.36">B</tspan><tspan class="cls-3" x="73.77" y="96.36">RI</tspan><tspan class="cls-1" x="199.35" y="96.36">GADA</tspan></text>
+  </g>
+</svg>
