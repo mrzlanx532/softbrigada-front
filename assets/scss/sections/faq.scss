@@ -1,6 +1,11 @@
 .faq {
+  display: none;
   max-width: var(--container-width);
   margin: 160px auto 0 auto;
+
+  @media (min-width: 640px) {
+    display: block;
+  }
 
   &__question-wrapper {
     cursor: pointer;

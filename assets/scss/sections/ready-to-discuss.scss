@@ -1,9 +1,13 @@
 .ready-to-discuss {
+  display: none;
   max-width: var(--container-width);
   margin: 174px auto 0 auto;
-  display: flex;
   gap: 16px;
   position: relative;
+
+  @media (min-width: 640px) {
+    display: flex;
+  }
 
   > svg {
     width: 1088px;

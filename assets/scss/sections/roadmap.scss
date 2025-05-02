@@ -1,6 +1,11 @@
 .roadmap {
+  display: none;
   margin: 194px auto 0 auto;
   overflow-x: hidden;
+
+  @media (min-width: 640px) {
+    display: block;
+  }
 
   h2 {
     span {

@@ -1,6 +1,11 @@
 .cases {
+  display: none;
   max-width: var(--container-width);
   margin: 158px auto 0 auto;
+
+  @media (min-width: 640px) {
+    display: block;
+  }
 
   h2 {
     text-align: center;

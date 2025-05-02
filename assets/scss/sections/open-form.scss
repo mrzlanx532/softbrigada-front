@@ -1,8 +1,12 @@
 .open-form {
-  display: flex;
+  display: none;
   gap: 16px;
   max-width: var(--container-width);
   margin: 224px auto 0 auto;
+
+  @media (min-width: 640px) {
+    display: flex;
+  }
 
   > div {
     flex: 1;

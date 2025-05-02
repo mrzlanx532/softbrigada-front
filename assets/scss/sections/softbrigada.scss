@@ -1,7 +1,12 @@
 .softbrigaga {
+  display: none;
   position: relative;
   visibility: hidden;
   margin: 193px 0 0 0;
+
+  @media (min-width: 640px) {
+    display: block;
+  }
 
   h1 {
     text-align: center;

@@ -1,6 +1,11 @@
 .footer {
+  display: none;
   max-width: var(--container-width);
   margin: 0 auto;
+
+  @media (min-width: 640px) {
+    display: block;
+  }
 
   .menu {
     margin-top: 60px;

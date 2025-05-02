@@ -1,5 +1,10 @@
 .offer {
+  display: none;
   margin-top: 137px;
+
+  @media (min-width: 640px) {
+    display: block;
+  }
 
   h2 {
     line-height: 1;

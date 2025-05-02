@@ -1,6 +1,11 @@
 .benefits {
   position: relative;
   overflow: hidden;
+  display: none;
+
+  @media (min-width: 640px) {
+    display: block;
+  }
 
   &__container {
     max-width: var(--container-width);
