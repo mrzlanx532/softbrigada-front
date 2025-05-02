@@ -1,12 +1,16 @@
-.menu {
+.menu-desktop {
+  display: none;
   width: 1232px;
   margin: 0;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   height: 65px;
   position: relative;
   z-index: 1;
+
+  @media (min-width: 640px) {
+    display: flex;
+  }
 
   &__container {
     display: flex;
@@ -71,5 +75,35 @@
 
   &__button {
     margin-left: 32px;
+  }
+}
+
+.menu-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (min-width: 640px) {
+    display: none;
+  }
+
+  div:last-child {
+    display: flex;
+  }
+
+  .button {
+    font-size: 14px;
+    padding: 20px;
+
+    svg {
+      margin-left: 0;
+      width: 24px;
+      height: 24px;
+    }
+
+    &:last-child {
+      padding: 14px;
+      margin-left: 8px;
+    }
   }
 }
