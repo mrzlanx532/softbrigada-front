@@ -14,7 +14,7 @@
     <symbol id="chat" viewBox="0 0 32 32" fill="none">
         <path d="M16.5 3C13.1868 3.00661 10.0112 4.32569 7.66846 6.66846C5.32569 9.01124 4.00661 12.1868 4 15.5V26.0375C4 26.558 4.20676 27.0572 4.5748 27.4252C4.94284 27.7932 5.44201 28 5.9625 28H16.5C19.8152 28 22.9946 26.683 25.3388 24.3388C27.683 21.9946 29 18.8152 29 15.5C29 12.1848 27.683 9.00537 25.3388 6.66117C22.9946 4.31696 19.8152 3 16.5 3Z" fill="currentColor"/>
     </symbol>
-    <symbol id="question-comma" width="20" height="23" viewBox="0 0 20 23" fill="none">
+    <symbol id="question-comma" viewBox="0 0 20 23" fill="none">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M1.64722 22.9331C11.9224 22.0956 20.0001 13.4911 20.0001 3V0H5.00045V7.8421C5.00045 13.4279 5.00045 16.2208 4.21481 18.466C3.63551 20.1216 2.75883 21.6314 1.64722 22.9331Z" fill="white"/>
     </symbol>
     <symbol id="bracket" width="9" height="34" viewBox="0 0 9 34" fill="none">

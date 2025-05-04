@@ -1,13 +1,22 @@
 .offer {
-  display: none;
+  display: block;
   margin-top: 137px;
+  padding: 0 20px;
 
   @media (min-width: 640px) {
     display: block;
+    padding: 0;
   }
 
   h2 {
     line-height: 1;
+    text-align: center;
+    margin: 0 0 40px 0;
+
+    @media (min-width: 640px) {
+      text-align: left;
+      margin: 0 0 64px 0;
+    }
   }
 
   &__gradient {
@@ -79,22 +88,52 @@
 
   &__solutions {
     display: flex;
+    flex-direction: column;
     gap: 16px;
+
+    @media (min-width: 640px) {
+      flex-direction: row;
+    }
   }
 
   &__solution {
-    border-radius: 80px;
-    padding: 64px;
-    width: calc(50% - 8px);
+    border-radius: 64px;
+    padding: 24px;
+    width: 100%;
     box-shadow: var(--box-shadow-1);
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+
+    @media (min-width: 640px) {
+      border-radius: 80px;
+      width: calc(50% - 8px);
+      padding: 64px;
+      flex-grow: 1;
+      flex-shrink: 0;
+      flex-basis: auto;
+    }
+
+    &.--mobile {
+      display: block;
+
+      @media (min-width: 640px) {
+        display: none;
+      }
+    }
 
     &.--best {
+      display: none;
       position: relative;
       max-width: var(--container-width-2);
       margin: 64px auto;
       width: 100%;
       padding: 64px 104px;
       overflow: hidden;
+
+      @media (min-width: 640px) {
+        display: block;
+      }
     }
   }
 
@@ -103,12 +142,21 @@
     padding: 12px;
     border-radius: 64px;
     background-color: var(--bg-color-3);
+    font-size: 14px;
+
+    @media (min-width: 640px) {
+      font-size: 16px;
+    }
   }
 
   h3 {
     margin-top: 32px;
-    font-size: 48px;
+    font-size: 28px;
     line-height: 1;
+
+    @media (min-width: 640px) {
+      font-size: 48px;
+    }
 
     span {
       width: 100%;
@@ -135,10 +183,15 @@
     padding: 16px;
     background: white;
     color: black;
-    border-radius: 64px;
-    font-size: 15px;
+    border-radius: 24px;
+    font-size: 14px;
     margin-top: 32px;
     font-weight: bold;
+
+    @media (min-width: 640px) {
+      font-size: 15px;
+      border-radius: 64px;
+    }
 
     svg {
       position: absolute;
@@ -152,7 +205,11 @@
   &__clouds {
     height: 178px;
     position: relative;
-    margin-top: 15px;
+    margin-top: 40px;
+
+    @media (min-width: 640px) {
+      margin-top: 15px;
+    }
 
     &.--is-active {
       > div {
@@ -170,11 +227,16 @@
       animation-play-state: paused;
 
       &:nth-child(1) {
-        top: 13px;
-        left: 0;
+        top: 2px;
+        left: 2px;
         transform: rotate(-4.72deg);
         animation: float-1 4s ease-in-out infinite;
         animation-delay: 0s;
+
+        @media (min-width: 640px) {
+          top: 13px;
+          left: 0;
+        }
 
         &:hover {
           transform: translateY(-15px) rotate(-4.72deg) scale(1,1);
@@ -191,11 +253,15 @@
       }
 
       &:nth-child(2) {
-        top: 1px;
+        top: 57px;
         right: 1px;
         transform: rotate(2.84deg);
         animation: float-2 4s ease-in-out infinite;
         animation-delay: 0.6s;
+
+        @media (min-width: 640px) {
+          top: 1px;
+        }
 
         @keyframes float-2 {
           0%, 100% {
@@ -208,11 +274,16 @@
       }
 
       &:nth-child(3) {
-        bottom: 1px;
-        left: 114px;
+        bottom: 0;
+        left: 0;
         transform: rotate(1.78deg);
         animation: float-3 4s ease-in-out infinite;
         animation-delay: 0.3s;
+
+        @media (min-width: 640px) {
+          left: 114px;
+          bottom: 1px;
+        }
 
         @keyframes float-3 {
           0%, 100% {

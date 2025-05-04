@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@mrzlanx532/nuxt-3-custom-scroll-plugin": "^0.0.28",
+    "@nuxtjs/device": "^3.2.4",
     "@splidejs/vue-splide": "^0.6.12",
     "@vueuse/components": "^13.1.0",
     "@vueuse/core": "^13.1.0",

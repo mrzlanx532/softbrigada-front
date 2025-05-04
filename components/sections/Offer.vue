@@ -70,6 +70,9 @@ onUnmounted(() => {
             </svg>
           </div>
         </div>
+        <div class="offer__solution --mobile">
+
+        </div>
       </div>
     </div>
     <div ref="offerSolutionBestRef" class="offer__solution --best">
