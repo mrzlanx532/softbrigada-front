@@ -27,12 +27,16 @@
   z-index: 6;
   max-width: 100%;
   opacity: 1;
-  padding: 60px 80px;
+  padding: 30px 40px;
   background: white;
   color: black;
   box-shadow: -50px 0px 75px black;
   -ms-overflow-style: none;
   scrollbar-width: none;
+
+  @media (min-width: 640px) {
+    padding: 60px 80px;
+  }
 
   &::-webkit-scrollbar {
     display: none;
@@ -44,6 +48,11 @@
 
   h3 {
     color: black;
+    font-size: 32px;
+
+    @media (min-width: 640px) {
+      font-size: 48px;
+    }
   }
 
   p {
