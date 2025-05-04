@@ -32,4 +32,12 @@
     display: inline-flex;
     align-items: center;
   }
+
+  &.--without-icon-on-mobile {
+    svg {
+      @media (max-width: 639px) {
+        display: none;
+      }
+    }
+  }
 }

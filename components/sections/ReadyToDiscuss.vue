@@ -41,7 +41,7 @@ onUnmounted(() => {
         <Input name="phone" label="Номер телефона" />
       </div>
       <Input name="email" label="Email" />
-      <Button type="submit" class="ready-to-discuss__button" :class="{'--blue': props.isSecondBlock}" icon="send">Заказать консультацию</Button>
+      <Button type="submit" class="ready-to-discuss__button --without-icon-on-mobile" :class="{'--blue': props.isSecondBlock}" icon="send">Заказать консультацию</Button>
     </form>
   </section>
 </template>

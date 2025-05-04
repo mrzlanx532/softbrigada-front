@@ -1,8 +1,13 @@
 .form {
   width: 100%;
-  padding: 64px;
+  padding: 24px;
   background: white;
-  border-radius: 80px;
+  border-radius: 64px;
+
+  @media (min-width: 640px) {
+    padding: 64px;
+    border-radius: 80px;
+  }
 
   &__group {
 
@@ -32,18 +37,24 @@
     }
   }
 
-  > div {
-    &:first-child {
-      margin-top: 0;
-    }
+  > h3 + div {
+    margin-top: 0;
+  }
 
-    margin-top: 32px;
+  > div {
+    margin-top: 24px;
   }
 }
 
 .input__wrapper {
   display: flex;
-  gap: 16px;
+  gap: 24px;
+  flex-direction: column;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    gap: 16px;
+  }
 
   .input {
     flex: 1;
