@@ -50,6 +50,10 @@ a {
   user-select: none;
 }
 
+div {
+  -webkit-tap-highlight-color: transparent;
+}
+
 button {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
