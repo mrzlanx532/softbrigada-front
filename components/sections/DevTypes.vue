@@ -46,12 +46,18 @@ const onClickType = (index: number) => {
               @click="onClickType(index)"
           >{{ type.title }}</button>
         </div>
-        <Button class="dev-types__lead" icon="chat">Обсудить детали</Button>
+        <Button class="dev-types__lead --desktop" icon="chat">Обсудить детали</Button>
       </div>
-      <div class="dev-types__detail">
+      <div class="dev-types__detail --desktop">
         <div>{{ types[activeType].title }}</div>
         <div>{{ types[activeType].description }}</div>
       </div>
+      <div class="dev-types__detail --mobile">
+        <div>{{ types[activeType].title }}</div>
+        <div>{{ types[activeType].description }}</div>
+        <div />
+      </div>
+      <Button class="dev-types__lead --mobile" icon="chat">Обсудить детали</Button>
     </div>
   </section>
 </template>
