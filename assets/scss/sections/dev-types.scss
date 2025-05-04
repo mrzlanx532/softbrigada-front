@@ -159,10 +159,10 @@
   }
 
   &__lead {
-    padding: 32px;
     font-size: 24px;
 
     &.--desktop {
+      padding: 32px;
       display: none !important;
       margin-top: 64px;
 
@@ -172,6 +172,7 @@
     }
 
     &.--mobile {
+      padding: 24px;
       display: inline-flex !important;
       margin-top: 40px;
       justify-content: center;
