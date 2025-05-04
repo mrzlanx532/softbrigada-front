@@ -20,7 +20,7 @@
     <symbol id="bracket" width="9" height="34" viewBox="0 0 9 34" fill="none">
         <path d="M9 33V33C4.58172 33 1 29.4183 1 25V9C1 4.58172 4.58172 1 9 1V1" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5"/>
     </symbol>
-    <symbol id="cursor" width="32" height="32" viewBox="0 0 32 32" fill="none">
+    <symbol id="cursor" viewBox="0 0 32 32" fill="none">
         <path d="M27.4375 11.05L6.27495 3.72495C5.91934 3.59997 5.53565 3.57803 5.16811 3.66166C4.80057 3.74528 4.46414 3.93107 4.1976 4.1976C3.93107 4.46414 3.74528 4.80057 3.66166 5.16811C3.57803 5.53565 3.59997 5.91934 3.72495 6.27495L11.05 27.4375C11.1819 27.8329 11.4355 28.1764 11.7745 28.4189C12.1136 28.6614 12.5206 28.7904 12.9375 28.7875H12.975C13.3969 28.7884 13.8077 28.6524 14.1458 28.4C14.4839 28.1475 14.731 27.7922 14.85 27.3875L17.8 17.8125L27.375 14.85C27.78 14.7296 28.1358 14.4826 28.39 14.1451C28.6443 13.8076 28.7836 13.3975 28.7875 12.975C28.7965 12.5522 28.6704 12.1376 28.4276 11.7914C28.1849 11.4452 27.838 11.1855 27.4375 11.05Z" fill="white"/>
     </symbol>
     <symbol id="human" width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -47,7 +47,7 @@
         <path d="M8.22168 23.7783L23.778 8.22197" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M8.22168 8.22168L23.778 23.778" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
-    <symbol id="handshake" width="32" height="32" viewBox="0 0 32 32" fill="none">
+    <symbol id="handshake" viewBox="0 0 32 32" fill="none">
         <path d="M30.0875 15.2251L27 16.7626L23 9.11259L26.125 7.55009C26.3572 7.43171 26.6269 7.40996 26.8751 7.48957C27.1233 7.56919 27.3299 7.74371 27.45 7.97509L30.525 13.8626C30.5874 13.9804 30.6255 14.1096 30.6372 14.2424C30.6489 14.3752 30.634 14.509 30.5932 14.636C30.5525 14.7629 30.4867 14.8805 30.3999 14.9816C30.313 15.0828 30.2068 15.1656 30.0875 15.2251V15.2251Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M5.00003 16.6375L1.91253 15.0875C1.79365 15.0292 1.6877 14.9477 1.60098 14.8476C1.51425 14.7476 1.44853 14.6311 1.40772 14.5052C1.3669 14.3793 1.35183 14.2464 1.36339 14.1145C1.37496 13.9826 1.41292 13.8544 1.47503 13.7375L4.55003 7.84999C4.67032 7.61878 4.87613 7.44367 5.12361 7.36195C5.3711 7.28023 5.64072 7.29837 5.87503 7.41249L9.00003 8.97499L5.00003 16.6375Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M27 16.7625L25 19.1124L20.4 23.7125C20.2746 23.8297 20.1227 23.9148 19.9573 23.9605C19.7918 24.0062 19.6178 24.0112 19.45 23.975L12.2 22.1625C12.0676 22.1255 11.9442 22.0617 11.8375 21.975L5 16.6375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -55,7 +55,7 @@
         <path d="M9.07495 8.97502L15.4875 7.10002C15.7153 7.03468 15.959 7.0524 16.175 7.15002L20.5 9.11252" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M14 26.6125L10.2375 25.6625C10.0842 25.6279 9.94221 25.5547 9.825 25.45L7 23" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
-    <symbol id="code" width="32" height="32" viewBox="0 0 32 32" fill="none" shape-rendering="geometricPrecision">
+    <symbol id="code" viewBox="0 0 32 32" fill="none" shape-rendering="geometricPrecision">
         <path d="M8 11L2 16L8 21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path  d="M24 11L30 16L24 21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M20 5L12 27" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

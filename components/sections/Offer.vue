@@ -70,8 +70,46 @@ onUnmounted(() => {
             </svg>
           </div>
         </div>
-        <div class="offer__solution --mobile">
-
+        <div class="offer__solution --best-mobile">
+          <div class="offer__gradient">
+            <Gradient ref="svgRef"/>
+          </div>
+          <div>
+            <div class="offer__tag">Вариант 3</div>
+            <h3>Мы работаем под ключ комплексно</h3>
+            <div class="offer__points">
+              <div class="offer__point-wrapper">
+                <div class="offer__point">
+                  <svg>
+                    <use href="/sprite.svg#cursor"/>
+                  </svg>
+                </div>
+                <div class="offer__point-content">Погрузимся в ваши бизнес-процессы, спроектируем и создадим ваш проект
+                </div>
+              </div>
+              <div class="offer__point-wrapper">
+                <div class="offer__point">
+                  <svg>
+                    <use href="/sprite.svg#code"/>
+                  </svg>
+                </div>
+                <div class="offer__point-content">Разработаем, внедрим и обучим персонал использовать новую систему</div>
+              </div>
+              <div class="offer__point-wrapper">
+                <div class="offer__point">
+                  <svg>
+                    <use href="/sprite.svg#handshake"/>
+                  </svg>
+                </div>
+                <div class="offer__point-content">У вас будет один подрядчик для всех вопросов и вам не придется искать</div>
+              </div>
+            </div>
+            <div class="offer__point-enum">
+              <div><div />Копирайтеров для наполнения</div>
+              <div><div />Дизайнеров и программистов</div>
+            </div>
+            <Button class="offer__button --white" icon="lightning">Получить решение</Button>
+          </div>
         </div>
       </div>
     </div>
