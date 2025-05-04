@@ -9,6 +9,10 @@
   overflow: hidden;
 
   @media (min-width: 640px) {
+    overflow: visible;
+  }
+
+  @media (min-width: 640px) {
     display: flex;
     flex-direction: row;
     padding: 0;
