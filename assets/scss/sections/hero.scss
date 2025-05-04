@@ -54,9 +54,13 @@
     margin: 64px 0;
     line-height: 1;
     text-align: center;
-    letter-spacing: -4px;
+    letter-spacing: -2px;
     z-index: 1;
     position: relative;
+
+    @media (min-width: 640px) {
+      letter-spacing: -4px;
+    }
 
     span {
       width: 100%;
@@ -98,9 +102,11 @@
         background: transparent;
         transition: color .3s ease-in-out, background-color .3s ease-in-out;
 
-        &:hover {
-          color: black;
-          background: white;
+        @media (hover: hover) {
+          &:hover {
+            color: black;
+            background: white;
+          }
         }
       }
     }
