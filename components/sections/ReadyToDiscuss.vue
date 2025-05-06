@@ -3,6 +3,8 @@ const props = defineProps<{
   isSecondBlock?: boolean
 }>()
 
+const device = useDevice()
+
 let io: IntersectionObserver | undefined = undefined
 
 const readyToDiscussRef = useTemplateRef('readyToDiscussRef')
@@ -32,7 +34,7 @@ onUnmounted(() => {
 
 <template>
   <section ref="readyToDiscussRef" :id="isSecondBlock ? 'ready-to-discuss' : undefined" class="ready-to-discuss">
-    <Gradient v-if="isSecondBlock" :class="{'--is-active': animationIsActive}" filled />
+    <Gradient v-if="device.isDesktop && isSecondBlock" :class="{'--is-active': animationIsActive}" filled />
     <h2>Готовы обсудить проект?</h2>
     <form class="form" @submit.prevent="onFormSubmit">
       <h3>Получить консультацию прямо сейчас</h3>
