@@ -1,3 +1,21 @@
+@keyframes appearance {
+  0% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 .hero {
   max-width: var(--container-width);
   margin: 0 auto;
@@ -15,38 +33,20 @@
     top: 0;
     left: 0;
     pointer-events: none;
-    transform: translateY(-22%);
+    background-image: url('/images/gradients/hero-section-gradient.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 390px;
 
-    svg {
-      color: #054BFE;
-      animation-name: appearance;
-      animation-duration: 10s;
-      animation-iteration-count: infinite;
-      width: 125vw;
-      height: 1001px;
+    animation-name: appearance;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
 
-      @media (min-width: 640px) {
-        width: 1403px;
-        height: 1001px;
-      }
-
-      @keyframes appearance {
-        0% {
-          opacity: 0;
-        }
-
-        30% {
-          opacity: 1;
-        }
-
-        70% {
-          opacity: 1;
-        }
-
-        100% {
-          opacity: 0;
-        }
-      }
+    @media (min-width: 640px) {
+      transform: translateY(-22%);
+      width: 1122px;
+      height: 994px;
     }
   }
 

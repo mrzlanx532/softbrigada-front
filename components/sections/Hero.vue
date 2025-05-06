@@ -40,9 +40,7 @@ const onClickLookCases = () => {
 <template>
 
   <section id="hero" class="hero">
-    <div class="hero__gradient">
-      <Gradient ref="blueGradient" />
-    </div>
+    <div class="hero__gradient" />
     <Menu />
     <h1>
       <span>Разрабатываем</span>
