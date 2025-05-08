@@ -1,4 +1,10 @@
 <script setup lang="ts">
+const props = withDefaults(defineProps<{
+  isHeader: boolean
+}>(), {
+  isHeader: true
+})
+
 import Button from '~/components/Button.vue'
 
 const { goToAnchor } = useAnchor()
@@ -31,8 +37,8 @@ const openBrief = () => {
           <svg><use href="/sprite.svg#telegram" /></svg>
           <svg><use href="/sprite.svg#whatsapp" /></svg>
         </div>
-        <a>info@gmail.com</a>
-        <a>+7 (910) 292-03-10</a>
+        <a v-if="props.isHeader">info@gmail.com</a>
+        <a v-if="props.isHeader">+7 (910) 292-03-10</a>
       </div>
       <Button class="menu-desktop__button" @click="openBrief">Заполнить бриф</Button>
     </div>
@@ -43,7 +49,7 @@ const openBrief = () => {
     </div>
     <div>
       <Button class="menu-mobile__button" @click="openBrief">Заполнить бриф</Button>
-      <Button class="menu-mobile__button">
+      <Button v-if="props.isHeader" class="menu-mobile__button">
         <svg><use href="/sprite.svg#burger" /></svg>
       </Button>
     </div>
