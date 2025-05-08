@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = withDefaults(defineProps<{
-  isHeader: boolean
+  isHeader?: boolean
 }>(), {
   isHeader: true
 })
