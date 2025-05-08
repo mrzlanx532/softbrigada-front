@@ -1,10 +1,12 @@
 .cases {
-  display: none;
+  display: block;
   max-width: var(--container-width);
   margin: 158px auto 0 auto;
+  padding: 0 20px;
 
   @media (min-width: 640px) {
     display: block;
+    padding: 0;
   }
 
   h2 {
@@ -17,9 +19,48 @@
   }
 
   &__wrapper {
-    display: flex;
     flex-wrap: wrap;
     gap: 16px;
+    display: none;
+
+    &.--desktop {
+      @media (min-width: 640px) {
+        display: flex;
+      }
+    }
+
+    &.--mobile {
+      @media (max-width: 639px) {
+        display: block;
+      }
+
+      .cases__case {
+        width: 100%;
+        box-shadow: var(--box-shadow-1);
+        padding: 24px;
+        border-radius: 64px;
+
+        div {
+          margin-top: 24px;
+          aspect-ratio: 1 / 1;
+          border-radius: 48px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+        }
+
+        h3 {
+          font-size: 20px;
+          margin-top: 20px;
+        }
+
+        p {
+          margin-top: 16px;
+          color: var(--color-2);
+          font-size: 14px;
+        }
+      }
+    }
   }
 
   &__case {
@@ -30,6 +71,8 @@
     grid-gap: 16px;
     width: calc(50% - 8px);
     cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
 
     &.--full {
       width: 100%;
@@ -55,7 +98,15 @@
 
   &__button {
     padding: 32px;
-    font-size: 24px;
-    margin: 64px auto 0 auto;
+    font-size: 20px;
+    margin: 104px auto 0 auto;
+    width: 100%;
+    justify-content: center;
+
+    @media (min-width: 640px) {
+      font-size: 24px;
+      margin: 64px auto 0 auto;
+      width: auto;
+    }
   }
 }

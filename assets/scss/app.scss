@@ -104,3 +104,25 @@ body {
 body, p {
   margin: 0;
 }
+
+.--splide-custom {
+  .splide__pagination {
+    bottom: -67px;
+  }
+
+  .splide__pagination__page {
+    height: 32px;
+    width: 32px;
+    background: var(--bg-color-5);
+    opacity: 1;
+
+    &:focus {
+      outline: none;
+    }
+
+    &.is-active {
+      background: var(--bg-color-3);
+      transform: none;
+    }
+  }
+}

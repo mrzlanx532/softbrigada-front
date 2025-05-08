@@ -57,7 +57,7 @@ const onClickReview = (index: number) => {
     <h2>Отзывы</h2>
     <div class="reviews__reviews">
       <ClientOnly>
-        <splide class="reviews__reviews-splide" :options="sliderOptions">
+        <splide class="--splide-custom" :options="sliderOptions">
           <splide-slide v-for="(review, index) in reviews" :key="index" @click="onClickReview(index)">
             <div
                 class="reviews__review"
