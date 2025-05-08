@@ -1,7 +1,7 @@
 .ready-to-discuss {
   display: flex;
   max-width: var(--container-width);
-  margin: 120px auto 0 auto;
+  margin: 174px auto 0 auto;
   gap: 16px;
   position: relative;
   padding: 0 20px;
@@ -10,6 +10,7 @@
 
   @media (min-width: 640px) {
     overflow: visible;
+    margin: 120px auto 0 auto;
   }
 
   @media (min-width: 640px) {

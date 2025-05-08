@@ -1,10 +1,16 @@
 <script setup lang="ts">
 import { type Ref } from 'vue'
 
+const device = useDevice()
 const reviewRef = useTemplateRef('reviewRef')
 
 const selectedReview: Ref<number | undefined> = ref(undefined)
-const sliderOptions = ref({
+const sliderOptions = ref(device.isMobile ? {
+  perPage: 1,
+  rewind : true,
+  arrows: false,
+  gap: '16px'
+} : {
   perPage: 3,
   rewind : true,
   arrows: false,
