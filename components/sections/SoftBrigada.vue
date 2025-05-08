@@ -51,6 +51,10 @@ const startSpotlightAnimation = () => {
       return
     }
 
+    if (device.isMobile) {
+      return
+    }
+
     firstIO!.disconnect()
 
     secondIO = new IntersectionObserver((entries) => {
