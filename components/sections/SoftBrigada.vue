@@ -3,6 +3,9 @@ const softbrigadaSectionRef = useTemplateRef('softbrigadaSectionRef')
 const labelRef = useTemplateRef('labelRef')
 const spotlightRef = useTemplateRef('spotlightRef')
 
+const device = useDevice()
+const radius = device.isMobile ? 200 : 350
+
 let isFirstAnimationIntermediateStopped = false
 let isFirstAnimationStarted = false
 
@@ -27,8 +30,8 @@ const mouseMoveListener = (event) => {
 const startSpotlightAnimation = () => {
   const start = performance.now();
   const duration = 4000
-  const startX = 0
-  const endX = spotlightRef.value.offsetWidth
+  const startX = device.isMobile ? - 150 : 0
+  const endX = device.isMobile ? spotlightRef.value.offsetWidth + 150 : spotlightRef.value.offsetWidth
 
   const easeInOutQuad = (t) => {
     return t < 0.5
@@ -41,7 +44,7 @@ const startSpotlightAnimation = () => {
     let progress = Math.min(elapsed / duration, 1);
     let easedProgress = easeInOutQuad(progress);
 
-    spotlightRef.value.style.background = `radial-gradient(circle at ${startX + (endX - startX) * easedProgress}px 0px, #00000000 10px, #000000 350px)`;
+    spotlightRef.value.style.background = `radial-gradient(circle at ${startX + (endX - startX) * easedProgress}px 0px, #00000000 10px, #000000 ${radius}px)`;
 
     if (progress < 1 && !isFirstAnimationIntermediateStopped) {
       requestAnimationFrame(animate);
@@ -62,7 +65,7 @@ const startSpotlightAnimation = () => {
 
 onMounted(() => {
   softbrigadaSectionRef.value.style.visibility = 'visible'
-  softbrigadaSectionRef.value.children[1].style.height = softbrigadaSectionRef.value.offsetHeight + 'px'
+  softbrigadaSectionRef.value.children[1].style.height = softbrigadaSectionRef.value.offsetHeight + 10 + 'px'
 
   firstIO = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
@@ -75,7 +78,7 @@ onMounted(() => {
       isFirstAnimationIntermediateStopped = true
     }
   }, {
-    rootMargin: '0px 0px -300px 0px'
+    rootMargin: device.isMobile ? '0px 0px -200px 0px' : '0px 0px -300px 0px'
   })
   firstIO.observe(spotlightRef.value)
 })
