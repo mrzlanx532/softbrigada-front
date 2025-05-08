@@ -13,7 +13,7 @@ let firstIO: IntersectionObserver | undefined = undefined
 let secondIO: IntersectionObserver | undefined = undefined
 
 const updateBackground = (x: number, y: number) => {
-  spotlightRef.value.style.background = `radial-gradient(circle at ${x}px ${y}px, #00000000 10px, #000000 350px)`;
+  spotlightRef.value.style.background = `radial-gradient(circle at ${x}px ${y}px, #00000000 10px, #000000 ${radius}px)`;
 }
 
 const mouseMoveListener = (event) => {
