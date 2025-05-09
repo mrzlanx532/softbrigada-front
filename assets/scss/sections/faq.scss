@@ -1,12 +1,13 @@
 .faq {
   display: block;
   max-width: var(--container-width);
-  margin: 160px auto 0 auto;
+  margin: 120px auto 0 auto;
   padding: 0 20px;
 
   @media (min-width: 640px) {
     display: block;
     padding: 0;
+    margin: 160px auto 0 auto;
   }
 
   h2 {

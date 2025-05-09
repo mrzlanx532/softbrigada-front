@@ -5,6 +5,10 @@ import Button from '~/components/Button.vue'
 import InputFile from '~/components/InputFile.vue'
 import { budgetOptions as _budgetOptions, deadlineOptions as _deadlineOptions } from '~/constants/index'
 
+const device = useDevice()
+
+const h2Text = ref(device.isMobile ? '<span>Опишите задачу —</span><span>мы придумаем как</span><span>ее решить</span>' : '<span>Опишите</span><span>задачу —</span><span>мы придумаем</span><span>как ее решить</span>')
+
 const formData = ref({
   budget: 0,
   deadline: 0,
@@ -22,12 +26,7 @@ const onFormSubmit = () => {
 <template>
   <section id="open-form" class="open-form">
     <div>
-      <h2>
-        <span>Опишите</span>
-        <span>задачу —</span>
-        <span>мы придумаем</span>
-        <span>как ее решить</span>
-      </h2>
+      <h2 v-html="h2Text" />
       <div class="open-form__me">
         <img src="/images/team/me.png" alt="me">
         <h4>Денис Женин, CEO</h4>
@@ -53,9 +52,12 @@ const onFormSubmit = () => {
             <div>Сроки</div>
             <Radio v-model="formData.deadline" :options="deadlineOptions" />
           </div>
+          <div class="form__group" v-if="device.isMobile">
+            <InputFile v-model="formData.file"/>
+          </div>
           <div class="form__action">
             <Button type="submit" class="open-form__button" icon="send">Отправить</Button>
-            <InputFile v-model="formData.file"/>
+            <InputFile v-if="!device.isMobile" class="open-form__input-file" v-model="formData.file"/>
           </div>
         </form>
       </div>
