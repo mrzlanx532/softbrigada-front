@@ -10,7 +10,10 @@ const questions = ref([
     question: 'Почему нужно заказать разработку сайта в Web Canape?',
     answer: [
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        'Lorem Ipsum has been the industry\'s standard dummy text.'
+        'Lorem Ipsum has been the industry\'s standard dummy text.',
+        'Lorem Ipsum has been the industry\'s standard dummy text.',
+        'Lorem Ipsum has been the industry\'s standard dummy text.',
+        'Lorem Ipsum has been the industry\'s standard dummy text.',
     ]
   },
   {
