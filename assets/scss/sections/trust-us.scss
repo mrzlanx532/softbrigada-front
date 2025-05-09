@@ -1,15 +1,28 @@
 .trust-us {
-  display: none;
+  display: block;
   max-width: var(--container-width);
-  margin: 160px auto 0 auto;
+  margin: 120px auto 0 auto;
 
   @media (min-width: 640px) {
     display: block;
+    margin: 160px auto 0 auto;
+  }
+
+  h2 {
+    text-align: center;
+
+    @media (min-width: 640px) {
+      text-align: left;
+    }
   }
 
   &__wrapper {
-    display: flex;
+    display: block;
     gap: 16px;
+
+    @media (min-width: 640px) {
+      display: flex;
+    }
   }
 
   &__item {
