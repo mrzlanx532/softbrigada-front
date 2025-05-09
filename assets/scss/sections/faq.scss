@@ -92,9 +92,11 @@
     justify-content: space-between;
     align-items: start;
     user-select: none;
+    gap: 16px;
 
     @media (min-width: 640px) {
       align-items: center;
+      gap: 0;
     }
 
     > div:first-child {
