@@ -102,7 +102,7 @@ onUnmounted(() => {
 
 <template>
   <section id="trust-us" class="trust-us">
-    <h2>Нам доверяют {{ $device.userAgent }}</h2>
+    <h2>Нам доверяют</h2>
     <div class="trust-us__wrapper">
       <ClientOnly v-if="device.isMobile">
         <splide @splide:moved="activeSlideChanged" class="--splide-custom-2" :options="sliderOptions">
