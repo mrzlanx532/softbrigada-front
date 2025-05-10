@@ -34,7 +34,7 @@ onUnmounted(() => {
 
 <template>
   <section ref="readyToDiscussRef" :id="isSecondBlock ? 'ready-to-discuss' : undefined" class="ready-to-discuss">
-    <Gradient v-if="device.isDesktop && isSecondBlock" :class="{'--is-active': animationIsActive}" filled />
+    <div class="ready-to-discuss__gradient" :class="{'--is-active': animationIsActive}" v-if="device.isDesktop && isSecondBlock" />
     <h2>Готовы обсудить проект?</h2>
     <form class="form" @submit.prevent="onFormSubmit">
       <h3>Получить консультацию прямо сейчас</h3>

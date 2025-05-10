@@ -53,18 +53,19 @@
   }
 
   &__gradient {
-    border-radius: 3000px 3000px 3000px 3000px;
-    opacity: 0.2;
-    background-image: radial-gradient(circle at center, rgba(55, 58, 231, 1) 0%, rgba(1, 1, 7, 1) 50%, transparent);
-    border-color: transparent;
-    border-style: solid;
+    opacity: 1;
+    background-image: url('/images/gradients/ready-to-discuss-section-gradient.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    border: none;
     position: absolute;
     left: -15%;
     top: 0;
     width: 1000px;
     height: 700px;
+    transform: rotate(45deg);
 
-    animation-name: test;
     animation-duration: 10s;
     animation-iteration-count: infinite;
 
