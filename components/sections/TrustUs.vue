@@ -49,11 +49,13 @@ const onPointerOut = (index) => {
 onMounted(async () => {
   io = new IntersectionObserver(async (entries) => {
     if (entries[0].isIntersecting) {
-      const video = await fetch('/videos/trust-us-background.webm')
-      const videoBlob = await video.blob()
+      Promise.resolve().then(async () => {
+        const video = await fetch('/videos/trust-us-background.webm')
+        const videoBlob = await video.blob()
 
-      videoRef.value.forEach(_videoRef => {
-        _videoRef.src = URL.createObjectURL(videoBlob)
+        videoRef.value.forEach(_videoRef => {
+          _videoRef.src = URL.createObjectURL(videoBlob)
+        })
       })
 
       io?.disconnect()
