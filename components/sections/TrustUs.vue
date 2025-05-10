@@ -76,9 +76,9 @@ onMounted(async () => {
         })
 
         if (device.isMobile) {
-          document.addEventListener('touchstart', () => {
+          //document.addEventListener('touchstart', () => {
             enableItem(0)
-          }, { once: true })
+          //}, { once: true })
         }
       })
 
