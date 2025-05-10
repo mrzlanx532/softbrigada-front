@@ -102,7 +102,7 @@ onUnmounted(() => {
           <splide-slide v-for="(item, index) in items" :key="index">
             <div class="trust-us__item">
               <img :src="'/images/trust-us/' + (index + 1) + '.png'" width="60" alt="image">
-              <video preload="none" ref="videoRef" muted :class="{[item.class]: true}" />
+              <video preload="none" ref="videoRef" :class="{[item.class]: true}" muted loop playsinline />
               <div>{{ item.title }}</div>
             </div>
           </splide-slide>
@@ -110,7 +110,7 @@ onUnmounted(() => {
       </ClientOnly>
       <div v-else class="trust-us__item" v-for="(item, index) in items" :key="index"  @pointerover="onPointerOver(index)" @pointerleave="onPointerOut(index)">
         <img :src="'/images/trust-us/' + (index + 1) + '.png'" width="60" alt="image">
-        <video preload="none" loop ref="videoRef" muted :class="{[item.class]: true}" />
+        <video preload="none" ref="videoRef" :class="{[item.class]: true}" muted loop playsinline />
         <div>{{ item.title }}</div>
       </div>
     </div>
