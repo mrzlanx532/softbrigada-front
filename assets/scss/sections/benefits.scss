@@ -1,7 +1,7 @@
 .benefits {
   position: relative;
   overflow: hidden;
-  display: none;
+  display: block;
 
   @media (min-width: 640px) {
     display: block;
@@ -12,9 +12,13 @@
     margin: 204px auto 0 auto;
   }
 
-  > svg {
+  &__gradient {
     width: 1745px;
     height: 1327px;
+    background-image: url('images/gradients/benefits-section-gradient.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     position: absolute;
     top: 220px;
     left: 0;
