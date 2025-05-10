@@ -126,3 +126,22 @@ body, p {
     }
   }
 }
+
+.--splide-custom-2 {
+  .splide__pagination {
+    display: none;
+  }
+
+  .splide__slide {
+    transition: height 0.5s ease;
+  }
+
+  .splide__slide.is-active {
+    height: 174px;
+
+    .trust-us__item {
+      transition: height 0.5s ease;
+      height: 174px;
+    }
+  }
+}

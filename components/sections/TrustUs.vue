@@ -1,7 +1,16 @@
 <script setup lang="ts">
-const activeSvgIndex = ref(undefined)
-
 const videoRef = useTemplateRef('videoRef')
+const device = useDevice()
+
+const sliderOptions = ref({
+  rewind : false,
+  loop : true,
+  type   : 'loop',
+  arrows: false,
+  autoWidth: true,
+  focus: 'center',
+  gap: 16
+})
 
 let io: IntersectionObserver | undefined = undefined
 
@@ -32,23 +41,32 @@ const items = ref([
   },
 ])
 
-const onPointerOver = (index) => {
-  activeSvgIndex.value = index
-
+const enableItem = (index) => {
   videoRef.value[index].style.opacity = 1
   videoRef.value[index].play()
 }
 
-const onPointerOut = (index) => {
-  activeSvgIndex.value = undefined
-
+const disableItem = (index) => {
   videoRef.value[index].style.opacity = 0
   videoRef.value[index].pause()
 }
 
+const onPointerOver = (index) => {
+  enableItem(index)
+}
+
+const onPointerOut = (index) => {
+  disableItem(index)
+}
+
+const activeSlideChanged = (el, newIndex, prevIndex) => {
+  enableItem(newIndex)
+  disableItem(prevIndex)
+}
+
 onMounted(async () => {
   io = new IntersectionObserver(async (entries) => {
-    if (entries[0].isIntersecting) {
+    if (entries[0].isIntersecting ) {
       Promise.resolve().then(async () => {
         const video = await fetch('/videos/trust-us-background.webm')
         const videoBlob = await video.blob()
@@ -56,6 +74,10 @@ onMounted(async () => {
         videoRef.value.forEach(_videoRef => {
           _videoRef.src = URL.createObjectURL(videoBlob)
         })
+
+        if (device.isMobile) {
+          enableItem(0)
+        }
       })
 
       io?.disconnect()
@@ -75,9 +97,20 @@ onUnmounted(() => {
   <section id="trust-us" class="trust-us">
     <h2>Нам доверяют</h2>
     <div class="trust-us__wrapper">
-      <div class="trust-us__item" v-for="(item, index) in items" :key="index" @pointerover="onPointerOver(index)" @pointerleave="onPointerOut(index)">
+      <ClientOnly v-if="device.isMobile">
+        <splide @splide:moved="activeSlideChanged" class="--splide-custom-2" :options="sliderOptions">
+          <splide-slide v-for="(item, index) in items" :key="index">
+            <div class="trust-us__item">
+              <img :src="'/images/trust-us/' + (index + 1) + '.png'" width="60" alt="image">
+              <video preload="none" ref="videoRef" muted :class="{[item.class]: true}" />
+              <div>{{ item.title }}</div>
+            </div>
+          </splide-slide>
+        </splide>
+      </ClientOnly>
+      <div v-else class="trust-us__item" v-for="(item, index) in items" :key="index"  @pointerover="onPointerOver(index)" @pointerleave="onPointerOut(index)">
         <img :src="'/images/trust-us/' + (index + 1) + '.png'" width="60" alt="image">
-        <video preload="none" ref="videoRef" muted :class="{[item.class]: true}" />
+        <video preload="none" loop ref="videoRef" muted :class="{[item.class]: true}" />
         <div>{{ item.title }}</div>
       </div>
     </div>
