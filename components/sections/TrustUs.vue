@@ -43,7 +43,12 @@ const items = ref([
 
 const enableItem = (index) => {
   videoRef.value[index].style.opacity = 1
-  videoRef.value[index].play()
+
+  try {
+    videoRef.value[index].play()
+  } catch (e) {
+    alert(e)
+  }
 }
 
 const disableItem = (index) => {
