@@ -55,6 +55,7 @@
       top: 0;
       transition: opacity .4s;
       will-change: opacity;
+      pointer-events: none;
 
       &.--1 {
         transform: scale(2);
