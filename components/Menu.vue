@@ -8,7 +8,7 @@ const props = withDefaults(defineProps<{
 })
 
 const { goToAnchor } = useAnchor()
-const { burgerMenuIsOpen } = useGlobalState()
+const { burgerMenuIsOpen, widgetIsVisible } = useGlobalState()
 
 const onClickLink = (id: string) => {
   goToAnchor(id)
@@ -22,10 +22,12 @@ const openBrief = () => {
 
 const openBurgerMenu = () => {
   burgerMenuIsOpen.value = true
+  widgetIsVisible.value = false
 }
 
 const closeBurgerMenu = () => {
   burgerMenuIsOpen.value = false
+  widgetIsVisible.value = true
 }
 </script>
 
