@@ -2,6 +2,21 @@
   position: relative;
   overflow: hidden;
   display: block;
+  padding: 0 20px;
+
+  @media (min-width: 640px) {
+    padding: 0;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  h2 {
+    @media (min-width: 640px) {
+      text-align: left;
+    }
+  }
 
   @media (min-width: 640px) {
     display: block;
@@ -13,16 +28,23 @@
   }
 
   &__gradient {
-    width: 1745px;
-    height: 1327px;
-    background-image: url('/images/gradients/benefits-section-gradient.png');
+    width: 200%;
+    height: 100%;
+    background-image: url(/images/gradients/benefits-section-gradient.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     position: absolute;
-    top: 220px;
-    left: 0;
+    top: 25%;
+    left: -35%;
     z-index: 0;
+
+    @media (min-width: 640px) {
+      width: 1745px;
+      height: 1327px;
+      top: 220px;
+      left: 0;
+    }
   }
 
   h2 {
@@ -33,29 +55,49 @@
   }
 
   p {
-    width: 50%;
-    float: right;
+    width: 100%;
+    float: left;
     margin-top: 32px;
-    font-size: 24px;
+    font-size: 20px;
+
+    @media (min-width: 640px) {
+      width: 50%;
+      float: right;
+      font-size: 24px;
+    }
   }
 
   &__wrapper {
     display: flex;
     clear: both;
+    flex-wrap: wrap;
   }
 
   &__benefit {
-    flex: 1;
+    flex: 1 0 50%;
     margin-top: 64px;
 
+    @media (min-width: 640px) {
+      flex: 1;
+    }
+
+
     div:first-child {
-      font-size: 80px;
+      font-size: 38px;
+
+      @media (min-width: 640px) {
+        font-size: 80px;
+      }
     }
 
     div:last-child {
       margin-top: 16px;
-      font-size: 15px;
+      font-size: 16px;
       color: var(--color-2);
+
+      @media (min-width: 640px) {
+        font-size: 15px;
+      }
     }
   }
 
@@ -67,32 +109,65 @@
     div:first-child {
       font-size: 15px;
       width: 296px;
+      display: none;
+
+      @media (min-width: 640px) {
+        display: block;
+      }
     }
 
     img {
-      border-radius: 80px;
+      width: 100%;
+      border-radius: 56px;
+
+      @media (min-width: 640px) {
+        width: auto;
+        border-radius: 80px;
+      }
     }
   }
 
   &__team-2 {
-    margin-top: 64px;
+    margin-top: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+
+    @media (min-width: 640px) {
+      margin-top: 64px;
+    }
 
     * {
       width: 50%;
     }
 
     img:first-child {
-      width: 400px;
+      width: 100%;
       aspect-ratio: 1 / 1;
       border-radius: 640px;
+      margin-top: 127px;
+
+      @media (min-width: 640px) {
+        margin-top: 0;
+        width: 400px;
+      }
     }
 
     h3 {
       display: inline-block;
       font-weight: normal;
+      position: absolute;
+      width: 100%;
+      font-size: 27px;
+      top: 0;
+      left: 0;
+
+      @media (min-width: 640px) {
+        font-size: 48px;
+        position: static;
+        width: auto;
+      }
 
       span {
         width: 100%;
