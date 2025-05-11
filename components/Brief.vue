@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import useBrief from '~/composables/useBrief'
 import { vOnClickOutside } from '@vueuse/components'
 import Radio from '~/components/Radio.vue'
 import Button from '~/components/Button.vue'
@@ -9,7 +8,7 @@ import {
   sourcesOptions as _sourcesOptions,
 } from '~/constants'
 
-const { briefIsOpen } = useBrief()
+const { briefIsOpen } = useGlobalState()
 
 const briefRef = useTemplateRef('briefRef')
 

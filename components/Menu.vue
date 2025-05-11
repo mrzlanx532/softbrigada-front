@@ -1,22 +1,31 @@
 <script setup lang="ts">
+import Button from '~/components/Button.vue'
+
 const props = withDefaults(defineProps<{
   isHeader?: boolean
 }>(), {
   isHeader: true
 })
 
-import Button from '~/components/Button.vue'
-
 const { goToAnchor } = useAnchor()
+const { burgerMenuIsOpen } = useGlobalState()
 
 const onClickLink = (id: string) => {
   goToAnchor(id)
 }
 
 const openBrief = () => {
-  const { briefIsOpen } = useBrief()
+  const { briefIsOpen } = useGlobalState()
 
   briefIsOpen.value = true
+}
+
+const openBurgerMenu = () => {
+  burgerMenuIsOpen.value = true
+}
+
+const closeBurgerMenu = () => {
+  burgerMenuIsOpen.value = false
 }
 </script>
 
@@ -49,9 +58,35 @@ const openBrief = () => {
     </div>
     <div>
       <Button class="menu-mobile__button" @click="openBrief">Заполнить бриф</Button>
-      <Button v-if="props.isHeader" class="menu-mobile__button">
+      <Button v-if="props.isHeader" class="menu-mobile__button" @click="openBurgerMenu">
         <svg><use href="/sprite.svg#burger" /></svg>
       </Button>
+    </div>
+  </div>
+  <div class="menu-open-burger" :class="{'--is-open': burgerMenuIsOpen}">
+    <div style="flex-direction: column; justify-content: space-between; display: flex; height: 100%;">
+      <div class="menu-mobile">
+        <div class="menu-mobile__logo">
+          <img height="35" src="/images/logo/43.svg" alt="logo">
+        </div>
+        <div>
+          <Button class="menu-mobile__button" @click="openBrief">Заполнить бриф</Button>
+          <Button class="menu-mobile__button" @click="closeBurgerMenu">
+            <svg><use href="/sprite.svg#plus" /></svg>
+          </Button>
+        </div>
+      </div>
+      <div class="menu-open-burger__anchor-links">
+        <a @click="onClickLink('dev-types')">что мы делаем</a>
+        <a @click="onClickLink('cases')">наши кейсы <span>+3</span></a>
+      </div>
+      <div class="menu-open-burger__buttons">
+        <Button icon="lightning" class="--white">Получить решение</Button>
+        <Button @click="onClickLookCases">Смотреть кейсы</Button>
+      </div>
+      <div class="menu-open-burger__contacts">
+
+      </div>
     </div>
   </div>
 </template>
