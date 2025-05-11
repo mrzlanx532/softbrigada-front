@@ -44,6 +44,29 @@
     }
   }
 
+  &__menu {
+    display: inline-block;
+    margin-left: 90px;
+
+    > a {
+      display: inline-block;
+      font-weight: bold;
+      margin-left: 32px;
+
+      &:last-child {
+        margin-left: 24px;
+        padding: 8px;
+
+        span {
+          margin-left: 16px;
+          background: var(--bg-color-2);
+          border-radius: 24px;
+          padding: 8px 10px;
+        }
+      }
+    }
+  }
+
   &__contacts {
     display: inline-flex;
     gap: 32px;
