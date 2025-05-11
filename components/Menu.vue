@@ -14,6 +14,12 @@ const onClickLink = (id: string) => {
   goToAnchor(id)
 }
 
+const onClickLookCases = () => {
+  const { goToAnchor } = useAnchor()
+
+  goToAnchor('cases')
+}
+
 const openBrief = () => {
   const { briefIsOpen } = useGlobalState()
 
@@ -80,14 +86,21 @@ const closeBurgerMenu = () => {
       </div>
       <div class="menu-open-burger__anchor-links">
         <a @click="onClickLink('dev-types')">что мы делаем</a>
-        <a @click="onClickLink('cases')">наши кейсы <span>+3</span></a>
+        <a @click="onClickLink('cases')">наши кейсы</a>
       </div>
       <div class="menu-open-burger__buttons">
         <Button icon="lightning" class="--white">Получить решение</Button>
         <Button @click="onClickLookCases">Смотреть кейсы</Button>
       </div>
       <div class="menu-open-burger__contacts">
-
+        <div>
+          <svg><use href="/sprite.svg#telegram" /></svg>
+          <svg><use href="/sprite.svg#whatsapp" /></svg>
+        </div>
+        <div>
+          <div>info@gmail.com</div>
+          <div>+ 7 (910) 292-03-10</div>
+        </div>
       </div>
     </div>
   </div>
