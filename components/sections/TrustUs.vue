@@ -67,7 +67,7 @@ const activeSlideChanged = (el, newIndex, prevIndex) => {
   disableItem(prevIndex)
 }
 
-onMounted(async () => {
+const onMountedSplide = () => {
   if (device.isMobile) {
     videoRef.value[0].addEventListener('canplay', () => enableItem(0))
   }
@@ -75,7 +75,7 @@ onMounted(async () => {
   videoRef.value.forEach(_videoRef => {
     _videoRef.load()
   })
-})
+}
 </script>
 
 <template>
@@ -83,13 +83,13 @@ onMounted(async () => {
     <h2>Нам доверяют</h2>
     <div class="trust-us__wrapper">
       <ClientOnly v-if="device.isMobile">
-        <splide @splide:moved="activeSlideChanged" class="--splide-custom-2" :options="sliderOptions">
+        <splide @splide:mounted="onMountedSplide" @splide:moved="activeSlideChanged" class="--splide-custom-2" :options="sliderOptions">
           <splide-slide v-for="(item, index) in items" :key="index">
             <div class="trust-us__item">
               <img :src="'/images/trust-us/' + (index + 1) + '.png'" width="60" alt="image">
               <video preload="none" ref="videoRef" :class="{[item.class]: true}" muted loop playsinline>
-                <source src="/videos/trust-us-background.mp4" type="video/mp4">
                 <source src="/videos/trust-us-background.webm" type="video/webm">
+                <source src="/videos/trust-us-background.mp4" type="video/mp4">
               </video>
               <div>{{ item.title }}</div>
             </div>
@@ -99,8 +99,8 @@ onMounted(async () => {
       <div v-else class="trust-us__item" v-for="(item, index) in items" :key="index"  @pointerover="onPointerOver(index)" @pointerleave="onPointerOut(index)">
         <img :src="'/images/trust-us/' + (index + 1) + '.png'" width="60" alt="image">
         <video preload="none" ref="videoRef" :class="{[item.class]: true}" muted loop playsinline>
-          <source src="/videos/trust-us-background.mp4" type="video/mp4">
           <source src="/videos/trust-us-background.webm" type="video/webm">
+          <source src="/videos/trust-us-background.mp4" type="video/mp4">
         </video>
         <div>{{ item.title }}</div>
       </div>
