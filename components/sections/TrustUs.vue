@@ -73,7 +73,7 @@ onMounted(async () => {
   io = new IntersectionObserver(async (entries) => {
     if (entries[0].isIntersecting ) {
       Promise.resolve().then(async () => {
-        const video = await fetch('/videos/trust-us-background.mp4')
+        const video = await fetch('/videos/trust-us-background_2.mp4')
         const videoBlob = await video.blob()
         const videoBlobLink = URL.createObjectURL(videoBlob)
 
