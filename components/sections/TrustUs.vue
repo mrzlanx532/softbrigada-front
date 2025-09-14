@@ -75,9 +75,10 @@ onMounted(async () => {
       Promise.resolve().then(async () => {
         const video = await fetch('/videos/trust-us-background.mp4')
         const videoBlob = await video.blob()
+        const videoBlobLink = URL.createObjectURL(videoBlob)
 
         videoRef.value.forEach(_videoRef => {
-          _videoRef.src = URL.createObjectURL(videoBlob)
+          _videoRef.src = videoBlobLink
         })
 
         if (device.isMobile) {
