@@ -12,8 +12,6 @@ const sliderOptions = ref({
   gap: 16
 })
 
-let io: IntersectionObserver | undefined = undefined
-
 const items = ref([
   {
     title: 'Сбер',
@@ -70,33 +68,18 @@ const activeSlideChanged = (el, newIndex, prevIndex) => {
 }
 
 onMounted(async () => {
-  io = new IntersectionObserver(async (entries) => {
-    if (entries[0].isIntersecting ) {
-      Promise.resolve().then(async () => {
-        const video = await fetch('/videos/trust-us-background.mp4')
-        const videoBlob = await video.blob()
-        const videoBlobLink = URL.createObjectURL(videoBlob)
+  const video = await fetch('/videos/trust-us-background.mp4')
+  const videoBlob = await video.blob()
+  const videoBlobLink = URL.createObjectURL(videoBlob)
 
-        if (device.isMobile) {
-          videoRef.value[0].addEventListener('canplay', () => enableItem(0))
-        }
+  if (device.isMobile) {
+    videoRef.value[0].addEventListener('canplay', () => enableItem(0))
+  }
 
-        videoRef.value.forEach(_videoRef => {
-          _videoRef.src = videoBlobLink
-          _videoRef.load()
-        })
-      })
-
-      io?.disconnect()
-    }
-  }, {
-    rootMargin: '0px 0px 3000px 0px'
+  videoRef.value.forEach(_videoRef => {
+    _videoRef.src = videoBlobLink
+    _videoRef.load()
   })
-  io.observe(document.querySelector('#trust-us'))
-})
-
-onUnmounted(() => {
-  io?.disconnect()
 })
 </script>
 
