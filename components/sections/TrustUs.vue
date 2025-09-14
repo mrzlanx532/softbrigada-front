@@ -68,16 +68,11 @@ const activeSlideChanged = (el, newIndex, prevIndex) => {
 }
 
 onMounted(async () => {
-  const video = await fetch('/videos/trust-us-background.mp4')
-  const videoBlob = await video.blob()
-  const videoBlobLink = URL.createObjectURL(videoBlob)
-
   if (device.isMobile) {
     videoRef.value[0].addEventListener('canplay', () => enableItem(0))
   }
 
   videoRef.value.forEach(_videoRef => {
-    _videoRef.src = videoBlobLink
     _videoRef.load()
   })
 })
@@ -92,7 +87,10 @@ onMounted(async () => {
           <splide-slide v-for="(item, index) in items" :key="index">
             <div class="trust-us__item">
               <img :src="'/images/trust-us/' + (index + 1) + '.png'" width="60" alt="image">
-              <video preload="none" ref="videoRef" :class="{[item.class]: true}" muted loop playsinline />
+              <video preload="none" ref="videoRef" :class="{[item.class]: true}" muted loop playsinline>
+                <source src="/videos/trust-us-background.mp4" type="video/mp4">
+                <source src="/videos/trust-us-background.webm" type="video/webm">
+              </video>
               <div>{{ item.title }}</div>
             </div>
           </splide-slide>
@@ -100,7 +98,10 @@ onMounted(async () => {
       </ClientOnly>
       <div v-else class="trust-us__item" v-for="(item, index) in items" :key="index"  @pointerover="onPointerOver(index)" @pointerleave="onPointerOut(index)">
         <img :src="'/images/trust-us/' + (index + 1) + '.png'" width="60" alt="image">
-        <video preload="none" ref="videoRef" :class="{[item.class]: true}" muted loop playsinline />
+        <video preload="none" ref="videoRef" :class="{[item.class]: true}" muted loop playsinline>
+          <source src="/videos/trust-us-background.mp4" type="video/mp4">
+          <source src="/videos/trust-us-background.webm" type="video/webm">
+        </video>
         <div>{{ item.title }}</div>
       </div>
     </div>
