@@ -68,18 +68,15 @@
 
     animation-duration: 10s;
     animation-iteration-count: infinite;
+    animation-name: hueRotate;
+    animation-timing-function: linear;
 
-    @keyframes test {
+    @keyframes hueRotate {
       0% {
-        opacity: 0.15;
+        filter: hue-rotate(0);
       }
-
-      50% {
-        opacity: 0.22;
-      }
-
       100% {
-        opacity: 0.15;
+        filter: hue-rotate(360deg);
       }
     }
   }
