@@ -30,9 +30,9 @@
       height: 1050px;
       color: #c13448;
 
-      animation-name: shimmer, moveInCircle, opacity;
-      animation-duration: 10s, 15s, 5s;
-      animation-iteration-count: infinite, infinite, infinite;
+      animation-name: shimmer, opacity;
+      animation-duration: 10s, 5s;
+      animation-iteration-count: infinite, infinite;
 
       @keyframes opacityOffer {
         0% {
