@@ -90,7 +90,7 @@ onMounted(async () => {
       io?.disconnect()
     }
   }, {
-    rootMargin: '0px 0px 2000px 0px'
+    rootMargin: '0px 0px 3000px 0px'
   })
   io.observe(document.querySelector('#trust-us'))
 })
