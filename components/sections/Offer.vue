@@ -1,31 +1,5 @@
 <script setup lang="ts">
 import Gradient from '~/assets/svg/offer-section-gradient.svg'
-
-let io: IntersectionObserver | undefined = undefined
-
-const svgRef = useTemplateRef('svgRef')
-const offerSolutionBestRef = useTemplateRef('offerSolutionBestRef')
-const isAnimationWork = ref(false)
-
-onMounted(() => {
-  io = new IntersectionObserver((entries) => {
-    const svg = svgRef.value.$el as SVGElement
-
-    if (entries[0].isIntersecting) {
-      svg.unpauseAnimations()
-      isAnimationWork.value = true
-      return
-    }
-
-    svg.pauseAnimations()
-    isAnimationWork.value = false
-  })
-  io.observe(document.querySelector('#offer'))
-})
-
-onUnmounted(() => {
-  io.disconnect()
-})
 </script>
 
 <template>
@@ -72,7 +46,7 @@ onUnmounted(() => {
         </div>
         <div class="offer__solution --best-mobile">
           <div class="offer__gradient">
-            <Gradient ref="svgRef"/>
+            <Gradient />
           </div>
           <div>
             <div class="offer__tag">Вариант 3</div>
@@ -113,9 +87,9 @@ onUnmounted(() => {
         </div>
       </div>
     </div>
-    <div ref="offerSolutionBestRef" class="offer__solution --best">
+    <div class="offer__solution --best">
       <div class="offer__gradient">
-        <Gradient ref="svgRef"/>
+        <Gradient />
       </div>
       <div class="offer__wrapper --best">
         <div>
