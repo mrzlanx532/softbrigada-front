@@ -77,15 +77,13 @@ onMounted(async () => {
         const videoBlob = await video.blob()
         const videoBlobLink = URL.createObjectURL(videoBlob)
 
+        if (device.isMobile) {
+          videoRef.value[0].addEventListener('canplay', () => enableItem(0))
+        }
+
         videoRef.value.forEach(_videoRef => {
           _videoRef.src = videoBlobLink
         })
-
-        if (device.isMobile) {
-          //document.addEventListener('touchstart', () => {
-            enableItem(0)
-          //}, { once: true })
-        }
       })
 
       io?.disconnect()
