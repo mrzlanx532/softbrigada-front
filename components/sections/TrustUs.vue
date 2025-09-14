@@ -83,6 +83,7 @@ onMounted(async () => {
 
         videoRef.value.forEach(_videoRef => {
           _videoRef.src = videoBlobLink
+          _videoRef.load()
         })
       })
 
