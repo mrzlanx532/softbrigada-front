@@ -32,7 +32,7 @@ import Gradient from '~/assets/svg/offer-section-gradient.svg'
           <ul>
             <li>Классный вариант сэкономить. Но это дополнительная головная боль</li>
           </ul>
-          <div class="offer__clouds" :class="{'--is-active': isAnimationWork}">
+          <div class="offer__clouds">
             <div>А что с сайтом?</div>
             <div>А как внедрить сервис?</div>
             <div>А как грамотно наполнить сайт?</div>
