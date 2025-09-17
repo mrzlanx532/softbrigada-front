@@ -1,4 +1,9 @@
 <script setup lang="ts">
+
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: string): void
+}>()
+
 const props = withDefaults(defineProps<{
   modelValue?: string
   name: string,
@@ -17,12 +22,13 @@ const onClickLabel = () => {
 
 <template>
   <div class="input">
-    <label @click="onClickLabel" :for="props.name">
+    <div class="input__label" @click="onClickLabel">
       {{ props.label }}
       <span v-if="props.isRequired">*</span>
-    </label>
+    </div>
     <input
-        v-model="props.modelValue"
+        :value="props.modelValue"
+        @input="emit('update:modelValue', ($event.target as HTMLInputElement).value)"
         ref="inputRef"
         :name="props.name"
         :placeholder="props.placeholder"
