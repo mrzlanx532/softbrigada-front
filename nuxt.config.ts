@@ -1,5 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  experimental: {
+    /** @ts-expect-error: Nuxt 3 пишет что такого типа нет, но он есть */
+    inlineSSRStyles: false
+  },
   compatibilityDate: '2024-11-01',
   devtools: { enabled: false },
   modules: ['v-gsap-nuxt', 'nuxt-svgo', '@nuxtjs/device'],
