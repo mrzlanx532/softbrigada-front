@@ -21,6 +21,15 @@
         font-weight: bold;
       }
     }
+
+    &.--description > div:nth-child(3) {
+      font-size: 12px;
+      color: var(--color-2);
+    }
+
+    &.--contacts > div:nth-child(2) {
+      margin-top: 32px;
+    }
   }
 
   form {
@@ -120,6 +129,10 @@
   cursor: pointer;
   user-select: none;
   color: black;
+
+  &.--small {
+    font-size: 14px;
+  }
 
   &.--attached {
     overflow: hidden;

@@ -50,22 +50,22 @@ const onFormSubmit = () => {
     <form class="brief__form form" @submit.prevent="onFormSubmit">
       <div class="form__group">
         <div>Услуги</div>
-        <Radio style="flex-wrap: wrap;" v-model="formData.service" :options="servicesOptions" />
+        <Radio v-model="formData.service" :options="servicesOptions" />
       </div>
       <div class="form__group">
         <div>Бюджет</div>
         <Radio v-model="formData.budget" :options="budgetOptions" />
       </div>
-      <div class="form__group">
+      <div class="form__group --description">
         <div>Описание задачи</div>
         <Input name="task_description" v-model="formData.task_description" label="Напишите о вашей задаче в двух словах"/>
-        <div style="font-size: 12px; color: var(--color-2);">или прикрепите файл с ТЗ</div>
-        <InputFile v-model="formData.task_file" style="font-size: 14px;"/>
+        <div>или прикрепите файл с ТЗ</div>
+        <InputFile class="--small" v-model="formData.task_file" />
       </div>
 
-      <div class="form__group">
+      <div class="form__group --contacts">
         <div>Контактные данные</div>
-        <Input style="margin-top: 32px;" :is-required="true" name="contacts_name" v-model="formData.contacts_name" label="Имя"/>
+        <Input :is-required="true" name="contacts_name" v-model="formData.contacts_name" label="Имя"/>
         <InputPhone :is-required="true" name="contacts_phone" v-model="formData.contacts_phone" label="Телефон"/>
         <Input name="contacts_email" v-model="formData.contacts_email" label="Email"/>
       </div>
