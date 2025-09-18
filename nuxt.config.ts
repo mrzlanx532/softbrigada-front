@@ -23,6 +23,9 @@ export default defineNuxtConfig({
       }]
     }
   },
+  typescript: {
+    typeCheck: false,
+  },
   svgo: {
     global: false,
     autoImportPath: false

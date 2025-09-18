@@ -31,7 +31,7 @@ const onFormSubmit = async () => {
   try {
     await apiContacts().create(formData.value)
 
-    errors.value = {} as FormDataCreateErrors
+    errors.value = {} as FormDataCreateErrorsSmallForm
     formData.value = getDefaultFormDataCreateSmallForm()
 
   } catch (error) {
