@@ -3,7 +3,8 @@ import Input from '~/components/Input.vue'
 import Button from '~/components/Button.vue'
 import apiContacts, {
   type FormDataCreateSmallForm,
-  type FormDataCreateErrorsSmallForm
+  type FormDataCreateErrorsSmallForm,
+  getDefaultFormDataCreateSmallForm
 } from '~/api/contacts'
 
 const props = defineProps<{
@@ -29,6 +30,10 @@ const errors = ref<FormDataCreateErrorsSmallForm>({} as FormDataCreateErrorsSmal
 const onFormSubmit = async () => {
   try {
     await apiContacts().create(formData.value)
+
+    errors.value = {} as FormDataCreateErrors
+    formData.value = getDefaultFormDataCreateSmallForm()
+
   } catch (error) {
     errors.value = error
     return
@@ -56,10 +61,10 @@ onUnmounted(() => {
     <form class="form" @submit.prevent="onFormSubmit">
       <h3>Получить консультацию прямо сейчас</h3>
       <div class="input__wrapper">
-        <Input v-model="formData.name" label="Имя" />
-        <InputPhone v-model="formData.phone" label="Номер телефона" />
+        <Input v-model="formData.name" :is-required="true" :errors="errors.name" label="Имя" />
+        <InputPhone v-model="formData.phone" :is-required="true" :errors="errors.phone" label="Номер телефона" />
       </div>
-      <Input v-model="formData.email" name="email" label="Email" />
+      <Input v-model="formData.email" :is-required="true" :errors="errors.email" label="Email" />
       <Button type="submit" class="ready-to-discuss__button --without-icon-on-mobile" :class="{'--blue': props.isSecondBlock}" icon="send">Заказать консультацию</Button>
     </form>
   </section>

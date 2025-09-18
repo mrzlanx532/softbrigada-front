@@ -8,7 +8,8 @@ const emit = defineEmits<{
 const props = withDefaults(defineProps<{
   modelValue?: string
   label: string,
-  isRequired?: boolean
+  isRequired?: boolean,
+  errors?: string[]
 }>(), {
   isRequired: false
 })
@@ -22,7 +23,7 @@ const onClickLabel = () => {
 
 <template>
   <div class="input">
-    <div class="input__label" @click="onClickLabel">
+    <div class="input__label" :class="{'--has-error': props.errors}" @click="onClickLabel">
       {{ props.label }}
       <span v-if="props.isRequired">*</span>
     </div>
@@ -32,6 +33,10 @@ const onClickLabel = () => {
         ref="inputRef"
         :name="'field-' + serverTime"
         :placeholder="props.placeholder"
-        :label="props.name"/>
+        :label="props.name"
+    />
+    <div class="input__error">
+      {{ props.errors ? props.errors[0] : null }}
+    </div>
   </div>
 </template>

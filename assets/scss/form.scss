@@ -93,9 +93,22 @@
     font-size: 12px;
     color: var(--color-2);
 
-    span {
-      color: red;
+    &.--has-error {
+      span {
+        color: var(--color-text-negative);
+      }
     }
+
+    span {
+      color: var(--color-2);
+    }
+  }
+
+  &__error {
+    margin-top: 4px;
+    color: var(--color-text-negative);
+    font-size: var(--font-size-description-3);
+    min-height: var(--font-size-description-3);
   }
 }
 

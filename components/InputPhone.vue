@@ -10,7 +10,8 @@ const emit = defineEmits<{
 const props = withDefaults(defineProps<{
   modelValue?: string
   label: string,
-  isRequired?: boolean
+  isRequired?: boolean,
+  errors?: string[]
 }>(), {
   isRequired: false
 })
@@ -29,7 +30,7 @@ const options = reactive<MaskInputOptions>({
 
 <template>
   <div class="input">
-    <div class="input__label" @click="onClickLabel">
+    <div class="input__label" :class="{'--has-error': props.errors}" @click="onClickLabel">
       {{ props.label }}
       <span v-if="props.isRequired">*</span>
     </div>
@@ -42,5 +43,8 @@ const options = reactive<MaskInputOptions>({
         :name="'field-' + serverTime"
         v-maska="options"
     />
+    <div v-if="props.errors" class="input__error">
+      {{ props.errors[0] }}
+    </div>
   </div>
 </template>

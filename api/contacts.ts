@@ -9,13 +9,12 @@ export interface FormDataCreateSmallForm {
 
 export type FormDataCreateErrorsSmallForm = FormDataErrors<FormDataCreateSmallForm>
 
-export const getDefaultFormDataCreate = (fromTrigger: string): FormDataCreate => {
+export const getDefaultFormDataCreateSmallForm = (): FormDataCreateSmallForm => {
     return {
         name: undefined,
         phone: undefined,
         email: undefined,
-        is_agree_to_receive_ads: true,
-        from_trigger: fromTrigger
+        form_type_id: 'SMALL_FORM'
     }
 }
 
