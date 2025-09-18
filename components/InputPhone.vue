@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import type { MaskInputOptions } from "maska"
 
+const {data: serverTime} = await useAsyncData('server-time', async() => Date.now())
+
 const emit = defineEmits<{
   (e: 'update:modelValue', value: string): void
 }>()
 
 const props = withDefaults(defineProps<{
   modelValue?: string
-  name: string,
   label: string,
   isRequired?: boolean
 }>(), {
@@ -36,9 +37,9 @@ const options = reactive<MaskInputOptions>({
         :value="props.modelValue"
         @input="emit('update:modelValue', ($event.target as HTMLInputElement).value)"
         ref="inputRef"
-        :name="props.name"
         :placeholder="props.placeholder"
         :label="props.name"
+        :name="'field-' + serverTime"
         v-maska="options"
     />
   </div>

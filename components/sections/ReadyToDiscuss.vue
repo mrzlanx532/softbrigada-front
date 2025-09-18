@@ -1,4 +1,11 @@
 <script setup lang="ts">
+import Input from '~/components/Input.vue'
+import Button from '~/components/Button.vue'
+import apiContacts, {
+  type FormDataCreateSmallForm,
+  type FormDataCreateErrorsSmallForm
+} from '~/api/contacts'
+
 const props = defineProps<{
   isSecondBlock?: boolean
 }>()
@@ -10,12 +17,22 @@ let io: IntersectionObserver | undefined = undefined
 const readyToDiscussRef = useTemplateRef('readyToDiscussRef')
 const animationIsActive = ref(false)
 
-import Input from '~/components/Input.vue'
-import Button from '~/components/Button.vue'
-import Gradient from '~/assets/svg/ready-to-discuss-section-gradient.svg'
+const formData = ref<FormDataCreateSmallForm>({
+  name: undefined,
+  phone: undefined,
+  email: undefined,
+  form_type_id: 'SMALL_FORM'
+})
 
-const onFormSubmit = () => {
-  alert('TODO')
+const errors = ref<FormDataCreateErrorsSmallForm>({} as FormDataCreateErrorsSmallForm)
+
+const onFormSubmit = async () => {
+  try {
+    await apiContacts().create(formData.value)
+  } catch (error) {
+    errors.value = error
+    return
+  }
 }
 
 onMounted(() => {
@@ -39,10 +56,10 @@ onUnmounted(() => {
     <form class="form" @submit.prevent="onFormSubmit">
       <h3>Получить консультацию прямо сейчас</h3>
       <div class="input__wrapper">
-        <Input name="name" label="Имя" />
-        <InputPhone name="phone" label="Номер телефона" />
+        <Input v-model="formData.name" label="Имя" />
+        <InputPhone v-model="formData.phone" label="Номер телефона" />
       </div>
-      <Input name="email" label="Email" />
+      <Input v-model="formData.email" name="email" label="Email" />
       <Button type="submit" class="ready-to-discuss__button --without-icon-on-mobile" :class="{'--blue': props.isSecondBlock}" icon="send">Заказать консультацию</Button>
     </form>
   </section>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const {data: serverTime} = await useAsyncData('server-time', async() => Date.now())
 
 const emit = defineEmits<{
   (e: 'update:modelValue', value: string): void
@@ -6,7 +7,6 @@ const emit = defineEmits<{
 
 const props = withDefaults(defineProps<{
   modelValue?: string
-  name: string,
   label: string,
   isRequired?: boolean
 }>(), {
@@ -30,7 +30,7 @@ const onClickLabel = () => {
         :value="props.modelValue"
         @input="emit('update:modelValue', ($event.target as HTMLInputElement).value)"
         ref="inputRef"
-        :name="props.name"
+        :name="'field-' + serverTime"
         :placeholder="props.placeholder"
         :label="props.name"/>
   </div>

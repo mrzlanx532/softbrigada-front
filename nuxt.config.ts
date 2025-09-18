@@ -1,8 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import runtimeConfigPublic from './config'
+
 export default defineNuxtConfig({
   experimental: {
     /** @ts-expect-error: Nuxt 3 пишет что такого типа нет, но он есть */
     inlineSSRStyles: false
+  },
+  runtimeConfig: {
+    public: runtimeConfigPublic as unknown as any
   },
   compatibilityDate: '2024-11-01',
   devtools: { enabled: false },
