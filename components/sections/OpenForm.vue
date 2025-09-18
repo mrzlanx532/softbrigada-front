@@ -40,7 +40,7 @@ const onFormSubmit = () => {
         <form @submit.prevent="onFormSubmit">
           <div class="input__wrapper">
             <Input name="name" label="Имя" />
-            <Input name="phone" label="Номер телефона" />
+            <InputPhone name="phone" label="Номер телефона" />
           </div>
           <Input name="email" label="Email" />
           <Input name="description" label="Расскажите о вашем проекте" />

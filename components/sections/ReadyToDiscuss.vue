@@ -40,7 +40,7 @@ onUnmounted(() => {
       <h3>Получить консультацию прямо сейчас</h3>
       <div class="input__wrapper">
         <Input name="name" label="Имя" />
-        <Input name="phone" label="Номер телефона" />
+        <InputPhone name="phone" label="Номер телефона" />
       </div>
       <Input name="email" label="Email" />
       <Button type="submit" class="ready-to-discuss__button --without-icon-on-mobile" :class="{'--blue': props.isSecondBlock}" icon="send">Заказать консультацию</Button>
