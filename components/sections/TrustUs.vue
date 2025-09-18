@@ -39,14 +39,12 @@ const items = ref([
   },
 ])
 
-const enableItem = (index) => {
+const enableItem = async (index) => {
   videoRef.value[index].style.opacity = 1
 
   try {
-    videoRef.value[index].play()
-  } catch (e) {
-    alert(e)
-  }
+    await videoRef.value[index].play()
+  } catch (e) {}
 }
 
 const disableItem = (index) => {
