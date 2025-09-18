@@ -87,7 +87,7 @@
     p {
       max-width: 472px;
       color: white;
-      font-size: 15px;
+      font-size: var(--font-size-description-1);
       margin-top: 16px;
     }
   }
@@ -105,7 +105,7 @@
     justify-content: center;
 
     @media (min-width: 640px) {
-      font-size: 24px;
+      font-size: var(--font-size-h4);
       margin: 64px auto 0 auto;
       width: auto;
     }

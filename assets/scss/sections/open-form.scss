@@ -68,19 +68,19 @@
       font-size: 20px;
       
       @media (min-width: 640px) {
-        font-size: 24px;
+        font-size: var(--font-size-h4);
       }
     }
 
     p {
-      font-size: 15px;
+      font-size: var(--font-size-description-1);
       color: var(--color-2);
       margin-top: 16px;
     }
   }
 
   &__button {
-    font-size: 24px;
+    font-size: var(--font-size-h4);
     color: white;
     background-color: var(--bg-color-3);
     width: 100%;

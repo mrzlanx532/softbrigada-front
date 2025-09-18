@@ -124,7 +124,7 @@
       }
 
       @media (min-width: 640px) {
-        font-size: 15px;
+        font-size: var(--font-size-description-1);
         padding: 24px;
         flex-grow: 0;
         flex-shrink: 1;
@@ -149,17 +149,17 @@
     background-size: cover;
 
     div:first-child {
-      font-size: 24px;
+      font-size: var(--font-size-h4);
     }
 
     div:last-child {
       margin-top: 16px;
-      font-size: 15px;
+      font-size: var(--font-size-description-1);
     }
   }
 
   &__lead {
-    font-size: 24px;
+    font-size: var(--font-size-h4);
 
     &.--desktop {
       padding: 32px;

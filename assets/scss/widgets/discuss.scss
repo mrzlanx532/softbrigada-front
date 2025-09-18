@@ -16,7 +16,7 @@
   }
 
   &__header-content {
-    font-size: 24px;
+    font-size: var(--font-size-h4);
     color: black;
     margin-top: 16px;
   }
@@ -25,13 +25,13 @@
     margin-top: 32px;
 
     div:first-child {
-      font-size: 13px;
+      font-size: var(--font-size-description-2);
       color: var(--color-2);
     }
 
     div:last-child {
       margin-top: 8px;
-      font-size: 15px;
+      font-size: var(--font-size-description-1);
       color: black;
     }
   }
@@ -87,7 +87,7 @@
     border-radius: 100px;
     padding: 20px;
     border: none;
-    font-size: 15px;
+    font-size: var(--font-size-description-1);
     gap: 16px;
     align-items: center;
     transition: background-color .5s ease-in-out, box-shadow .5s ease-in-out;

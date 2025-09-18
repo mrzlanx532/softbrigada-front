@@ -58,13 +58,13 @@
 
     @media (min-width: 640px) {
       flex-direction: row;
-      font-size: 24px;
+      font-size: var(--font-size-h4);
       gap: 0;
       margin-top: 32px;
     }
 
     &:first-child > div {
-      font-size: 24px;
+      font-size: var(--font-size-h4);
     }
 
     &:last-child > div {
@@ -75,7 +75,7 @@
 
       @media (min-width: 640px) {
         margin-bottom: 42px;
-        font-size: 15px;
+        font-size: var(--font-size-description-1);
         line-height: 1;
       }
 
