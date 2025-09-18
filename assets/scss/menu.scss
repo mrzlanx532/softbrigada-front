@@ -127,6 +127,13 @@
     pointer-events: auto;
   }
 
+  &__container {
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+    height: 100%;
+  }
+
   &__anchor-links {
     display: flex;
     flex-direction: column;

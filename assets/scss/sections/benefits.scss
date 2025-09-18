@@ -27,6 +27,11 @@
     margin: 204px auto 0 auto;
   }
 
+  &__container-child {
+    position: relative;
+    z-index: 3;
+  }
+
   &__gradient {
     width: 200%;
     height: 100%;

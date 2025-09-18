@@ -6,7 +6,7 @@
   <section id="benefits" class="benefits">
     <div class="benefits__gradient" />
     <div class="benefits__container">
-      <div style="position: relative; z-index: 3">
+      <div class="benefits__container-child">
         <h2>
           <span>Преимущества</span>
           <span>SoftBrigada</span>

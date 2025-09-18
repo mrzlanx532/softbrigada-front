@@ -72,7 +72,7 @@ const closeBurgerMenu = () => {
     </div>
   </div>
   <div class="menu-open-burger" :class="{'--is-open': burgerMenuIsOpen}">
-    <div style="flex-direction: column; justify-content: space-between; display: flex; height: 100%;">
+    <div class="menu-open-burger__container">
       <div class="menu-mobile">
         <div class="menu-mobile__logo">
           <img height="35" src="/images/logo/43.svg" alt="logo">
