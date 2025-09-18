@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Gradient from '~/assets/svg/offer-section-gradient.svg'
+import Button from '~/components/form/Button.vue'
 </script>
 
 <template>

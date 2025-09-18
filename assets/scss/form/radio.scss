@@ -1,9 +1,30 @@
 .radio {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
 
-  div {
+  &__label {
+    margin-top: 0;
+    font-size: var(--font-size-description-1);
+    font-weight: bold;
+    color: black;
+
+    &.--has-error {
+      span {
+        color: var(--color-text-negative);
+      }
+    }
+
+    span {
+      color: var(--color-2);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  &__list-item {
     padding: 12px;
     color: black;
     border: 1px solid var(--color-3);

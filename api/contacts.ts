@@ -22,6 +22,11 @@ export interface FormDataCreateBrief {
     name: string | undefined,
     phone: string | undefined,
     email: string | undefined,
+    budget_id: string | undefined,
+    description: string | undefined,
+    service_id: string | undefined,
+    source_id: string | undefined,
+    file: File | undefined,
     form_type_id: 'BRIEF'
 }
 

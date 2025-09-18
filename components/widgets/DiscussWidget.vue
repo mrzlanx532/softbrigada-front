@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { vOnClickOutside } from '@vueuse/components'
-import Button from '~/components/Button.vue'
+import Button from '~/components/form/Button.vue'
 
 let io: IntersectionObserver | undefined = undefined
 const isOpen = ref(false)

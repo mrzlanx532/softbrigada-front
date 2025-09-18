@@ -1,33 +1,33 @@
 export const budgetOptions = [
     {
-        id: 1,
+        id: 'SMALL',
         name: '400 тыс.-1 млн.руб.'
     },
     {
-        id: 2,
+        id: 'MEDIUM',
         name: '1 млн.руб.-2 млн.руб.'
     },
     {
-        id: 3,
+        id: 'BIG',
         name: 'Более 2 млн.руб.'
     },
 ]
 
 export const deadlineOptions = [
     {
-        id: 1,
+        id: 'MONTHS_1_3',
         name: '1-3 месяца'
     },
     {
-        id: 2,
+        id: 'MONTHS_3_6',
         name: '3-6 месяцев'
     },
     {
-        id: 3,
+        id: 'MONTHS_6_12',
         name: '6-12 месяцев'
     },
     {
-        id: 4,
+        id: 'MONTHS_MORE_12',
         name: 'Более 12 месяцев'
     }
 ]

@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import Input from '~/components/Input.vue'
-import Radio from '~/components/Radio.vue'
-import Button from '~/components/Button.vue'
-import InputFile from '~/components/InputFile.vue'
+import Input from '~/components/form/Input.vue'
+import Radio from '~/components/form/Radio.vue'
+import Button from '~/components/form/Button.vue'
+import InputFile from '~/components/form/InputFile.vue'
+import InputPhone from '~/components/form/InputPhone.vue'
 import { budgetOptions as _budgetOptions, deadlineOptions as _deadlineOptions } from '~/constants/index'
 import apiContacts, {
   type FormDataCreateBigForm,
@@ -68,17 +69,9 @@ const onFormSubmit = async () => {
           </div>
           <Input v-model="formData.email" :errors="errors.email" :is-required="true" label="Email" />
           <Input v-model="formData.description" :errors="errors.description" :is-required="true" label="Расскажите о вашем проекте" />
-          <div class="form__group">
-            <div>Бюджет</div>
-            <Radio v-model="formData.budget_id" :options="budgetOptions" />
-          </div>
-          <div class="form__group">
-            <div>Сроки</div>
-            <Radio v-model="formData.deadline_id" :options="deadlineOptions" />
-          </div>
-          <div class="form__group" v-if="device.isMobile">
-            <InputFile v-model="formData.file"/>
-          </div>
+          <Radio v-model="formData.budget_id" :errors="errors.budget_id" :is-required="true" label="Бюджет" :options="budgetOptions" />
+          <Radio v-model="formData.deadline_id" :errors="errors.deadline_id" :is-required="true" label="Сроки" :options="deadlineOptions" />
+          <InputFile v-if="device.isMobile" v-model="formData.file"/>
           <div class="form__action">
             <Button type="submit" class="open-form__button" icon="send">Отправить</Button>
             <InputFile v-if="!device.isMobile" class="open-form__input-file" v-model="formData.file"/>

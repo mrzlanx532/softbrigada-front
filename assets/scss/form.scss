@@ -41,7 +41,11 @@
       }
 
       &:last-child {
-        margin-top: 64px;
+        margin-top: 40px;
+
+        @media (min-width: 640px) {
+          margin-top: 64px;
+        }
       }
     }
   }
