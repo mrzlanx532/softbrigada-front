@@ -1,0 +1,41 @@
+.input {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--color-3);
+    color: black;
+    padding: 8px 0;
+    font-weight: bold;
+    font-size: 14px;
+
+    &:focus {
+      border-bottom: 1px solid black;
+    }
+  }
+
+  &__label {
+    cursor: text;
+    font-size: 12px;
+    color: var(--color-2);
+
+    &.--has-error {
+      span {
+        color: var(--color-text-negative);
+      }
+    }
+
+    span {
+      color: var(--color-2);
+    }
+  }
+
+  &__error {
+    margin-top: 4px;
+    color: var(--color-text-negative);
+    font-size: var(--font-size-description-3);
+    min-height: var(--font-size-description-3);
+  }
+}

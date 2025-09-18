@@ -1,0 +1,60 @@
+.input-file {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  color: black;
+
+  &.--small {
+    font-size: 14px;
+  }
+
+  &.--attached {
+    overflow: hidden;
+
+    > svg {
+      transform: rotate(45deg);
+    }
+
+    > div > div:last-child {
+      max-width: 136px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-top: 4px;
+      text-wrap: nowrap;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  > div {
+    margin-left: 8px;
+    color: inherit;
+    line-height: 1.2;
+
+    div {
+      color: black;
+
+      &:last-child {
+        font-size: var(--font-size-description-2);
+        line-height: 1.2;
+        color: var(--bg-color-3);
+        text-align: center;
+      }
+    }
+  }
+
+  svg {
+    width: 32px;
+    height: 32px;
+    color: inherit;
+    transition: transform .3s ease-in-out;
+
+    use {
+      color: inherit;
+    }
+  }
+}

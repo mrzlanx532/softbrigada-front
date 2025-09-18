@@ -4,6 +4,9 @@
 @use 'buttons';
 @use 'form';
 @use 'brief';
+@use 'form/input-file';
+@use 'form/radio';
+@use 'form/input';
 
 /* sections */
 @use 'sections/hero';
