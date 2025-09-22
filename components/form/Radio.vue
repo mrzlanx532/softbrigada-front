@@ -1,7 +1,7 @@
 <script setup lang="ts">
 type IOption = {
   id: number | string,
-  name: string
+  title: string
 }
 
 const props = withDefaults(defineProps<{
@@ -37,7 +37,7 @@ const onClick = (value) => {
           @click="onClick(item.id)"
           :class="{'--active': item.id === props.modelValue}"
       >
-        {{ item.name }}
+        {{ item.title }}
       </div>
     </div>
   </div>
