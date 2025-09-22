@@ -21,8 +21,9 @@ const onClickLookCases = () => {
 }
 
 const openBrief = () => {
-  const { briefIsOpen } = useGlobalState()
+  const { briefIsOpen, widgetIsVisible } = useGlobalState()
 
+  widgetIsVisible.value = false
   briefIsOpen.value = true
 }
 

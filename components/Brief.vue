@@ -13,7 +13,7 @@ import apiContacts, {
 
 const definitions = useState('definitions')
 
-const { briefIsOpen } = useGlobalState()
+const { briefIsOpen, widgetIsVisible } = useGlobalState()
 
 const briefRef = useTemplateRef('briefRef')
 
@@ -28,6 +28,7 @@ const errors = ref<FormDataCreateErrorsBrief>({} as FormDataCreateErrorsBrief)
 
 const closeBrief = () => {
   briefIsOpen.value = false
+  widgetIsVisible.value = true
 
   setTimeout(() => {
     briefRef.value.scrollTop = 0
