@@ -43,8 +43,8 @@ const options = reactive<MaskInputOptions>({
         :name="'field-' + serverTime"
         v-maska="options"
     />
-    <div v-if="props.errors" class="input__error">
-      {{ props.errors[0] }}
+    <div class="input__error">
+      {{ props.errors ? props.errors[0] : '' }}
     </div>
   </div>
 </template>

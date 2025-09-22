@@ -36,7 +36,7 @@ const onClickLabel = () => {
         :label="props.name"
     />
     <div class="input__error">
-      {{ props.errors ? props.errors[0] : null }}
+      {{ props.errors ? props.errors[0] : '' }}
     </div>
   </div>
 </template>
