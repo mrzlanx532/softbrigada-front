@@ -22,7 +22,7 @@ export default () => {
         setTimeout(() => {
             document.body.style.overflow = ''
             document.body.style.paddingRight = ''
-        }, 300)
+        }, 250)
 
     })
 
