@@ -2,10 +2,9 @@
 import { vOnClickOutside } from '@vueuse/components'
 import Radio from '~/components/form/Radio.vue'
 import Button from '~/components/form/Button.vue'
-import InputFile from '~/components/form/InputFile.vue'
 import InputPhone from '~/components/form/InputPhone.vue'
 import Input from '~/components/form/Input.vue'
-
+import TaskDescription from '~/components/form/TaskDescription.vue'
 import {
   servicesOptions as _servicesOptions,
   budgetOptions as _budgetOptions,
@@ -66,12 +65,12 @@ const onFormSubmit = async () => {
     <form class="brief__form form" @submit.prevent="onFormSubmit">
       <Radio v-model="formData.service_id" :errors="errors.service_id" :is-required="true" label="Услуга" :options="servicesOptions" />
       <Radio v-model="formData.budget_id" :errors="errors.budget_id" :is-required="true" label="Бюджет" :options="budgetOptions" />
-      <div class="form__group --description">
-        <div>Описание задачи</div>
-        <Input name="task_description" v-model="formData.task_description" label="Напишите о вашей задаче в двух словах"/>
-        <div>или прикрепите файл с ТЗ</div>
-        <InputFile class="--small" v-model="formData.task_file" />
-      </div>
+      <TaskDescription
+          :is-required="true"
+          v-model:description="formData.description"
+          v-model:file="formData.file"
+          :errors="errors.hasOwnProperty('description') || errors.hasOwnProperty('file')"
+      />
       <div class="form__group --contacts">
         <div>Контактные данные</div>
         <Input :is-required="true" v-model="formData.name" :errors="errors.name" label="Имя"/>
