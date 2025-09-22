@@ -19,8 +19,11 @@ export default () => {
             return
         }
 
-        document.body.style.overflow = ''
-        document.body.style.paddingRight = ''
+        setTimeout(() => {
+            document.body.style.overflow = ''
+            document.body.style.paddingRight = ''
+        }, 300)
+
     })
 
     return {
