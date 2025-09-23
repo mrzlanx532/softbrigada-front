@@ -2,6 +2,8 @@
 import { vOnClickOutside } from '@vueuse/components'
 import Button from '~/components/form/Button.vue'
 
+const config = useConfig()
+
 let io: IntersectionObserver | undefined = undefined
 const isOpen = ref(false)
 const liteMode = ref(true)
@@ -14,6 +16,22 @@ const onClickButton = () => {
 
 const closeWidget = () => {
   isOpen.value = false
+}
+
+const goToLink = (link: string) => {
+  const a = document.createElement('a')
+  a.href = link
+  a.target = '_blank'
+  a.click()
+}
+
+const onClickPhone = () => {
+  if (window.innerWidth < 767) {
+    const a = document.createElement('a')
+    a.href = 'tel:+' + config.phone
+    a.click()
+    a.remove()
+  }
 }
 
 onMounted(() => {
@@ -40,13 +58,13 @@ onUnmounted(() => {
       <div class="widget-discuss__header-content">Обсудить проект</div>
       <div class="widget-discuss__group">
         <div>По телефону</div>
-        <div>+7 (910) 292-03-10</div>
+        <div class="widget-discuss__phone" @click="onClickPhone">{{ config.formattedPhone }}</div>
       </div>
       <div class="widget-discuss__group">
         <div>По почте</div>
-        <div>info@gmail.com</div>
+        <div><a :href="'mailto:' + config.email">{{ config.email }}</a></div>
       </div>
-      <Button>Написать в телеграм</Button>
+      <Button @click="goToLink(config.telegram)">Написать в телеграм</Button>
     </div>
     <button
         class="widget-discuss__button"

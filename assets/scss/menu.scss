@@ -8,6 +8,11 @@
   position: relative;
   z-index: 1;
 
+  &__phone {
+    cursor: text;
+    user-select: auto;
+  }
+
   @media (min-width: 640px) {
     display: flex;
   }

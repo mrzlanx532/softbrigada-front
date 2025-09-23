@@ -9,6 +9,7 @@ const props = withDefaults(defineProps<{
 
 const { goToAnchor } = useAnchor()
 const { burgerMenuIsOpen, widgetIsVisible } = useGlobalState()
+const config = useConfig()
 
 const onClickLink = (id: string) => {
   goToAnchor(id)
@@ -52,11 +53,11 @@ const closeBurgerMenu = () => {
     <div class="menu-desktop__container --right">
       <div class="menu-desktop__contacts">
         <div class="menu-desktop__contacts-social">
-          <svg><use href="/sprite.svg#telegram" /></svg>
-          <svg><use href="/sprite.svg#whatsapp" /></svg>
+          <a :href="config.telegram"><svg><use href="/sprite.svg#telegram" /></svg></a>
+          <a :href="config.whatsapp"><svg><use href="/sprite.svg#whatsapp" /></svg></a>
         </div>
-        <a v-if="props.isHeader">info@gmail.com</a>
-        <a v-if="props.isHeader">+7 (910) 292-03-10</a>
+        <a v-if="props.isHeader" :href="'mailto:' + config.email">{{ config.email }}</a>
+        <a v-if="props.isHeader" class="menu-desktop__phone">{{ config.formattedPhone }}</a>
       </div>
       <Button class="menu-desktop__button" @click="openBrief">Заполнить бриф</Button>
     </div>
@@ -95,12 +96,12 @@ const closeBurgerMenu = () => {
       </div>
       <div class="menu-open-burger__contacts">
         <div>
-          <svg><use href="/sprite.svg#telegram" /></svg>
-          <svg><use href="/sprite.svg#whatsapp" /></svg>
+          <a :href="config.telegram"><svg><use href="/sprite.svg#telegram" /></svg></a>
+          <a :href="config.whatsapp"><svg><use href="/sprite.svg#whatsapp" /></svg></a>
         </div>
         <div>
-          <div>info@gmail.com</div>
-          <div>+ 7 (910) 292-03-10</div>
+          <div><a :href="'mailto:' + config.email">{{ config.email }}</a></div>
+          <div><a :href="'tel:+' + config.phone">{{ config.formattedPhone }}</a></div>
         </div>
       </div>
     </div>

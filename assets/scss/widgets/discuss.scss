@@ -32,6 +32,20 @@
       margin-top: 8px;
       font-size: var(--font-size-description-1);
       color: black;
+
+      a {
+        color: black;
+        font-size: var(--font-size-description-1);
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__phone {
+    cursor: pointer;
+
+    @media (min-width: 640px) {
+      cursor: text;
     }
   }
 

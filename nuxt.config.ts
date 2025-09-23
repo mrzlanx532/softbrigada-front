@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import runtimeConfigPublic from './config'
+import { type CustomRuntimeConfigPublic } from '~/types'
 
 export default defineNuxtConfig({
   experimental: {
@@ -7,7 +8,7 @@ export default defineNuxtConfig({
     inlineSSRStyles: false
   },
   runtimeConfig: {
-    public: runtimeConfigPublic as unknown as any
+    public: runtimeConfigPublic as unknown as CustomRuntimeConfigPublic
   },
   compatibilityDate: '2024-11-01',
   devtools: { enabled: false },
