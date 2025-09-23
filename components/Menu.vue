@@ -54,6 +54,10 @@ const closeBurgerMenu = () => {
   document.documentElement.scrollTop = getY()
   document.documentElement.style.scrollBehavior = 'smooth';
 }
+
+const onClickMobileLogo = () => {
+  document.documentElement.scrollTop = 0
+}
 </script>
 
 <template>
@@ -80,7 +84,7 @@ const closeBurgerMenu = () => {
     </div>
   </div>
   <div class="menu-mobile --fixed">
-    <div class="menu-mobile__logo">
+    <div class="menu-mobile__logo" @click="onClickMobileLogo">
       <img height="35" src="/images/logo/43.svg" alt="logo">
     </div>
     <div>
