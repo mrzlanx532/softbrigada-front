@@ -11,11 +11,17 @@ const { goToAnchor } = useAnchor()
 const { burgerMenuIsOpen, widgetIsVisible } = useGlobalState()
 const config = useConfig()
 
-const onClickLink = (id: string) => {
+const onClickLink = (id: string, isMobile: boolean) => {
+  if (isMobile) {
+    closeBurgerMenu()
+  }
+
   goToAnchor(id)
 }
 
 const onClickLookCases = () => {
+  closeBurgerMenu()
+
   const { goToAnchor } = useAnchor()
 
   goToAnchor('cases')
@@ -29,6 +35,10 @@ const openBrief = () => {
 }
 
 const openBurgerMenu = () => {
+  setTimeout(() => {
+    document.body.style.position = 'fixed'
+  }, 300)
+
   burgerMenuIsOpen.value = true
   widgetIsVisible.value = false
 }
@@ -36,6 +46,7 @@ const openBurgerMenu = () => {
 const closeBurgerMenu = () => {
   burgerMenuIsOpen.value = false
   widgetIsVisible.value = true
+  document.body.style.position = ''
 }
 </script>
 
@@ -87,8 +98,8 @@ const closeBurgerMenu = () => {
         </div>
       </div>
       <div class="menu-open-burger__anchor-links">
-        <a @click="onClickLink('dev-types')">что мы делаем</a>
-        <a @click="onClickLink('cases')">наши кейсы</a>
+        <a @click="onClickLink('dev-types', true)">что мы делаем</a>
+        <a @click="onClickLink('cases', true)">наши кейсы</a>
       </div>
       <div class="menu-open-burger__buttons">
         <Button icon="lightning" class="--white">Получить решение</Button>
