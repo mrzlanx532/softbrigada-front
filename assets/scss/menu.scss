@@ -88,6 +88,12 @@
   align-items: center;
   justify-content: space-between;
 
+  &.--fixed {
+    position: fixed;
+    width: calc(100% - 40px);
+    z-index: 10;
+  }
+
   @media (min-width: 640px) {
     display: none;
   }
@@ -124,7 +130,7 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity .3s ease-out;
-  z-index: 1;
+  z-index: 11;
   padding: 20px;
 
   &.--is-open {

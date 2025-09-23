@@ -10,6 +10,7 @@ const props = withDefaults(defineProps<{
 const { goToAnchor } = useAnchor()
 const { burgerMenuIsOpen, widgetIsVisible } = useGlobalState()
 const config = useConfig()
+const { getY, setY } = useScrollLock()
 
 const onClickLink = (id: string, isMobile: boolean) => {
   if (isMobile) {
@@ -35,9 +36,10 @@ const openBrief = () => {
 }
 
 const openBurgerMenu = () => {
+  setY()
   setTimeout(() => {
-    document.body.style.position = 'fixed'
-  }, 300)
+    document.documentElement.style.position = 'fixed'
+  }, 200)
 
   burgerMenuIsOpen.value = true
   widgetIsVisible.value = false
@@ -46,7 +48,11 @@ const openBurgerMenu = () => {
 const closeBurgerMenu = () => {
   burgerMenuIsOpen.value = false
   widgetIsVisible.value = true
-  document.body.style.position = ''
+
+  document.documentElement.style.position = ''
+  document.documentElement.style.scrollBehavior = 'auto';
+  document.documentElement.scrollTop = getY()
+  document.documentElement.style.scrollBehavior = 'smooth';
 }
 </script>
 
@@ -73,7 +79,7 @@ const closeBurgerMenu = () => {
       <Button class="menu-desktop__button" @click="openBrief">Заполнить бриф</Button>
     </div>
   </div>
-  <div class="menu-mobile">
+  <div class="menu-mobile --fixed">
     <div class="menu-mobile__logo">
       <img height="35" src="/images/logo/43.svg" alt="logo">
     </div>
