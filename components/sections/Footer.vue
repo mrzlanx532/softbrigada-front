@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import Menu from '~/components/Menu.vue'
-
 const config = useConfig()
 
 const { goToAnchor } = useAnchor()
@@ -19,7 +17,6 @@ const onClickPhone = () => {
 
 <template>
   <section id="footer" class="footer">
-    <Menu :is-header="false"/>
     <div class="footer__row --part-of-menu">
       <a @click="onClickLink('dev-types')">что мы делаем</a>
       <a @click="onClickLink('cases')">наши кейсы <span>+3</span></a>

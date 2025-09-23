@@ -52,6 +52,9 @@ const startSpotlightAnimation = () => {
     }
 
     if (device.isMobile) {
+      setTimeout(() => {
+        startSpotlightAnimation()
+      }, 1000)
       return
     }
 
