@@ -155,6 +155,9 @@
 
     p {
       color: var(--color-2);
+      white-space: pre-line;
+      margin-left: 74px;
+      line-height: 1.2;
 
       &:first-child {
         padding-top: 16px;

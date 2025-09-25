@@ -7,50 +7,51 @@ const answerHeights = []
 
 const questions = ref([
   {
-    question: 'Почему нужно заказать разработку сайта в Web Canape?',
-    answer: [
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        'Lorem Ipsum has been the industry\'s standard dummy text.',
-        'Lorem Ipsum has been the industry\'s standard dummy text.',
-        'Lorem Ipsum has been the industry\'s standard dummy text.',
-        'Lorem Ipsum has been the industry\'s standard dummy text.',
-    ]
+    question: 'Сколько стоит разработка проекта?',
+    answer: `Много`
   },
   {
-    question: 'Что, если мне не понравится результат?',
-    answer: [
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-      'Lorem Ipsum has been the industry\'s standard dummy text.'
-    ]
+    question: 'Какие условия оплаты — предоплата, поэтапно или по факту?',
+    answer: `Мы работаем по предоплате, разбиваем оплату на этапы:
+
+      1/3 готовности проекта (верстка + дизайн + программирование) - сдача
+      2/3 готовности проекта (верстка + дизайн + программирование) - сдача
+      3/3 готовности проекта (верстка + дизайн + программирование) - сдача
+    `
   },
   {
-    question: 'Где гарантии, что вы не пропадете после предоплаты?',
-    answer: [
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-      'Lorem Ipsum has been the industry\'s standard dummy text.'
-    ]
+    question: 'Что может повлиять на сроки?',
+    answer: `На сроки может повлиять не обговоренный функционал на этапе проектирования и дизайна`
   },
   {
-    question: 'Почему у вас такая дорогая разработка? На фрилансе дешевле',
-    answer: [
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-      'Lorem Ipsum has been the industry\'s standard dummy text.'
-    ]
+    question: 'Можно ли сделать проект уже "вчера"? (экспресс-разработка)',
+    answer: `Нет, мы не делаем проекты на скорую руку.`
   },
   {
-    question: 'Где гарантии, что сайт для моей компании будет продавать?',
-    answer: [
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-      'Lorem Ipsum has been the industry\'s standard dummy text.'
-    ]
+    question: 'Можно ли оптимизировать сайт под SEO?',
+    answer: `Да, при необходимости продумываем стратегию под продвижению SEO, обговариваем на этапе проектирования.`
   },
   {
-    question: 'Что нужно будет от меня, чтобы заказать создание сайта?',
-    answer: [
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-      'Lorem Ipsum has been the industry\'s standard dummy text.'
-    ]
-  }
+    question: 'Можно ли будет самим управлять сайтом после запуска (CMS)?',
+    answer: `Да, мы такое делаем, обговариваем на этапе проектирования.`
+  },
+  {
+    question: 'Оказываете ли вы техническую поддержку после запуска?',
+    answer: `Да, при необходимости мы занимаемся дальнейшей поддержкой проекта`
+  },
+  {
+    question: 'Сколько времени займет разработка сайта?',
+    answer: `Нужно обсуждать каждый конкретный проект. Зависит от сложности`
+  },
+  {
+    question: 'Вы работаете по договору? Какие гарантии?',
+    answer: `Да, мы работаем по договору, несем полную ответственность обговоренную в договоре`
+  },
+  {
+    question: 'Что если мне не понравится результат?',
+    answer: `Ситуация маловероятна.
+     Каждый этап разработки, мы согласовываем с вами.`
+  },
 ])
 
 const selectedQuestion: Ref<number|undefined> = ref(undefined)
@@ -102,7 +103,7 @@ onMounted(() => {
           <div>
             <div>
               <svg><use href="/sprite.svg#bracket" /></svg>
-              <span>{{ '0' + (index + 1) }}</span>
+              <span>{{ index < 9 ? ('0' + (index + 1)) : index + 1 }}</span>
               <svg><use href="/sprite.svg#bracket" /></svg>
             </div>
             <div>
@@ -114,9 +115,7 @@ onMounted(() => {
           </div>
         </div>
         <div class="faq__question-answer --init" ref="answerRef">
-          <p v-for="row in question.answer">
-            {{ row }}
-          </p>
+          <p v-html="question.answer" />
         </div>
       </div>
     </div>
