@@ -51,8 +51,8 @@ const onFormSubmit = async () => {
     <div>
       <h2 v-html="h2Text" />
       <div class="open-form__me">
-        <img src="/images/team/me.png" alt="me">
-        <h4>Денис Женин, CEO</h4>
+        <img src="/images/team/me.jpg" alt="me">
+        <h4>Данилов Денис, CEO</h4>
         <p>
           Я напишу вам, отвечу на все вопросы и предложу решение для вашей задачи
         </p>

@@ -52,7 +52,7 @@ onUnmounted(() => {
   <div class="widget-discuss" :class="{'--visible': widgetIsVisible}" v-on-click-outside="closeWidget">
     <div class="widget-discuss__content" :class="{'--is-open': isOpen }">
       <div class="widget-discuss__header">
-        <img src="/images/reviews/1.png" alt="me" />
+        <img src="/images/team/me.jpg" alt="me" />
         <svg @click="closeWidget"><use href="/sprite.svg#close" /></svg>
       </div>
       <div class="widget-discuss__header-content">Обсудить проект</div>

@@ -39,7 +39,7 @@ onMounted(() => {
   <section id="roadmap" class="roadmap" :style="{ 'margin-left': marginLeft }">
     <div ref="pinnedContentRef">
       <h2>
-        Дорожная карта
+        Дорожная карта проекта
       </h2>
       <div class="roadmap__table-container" ref="tableContainerRef">
         <div class="roadmap__steps">
