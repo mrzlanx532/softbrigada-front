@@ -2,6 +2,14 @@
 import BaseModal from '~/components/modals/BaseModal.vue'
 import Button from '~/components/shared/form/Button.vue'
 
+const props = withDefaults(defineProps<{
+  title?: string,
+  buttonText?: string,
+}>(), {
+  title: 'Заявка на консультацию отправлена!',
+  buttonText: 'Вернуться на сайт'
+})
+
 const emit = defineEmits<{
   (e: 'confirm'): void
 }>()
@@ -14,8 +22,8 @@ const onClickBack = () => {
 <template>
   <BaseModal>
     <div class="thank-you-modal">
-      <div>Заявка на консультацию отправлена!</div>
-      <Button type="submit" class="--without-icon-on-mobile" @click="onClickBack">Вернуться на сайт</Button>
+      <div>{{ props.title }}</div>
+      <Button type="submit" class="--without-icon-on-mobile" @click="onClickBack">{{ props.buttonText }}</Button>
     </div>
   </BaseModal>
 </template>

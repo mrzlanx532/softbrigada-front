@@ -7,6 +7,8 @@ import apiContacts, {
   type FormDataCreateErrorsSmallForm,
   getDefaultFormDataCreateSmallForm
 } from '~/api/contacts'
+import { useModal } from 'vue-final-modal'
+import ThankYouModal from '~/components/modals/ThankYouModal.vue'
 
 const props = defineProps<{
   isSecondBlock?: boolean
@@ -34,6 +36,16 @@ const onFormSubmit = async () => {
 
     errors.value = {} as FormDataCreateErrorsSmallForm
     formData.value = getDefaultFormDataCreateSmallForm()
+
+    const thankYouModal = useModal({
+      component: ThankYouModal,
+      attrs: {
+        onConfirm: () => {
+          thankYouModal.close()
+        }
+      }
+    })
+    await thankYouModal.open()
 
   } catch (error) {
     errors.value = error

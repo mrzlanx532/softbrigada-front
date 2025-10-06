@@ -2,13 +2,16 @@
 import { vOnClickOutside } from '@vueuse/components'
 import Button from '~/components/shared/form/Button.vue'
 
+const widgetTemplateRef = useTemplateRef('widgetTemplateRef')
+const rightPx = ref()
+
 const config = useConfig()
 
 let io: IntersectionObserver | undefined = undefined
 const isOpen = ref(false)
 const liteMode = ref(true)
 
-const { widgetIsVisible } = useGlobalState()
+const { widgetIsVisible, modalIsOpen, scrollBarWidth } = useGlobalState()
 
 const onClickButton = () => {
   isOpen.value = !isOpen.value
@@ -41,6 +44,8 @@ onMounted(() => {
         liteMode.value = false
   })
   io.observe(document.querySelector('#hero'))
+
+  rightPx.value = parseFloat(window.getComputedStyle(widgetTemplateRef.value).right)
 })
 
 onUnmounted(() => {
@@ -49,8 +54,15 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="widget-discuss" :class="{'--visible': widgetIsVisible}" v-on-click-outside="closeWidget">
-    <div class="widget-discuss__content" :class="{'--is-open': isOpen }">
+  <div class="widget-discuss"
+       ref="widgetTemplateRef"
+       :class="{'--visible': widgetIsVisible}"
+       :style="{right: modalIsOpen ? (rightPx + scrollBarWidth) + 'px': rightPx + 'px'}" v-on-click-outside="closeWidget"
+  >
+    <div class="widget-discuss__content"
+         :class="{'--is-open': isOpen }"
+         :style="{right: modalIsOpen ? (rightPx + scrollBarWidth) + 'px': rightPx + 'px'}"
+    >
       <div class="widget-discuss__header">
         <img src="/images/team/me.jpg" alt="me" />
         <svg @click="closeWidget"><use href="/sprite.svg#close" /></svg>

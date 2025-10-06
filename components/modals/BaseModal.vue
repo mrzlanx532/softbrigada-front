@@ -1,9 +1,19 @@
 <script setup lang="ts">
 import { VueFinalModal } from 'vue-final-modal'
 
+const { modalIsOpen } = useGlobalState()
+
 const emit = defineEmits<{
   (e: 'close'): void
 }>()
+
+onMounted(() => {
+  modalIsOpen.value = true
+})
+
+onUnmounted(() => {
+  modalIsOpen.value = false
+})
 </script>
 
 <template>
