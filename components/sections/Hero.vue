@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Menu from '~/components/Menu.vue'
-import Button from '~/components/form/Button.vue'
+import Menu from '~/components/special/Menu.vue'
+import Button from '~/components/shared/form/Button.vue'
 import Gradient from '~/assets/svg/hero-section-gradient.svg?component'
 import { useModal } from 'vue-final-modal'
 import FormModal from '~/components/modals/FormModal.vue'

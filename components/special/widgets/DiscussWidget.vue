@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { vOnClickOutside } from '@vueuse/components'
-import Button from '~/components/form/Button.vue'
+import Button from '~/components/shared/form/Button.vue'
 
 const config = useConfig()
 

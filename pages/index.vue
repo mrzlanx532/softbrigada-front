@@ -12,7 +12,7 @@ import OpenForm from '~/components/sections/OpenForm.vue'
 import FAQ from '~/components/sections/FAQ.vue'
 import Footer from '~/components/sections/Footer.vue'
 import SoftBrigada from '~/components/sections/SoftBrigada.vue'
-import DiscussWidget from '~/components/widgets/DiscussWidget.vue'
+import DiscussWidget from '~/components/special/widgets/DiscussWidget.vue'
 </script>
 
 <template>

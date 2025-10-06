@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Button from '~/components/form/Button.vue'
+import Button from '~/components/shared/form/Button.vue'
 
 const activeType = ref(0)
 const types = ref([

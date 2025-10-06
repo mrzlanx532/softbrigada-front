@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Input from '~/components/form/Input.vue'
-import Radio from '~/components/form/Radio.vue'
-import Button from '~/components/form/Button.vue'
-import InputFile from '~/components/form/InputFile.vue'
-import InputPhone from '~/components/form/InputPhone.vue'
+import Input from '~/components/shared/form/Input.vue'
+import Radio from '~/components/shared/form/Radio.vue'
+import Button from '~/components/shared/form/Button.vue'
+import InputFile from '~/components/shared/form/InputFile.vue'
+import InputPhone from '~/components/shared/form/InputPhone.vue'
 import apiContacts, {
   type FormDataCreateBigForm,
   type FormDataCreateErrorsBigForm,

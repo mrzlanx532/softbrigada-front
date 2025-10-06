@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Input from '~/components/form/Input.vue'
-import InputFile from '~/components/form/InputFile.vue'
+import Input from '~/components/shared/form/Input.vue'
+import InputFile from '~/components/shared/form/InputFile.vue'
 
 const props = withDefaults(defineProps<{
   isRequired: boolean,

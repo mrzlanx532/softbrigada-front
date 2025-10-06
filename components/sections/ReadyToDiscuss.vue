@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Input from '~/components/form/Input.vue'
-import InputPhone from '~/components/form/InputPhone.vue'
-import Button from '~/components/form/Button.vue'
+import Input from '~/components/shared/form/Input.vue'
+import InputPhone from '~/components/shared/form/InputPhone.vue'
+import Button from '~/components/shared/form/Button.vue'
 import apiContacts, {
   type FormDataCreateSmallForm,
   type FormDataCreateErrorsSmallForm,
