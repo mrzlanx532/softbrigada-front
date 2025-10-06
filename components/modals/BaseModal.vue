@@ -17,7 +17,7 @@ const emit = defineEmits<{
     <template #default="{ close }">
       <div class="modal__container" @click="(e) => e.target === e.currentTarget && close()">
         <div class="modal__close" @click="(e) => e.target === e.currentTarget && close()">
-          <svg><use :href="'/sprite.svg#cross'" /></svg>
+          <svg><use :href="'/sprite.svg#plus'" /></svg>
         </div>
         <div class="modal__content">
           <slot :close=close />

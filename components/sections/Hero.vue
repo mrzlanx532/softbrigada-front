@@ -4,6 +4,7 @@ import Button from '~/components/shared/form/Button.vue'
 import Gradient from '~/assets/svg/hero-section-gradient.svg?component'
 import { useModal } from 'vue-final-modal'
 import FormModal from '~/components/modals/FormModal.vue'
+import ThankYouModal from '~/components/modals/ThankYouModal.vue'
 
 const offerPoints = [
   {
@@ -42,11 +43,13 @@ const onClickGetSolution = () => {
   const { open, close } = useModal({
     component: FormModal,
     attrs: {
+      title: `Получить решение прямо сейчас`,
+      buttonText: 'Заказать консультацию',
       onConfirm: () => {
-        //close()
+        close()
 
-        //const thankYouModal = useModal({component: ThankYouModal})
-        //thankYouModal.open()
+        const thankYouModal = useModal({component: ThankYouModal})
+        thankYouModal.open()
       }
     },
   })

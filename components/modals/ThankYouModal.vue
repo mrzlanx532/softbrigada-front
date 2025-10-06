@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { VueFinalModal } from 'vue-final-modal'
 import BaseModal from '~/components/modals/BaseModal.vue'
 
 const emit = defineEmits<{
@@ -9,6 +8,9 @@ const emit = defineEmits<{
 
 <template>
   <BaseModal>
-    <div>Привет</div>
+    <div>
+      <div>Заявка отправлена</div>
+      <div>Мы свяжемся с вами в близжайшее время</div>
+    </div>
   </BaseModal>
 </template>
