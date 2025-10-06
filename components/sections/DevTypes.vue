@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import Button from '~/components/shared/form/Button.vue'
+import { useModal } from 'vue-final-modal'
+import FormModal from '~/components/modals/FormModal.vue'
+import ThankYouModal from '~/components/modals/ThankYouModal.vue'
 
 const activeType = ref(0)
 const types = ref([
@@ -32,6 +35,31 @@ const types = ref([
 const onClickType = (index: number) => {
   activeType.value = index
 }
+
+const onClickDiscussDetails = () => {
+  const { open, close } = useModal({
+    component: FormModal,
+    attrs: {
+      title: `Получить решение прямо сейчас`,
+      buttonText: 'Заказать консультацию',
+      onConfirm: () => {
+        close()
+
+        const thankYouModal = useModal({
+          component: ThankYouModal,
+          attrs: {
+            onConfirm: () => {
+              thankYouModal.close()
+            }
+          }
+        })
+        thankYouModal.open()
+      }
+    },
+  })
+
+  open()
+}
 </script>
 
 <template>
@@ -46,7 +74,7 @@ const onClickType = (index: number) => {
               @click="onClickType(index)"
           >{{ type.title }}</button>
         </div>
-        <Button class="dev-types__lead --desktop" icon="chat">Обсудить детали</Button>
+        <Button class="dev-types__lead --desktop" icon="chat" @click="onClickDiscussDetails">Обсудить детали</Button>
       </div>
       <div class="dev-types__detail --desktop">
         <div>{{ types[activeType].title }}</div>
@@ -57,7 +85,7 @@ const onClickType = (index: number) => {
         <div>{{ types[activeType].description }}</div>
         <div />
       </div>
-      <Button class="dev-types__lead --mobile" icon="chat">Обсудить детали</Button>
+      <Button class="dev-types__lead --mobile" icon="chat" @click="onClickDiscussDetails">Обсудить детали</Button>
     </div>
   </section>
 </template>

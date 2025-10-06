@@ -1,6 +1,34 @@
 <script setup lang="ts">
 import Gradient from '~/assets/svg/offer-section-gradient.svg'
 import Button from '~/components/shared/form/Button.vue'
+import { useModal } from 'vue-final-modal'
+import FormModal from '~/components/modals/FormModal.vue'
+import ThankYouModal from '~/components/modals/ThankYouModal.vue'
+
+const onClickGetSolution = () => {
+  const { open, close } = useModal({
+    component: FormModal,
+    attrs: {
+      title: `Получить решение прямо сейчас`,
+      buttonText: 'Заказать консультацию',
+      onConfirm: () => {
+        close()
+
+        const thankYouModal = useModal({
+          component: ThankYouModal,
+          attrs: {
+            onConfirm: () => {
+              thankYouModal.close()
+            }
+          }
+        })
+        thankYouModal.open()
+      }
+    },
+  })
+
+  open()
+}
 </script>
 
 <template>
@@ -83,7 +111,7 @@ import Button from '~/components/shared/form/Button.vue'
               <div><div />Копирайтеров для наполнения</div>
               <div><div />Дизайнеров и программистов</div>
             </div>
-            <Button class="offer__button --white" icon="lightning">Получить решение</Button>
+            <Button class="offer__button --white" icon="lightning" @click="onClickGetSolution">Получить решение</Button>
           </div>
         </div>
       </div>
@@ -96,7 +124,7 @@ import Button from '~/components/shared/form/Button.vue'
         <div>
           <div class="offer__tag">Вариант 3</div>
           <h2>Мы работаем под ключ комплексно</h2>
-          <Button class="offer__button --white" icon="lightning">Получить решение</Button>
+          <Button class="offer__button --white" icon="lightning" @click="onClickGetSolution">Получить решение</Button>
         </div>
         <div>
           <div class="offer__point-wrapper">

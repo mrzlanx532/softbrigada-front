@@ -10,6 +10,8 @@ import apiContacts, {
   type FormDataCreateErrorsBrief,
   getDefaultFormDataCreateBrief,
 } from '~/api/contacts'
+import { useModal } from 'vue-final-modal'
+import ThankYouModal from '~/components/modals/ThankYouModal.vue'
 
 const definitions = useState('definitions')
 
@@ -41,6 +43,21 @@ const onFormSubmit = async () => {
 
     errors.value = {} as FormDataCreateErrorsBrief
     formData.value = getDefaultFormDataCreateBrief()
+
+    closeBrief()
+
+    setTimeout(() => {
+      const thankYouModal = useModal({
+        component: ThankYouModal,
+        attrs: {
+          title: 'Ваша заявка была отправлена',
+          onConfirm: () => {
+            thankYouModal.close()
+          }
+        }
+      })
+      thankYouModal.open()
+    }, 501)
 
   } catch (error) {
     errors.value = error

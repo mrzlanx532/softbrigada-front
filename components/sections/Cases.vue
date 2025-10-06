@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import Button from '~/components/shared/form/Button.vue'
+import { useModal } from 'vue-final-modal'
+import FormModal from '~/components/modals/FormModal.vue'
+import ThankYouModal from '~/components/modals/ThankYouModal.vue'
 
 const sliderOptions = ref({
   perPage: 1,
@@ -27,6 +30,31 @@ const cases = ref([
     isFull: false
   },
 ])
+
+const onClickDiscussProject = () => {
+  const { open, close } = useModal({
+    component: FormModal,
+    attrs: {
+      title: `Обсудить проект прямо сейчас`,
+      buttonText: 'Заказать консультацию',
+      onConfirm: () => {
+        close()
+
+        const thankYouModal = useModal({
+          component: ThankYouModal,
+          attrs: {
+            onConfirm: () => {
+              thankYouModal.close()
+            }
+          }
+        })
+        thankYouModal.open()
+      }
+    },
+  })
+
+  open()
+}
 </script>
 
 <template>
@@ -57,7 +85,7 @@ const cases = ref([
       </ClientOnly>
     </div>
     <div class="cases__button-wrapper">
-      <Button class="cases__button --white" icon="chat">Обсудить проект</Button>
+      <Button class="cases__button --white" icon="chat" @click="onClickDiscussProject">Обсудить проект</Button>
     </div>
   </section>
 </template>
