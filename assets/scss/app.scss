@@ -1,14 +1,14 @@
 @use 'fonts';
 @use 'variables';
-@use 'menu';
+@use 'special/menu';
 @use 'buttons';
 @use 'form';
-@use 'brief';
+@use 'special/brief';
 @use 'modal';
-@use 'form/input-file';
-@use 'form/radio';
-@use 'form/input';
-@use 'form/task_description';
+@use 'shared/form/input-file';
+@use 'shared/form/radio';
+@use 'shared/form/input';
+@use 'shared/form/task_description';
 
 /* sections */
 @use 'sections/hero';
@@ -26,7 +26,7 @@
 @use 'sections/footer';
 
 /* widgets */
-@use 'widgets/discuss';
+@use 'special/widgets/discuss';
 
 * {
   color: white;
