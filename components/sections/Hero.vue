@@ -2,6 +2,8 @@
 import Menu from '~/components/Menu.vue'
 import Button from '~/components/form/Button.vue'
 import Gradient from '~/assets/svg/hero-section-gradient.svg?component'
+import { useModal } from 'vue-final-modal'
+import FormModal from '~/components/modals/FormModal.vue'
 
 const offerPoints = [
   {
@@ -35,6 +37,22 @@ const onClickLookCases = () => {
 
   goToAnchor('cases')
 }
+
+const onClickGetSolution = () => {
+  const { open, close } = useModal({
+    component: FormModal,
+    attrs: {
+      onConfirm: () => {
+        //close()
+
+        //const thankYouModal = useModal({component: ThankYouModal})
+        //thankYouModal.open()
+      }
+    },
+  })
+
+  open()
+}
 </script>
 
 <template>
@@ -48,7 +66,7 @@ const onClickLookCases = () => {
       <span>— от идеи до запуска</span>
     </h1>
     <div class="hero__buttons">
-      <Button icon="lightning" class="--white">Получить решение</Button>
+      <Button icon="lightning" class="--white" @click="onClickGetSolution">Получить решение</Button>
       <Button @click="onClickLookCases">Смотреть кейсы</Button>
     </div>
     <div class="hero__offer-points-wrapper">
