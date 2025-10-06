@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import Menu from '~/components/special/Menu.vue'
 import Button from '~/components/shared/form/Button.vue'
-import Gradient from '~/assets/svg/hero-section-gradient.svg?component'
 import { useModal } from 'vue-final-modal'
 import FormModal from '~/components/modals/FormModal.vue'
 import ThankYouModal from '~/components/modals/ThankYouModal.vue'
@@ -48,7 +47,14 @@ const onClickGetSolution = () => {
       onConfirm: () => {
         close()
 
-        const thankYouModal = useModal({component: ThankYouModal})
+        const thankYouModal = useModal({
+          component: ThankYouModal,
+          attrs: {
+            onConfirm: () => {
+              thankYouModal.close()
+            }
+          }
+        })
         thankYouModal.open()
       }
     },
@@ -59,7 +65,6 @@ const onClickGetSolution = () => {
 </script>
 
 <template>
-
   <section id="hero" class="hero">
     <div class="hero__gradient" />
     <Menu />

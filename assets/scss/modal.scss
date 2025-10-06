@@ -16,13 +16,13 @@
     height: auto;
     width: 632px;
     max-width: 100%;
-    background-color: var(--color-white);
+    background-color: white;
     border-radius: 80px;
     position: relative;
-
-    @media (max-width: 767px) {
-      width: 100%;
-      padding: 24px;
+    
+    @media (min-width: 640px) {
+      padding: 64px;
+      border-radius: 80px;
     }
   }
 
@@ -53,6 +53,10 @@
 }
 
 .form-modal {
+  > div {
+    margin-top: 24px;
+  }
+
   h3 {
     color: black;
     font-size: var(--font-size-h3);
@@ -64,5 +68,17 @@
 }
 
 .thank-you-modal {
+  > div {
+    &:first-child {
+      font-size: 36px;
+      color: black;
+    }
+  }
 
+  .button {
+    margin-top: 64px;
+    padding: 32px;
+    font-size: var(--font-size-h4);
+    width: 100%;
+  }
 }

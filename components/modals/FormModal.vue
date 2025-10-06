@@ -14,7 +14,7 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  (e: 'close'): void
+  (e: 'confirm'): void
 }>()
 
 const formData = ref<FormDataCreateSmallForm>({
@@ -42,7 +42,7 @@ const onFormSubmit = async () => {
 
 <template>
   <BaseModal>
-    <form class="form form-modal" @submit.prevent="onFormSubmit">
+    <form class="form-modal" @submit.prevent="onFormSubmit">
       <h3 v-html="props.title" />
       <div class="input__wrapper">
         <Input v-model="formData.name" :is-required="true" :errors="errors.name" label="Имя" />
