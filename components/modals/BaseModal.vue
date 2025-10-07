@@ -8,11 +8,11 @@ const emit = defineEmits<{
 }>()
 
 onMounted(() => {
-  modalIsOpen.value = true
+  modalIsOpen.value++
 })
 
 onUnmounted(() => {
-  modalIsOpen.value = false
+  modalIsOpen.value--
 })
 </script>
 

@@ -57,11 +57,11 @@ onUnmounted(() => {
   <div class="widget-discuss"
        ref="widgetTemplateRef"
        :class="{'--visible': widgetIsVisible}"
-       :style="{right: modalIsOpen ? (rightPx + scrollBarWidth) + 'px': rightPx + 'px'}" v-on-click-outside="closeWidget"
+       :style="{right: modalIsOpen > 0 ? (rightPx + scrollBarWidth) + 'px': rightPx + 'px'}" v-on-click-outside="closeWidget"
   >
     <div class="widget-discuss__content"
          :class="{'--is-open': isOpen }"
-         :style="{right: modalIsOpen ? (rightPx + scrollBarWidth) + 'px': rightPx + 'px'}"
+         :style="{right: modalIsOpen > 0 ? (rightPx + scrollBarWidth) + 'px': rightPx + 'px'}"
     >
       <div class="widget-discuss__header">
         <img src="/images/team/me.jpg" alt="me" />

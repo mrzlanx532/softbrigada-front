@@ -2,7 +2,7 @@ export default () => {
     const briefIsOpen = useState('briefIsOpen', () => false)
     const burgerMenuIsOpen = useState('burgerMenuIsOpen', () => false)
     const widgetIsVisible = useState('widgetIsVisible', () => true)
-    const modalIsOpen = useState('modalIsOpen', () => false)
+    const modalIsOpen = useState('modalIsOpen', () => 0)
 
     const scrollBarWidthWasRead = useState('scrollBarWidthWasRead', () => false)
     const scrollBarWidth = useState('scrollBarWidth', () => 0)

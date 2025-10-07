@@ -44,7 +44,6 @@ const onFormSubmit = async () => {
     const thankYouModal = useModal({
       component: ThankYouModal,
       attrs: {
-        title: 'Ваша заявка была отправлена',
         onConfirm: () => {
           thankYouModal.close()
         }
