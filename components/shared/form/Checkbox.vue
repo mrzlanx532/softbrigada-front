@@ -11,9 +11,9 @@ const onClick = () => {
 </script>
 
 <template>
-  <div class="checkbox" :class="{'--checked': model, '--has-error': props.errors}" @click="onClick">
+  <div class="checkbox" :class="{'--checked': model, '--has-error': props.errors}">
     <div class="checkbox__wrapper">
-      <div class="checkbox__container">
+      <div class="checkbox__container" @click="onClick">
         <svg><use :href="'/sprite.svg#tick-square-filled'" /></svg>
       </div>
       <div class="checkbox__text" @click.stop>
