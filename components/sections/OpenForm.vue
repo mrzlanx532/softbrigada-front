@@ -11,6 +11,8 @@ import apiContacts, {
 } from '~/api/contacts'
 import { useModal } from 'vue-final-modal'
 import ThankYouModal from '~/components/modals/ThankYouModal.vue'
+import ProcessingPersonalDataAgree from '~/components/shared/form/ProcessingPersonalDataAgree.vue'
+import Checkbox from '~/components/shared/form/Checkbox.vue'
 
 const definitions = useState('definitions')
 
@@ -29,7 +31,8 @@ const formData = ref<FormDataCreateBigForm>({
   budget_id: undefined,
   deadline_id: undefined,
   file: undefined,
-  form_type_id: 'BIG_FORM'
+  form_type_id: 'BIG_FORM',
+  is_agree_to_receive_ads: true
 })
 
 const errors = ref<FormDataCreateErrorsBigForm>({} as FormDataCreateErrorsBigForm)
@@ -86,6 +89,10 @@ const onFormSubmit = async () => {
             <Button type="submit" class="open-form__button" icon="send">Отправить</Button>
             <InputFile v-if="!device.isMobile" class="open-form__input-file" v-model="formData.file"/>
           </div>
+          <ProcessingPersonalDataAgree />
+          <Checkbox :errors="errors.is_agree_to_receive_ads" class="--contrast" v-model="formData.is_agree_to_receive_ads">
+            <a target="_blank" href="/docs/consent-to-receive-advertising.pdf">Я согласен получить рекламу и звонки</a>
+          </Checkbox>
         </form>
       </div>
     </div>

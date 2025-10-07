@@ -8,6 +8,10 @@
   flex-direction: column;
   overflow: hidden;
 
+  .processing-personal-data-agree {
+    margin-top: 24px;
+  }
+
   @media (min-width: 640px) {
     overflow: visible;
     margin: 120px auto 0 auto;

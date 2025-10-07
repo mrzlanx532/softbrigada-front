@@ -9,6 +9,8 @@ import apiContacts, {
 } from '~/api/contacts'
 import { useModal } from 'vue-final-modal'
 import ThankYouModal from '~/components/modals/ThankYouModal.vue'
+import ProcessingPersonalDataAgree from '~/components/shared/form/ProcessingPersonalDataAgree.vue'
+import Checkbox from '~/components/shared/form/Checkbox.vue'
 
 const props = defineProps<{
   isSecondBlock?: boolean
@@ -25,7 +27,8 @@ const formData = ref<FormDataCreateSmallForm>({
   name: undefined,
   phone: undefined,
   email: undefined,
-  form_type_id: 'SMALL_FORM'
+  form_type_id: 'SMALL_FORM',
+  is_agree_to_receive_ads: true
 })
 
 const errors = ref<FormDataCreateErrorsSmallForm>({} as FormDataCreateErrorsSmallForm)
@@ -79,6 +82,10 @@ onUnmounted(() => {
       </div>
       <Input v-model="formData.email" :is-required="true" :errors="errors.email" label="Email" />
       <Button type="submit" class="ready-to-discuss__button --without-icon-on-mobile" :class="{'--blue': props.isSecondBlock}" icon="send">Заказать консультацию</Button>
+      <ProcessingPersonalDataAgree />
+      <Checkbox :errors="errors.is_agree_to_receive_ads" class="--contrast" v-model="formData.is_agree_to_receive_ads">
+        <a target="_blank" href="/docs/consent-to-receive-advertising.pdf">Я согласен получить рекламу и звонки</a>
+      </Checkbox>
     </form>
   </section>
 </template>

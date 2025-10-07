@@ -12,6 +12,8 @@ import apiContacts, {
 } from '~/api/contacts'
 import { useModal } from 'vue-final-modal'
 import ThankYouModal from '~/components/modals/ThankYouModal.vue'
+import Checkbox from '~/components/shared/form/Checkbox.vue'
+import ProcessingPersonalDataAgree from '~/components/shared/form/ProcessingPersonalDataAgree.vue'
 
 const definitions = useState('definitions')
 
@@ -23,7 +25,8 @@ const formData = ref<FormDataCreateBrief>({
   name: undefined,
   phone: undefined,
   email: undefined,
-  form_type_id: 'BRIEF'
+  form_type_id: 'BRIEF',
+  is_agree_to_receive_ads: true
 })
 
 const errors = ref<FormDataCreateErrorsBrief>({} as FormDataCreateErrorsBrief)
@@ -94,8 +97,11 @@ const onFormSubmit = async () => {
       <Radio v-model="formData.source_id" :is-required="true" label="Откуда вы о нас узнали?" :errors="errors.source_id" :options="definitions.ContactsContactSourceDefinition" />
       <div class="form__action">
         <Button type="submit">Отправить</Button>
-        <div>Нажимая на кнопку вы даете согласие на обработку персональных данных</div>
       </div>
+      <ProcessingPersonalDataAgree />
+      <Checkbox :errors="errors.is_agree_to_receive_ads" class="--contrast" v-model="formData.is_agree_to_receive_ads">
+        <a target="_blank" href="/docs/consent-to-receive-advertising.pdf">Я согласен получить рекламу и звонки</a>
+      </Checkbox>
     </form>
   </div>
 </template>

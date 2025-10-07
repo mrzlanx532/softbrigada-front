@@ -4,7 +4,8 @@ export interface FormDataCreateSmallForm {
     name: string | undefined,
     phone: string | undefined,
     email: string | undefined,
-    form_type_id: 'SMALL_FORM'
+    form_type_id: 'SMALL_FORM',
+    is_agree_to_receive_ads: boolean
 }
 
 export interface FormDataCreateBigForm {
@@ -15,7 +16,8 @@ export interface FormDataCreateBigForm {
     budget_id: string | undefined,
     deadline_id: string | undefined,
     file: File | undefined,
-    form_type_id: 'BIG_FORM'
+    form_type_id: 'BIG_FORM',
+    is_agree_to_receive_ads: boolean
 }
 
 export interface FormDataCreateBrief {
@@ -27,7 +29,8 @@ export interface FormDataCreateBrief {
     service_id: string | undefined,
     source_id: string | undefined,
     file: File | undefined,
-    form_type_id: 'BRIEF'
+    form_type_id: 'BRIEF',
+    is_agree_to_receive_ads: boolean
 }
 
 type FormDataCreateForm = FormDataCreateSmallForm | FormDataCreateBigForm | FormDataCreateBrief
@@ -41,7 +44,8 @@ export const getDefaultFormDataCreateSmallForm = (): FormDataCreateSmallForm => 
         name: undefined,
         phone: undefined,
         email: undefined,
-        form_type_id: 'SMALL_FORM'
+        form_type_id: 'SMALL_FORM',
+        is_agree_to_receive_ads: true
     }
 }
 
@@ -51,7 +55,8 @@ export const getDefaultFormDataCreateBigForm = (): FormDataCreateBigForm => {
         phone: undefined,
         email: undefined,
         description: undefined,
-        form_type_id: 'BIG_FORM'
+        form_type_id: 'BIG_FORM',
+        is_agree_to_receive_ads: true
     }
 }
 
@@ -60,7 +65,8 @@ export const getDefaultFormDataCreateBrief = (): FormDataCreateBrief => {
         name: undefined,
         phone: undefined,
         email: undefined,
-        form_type_id: 'BRIEF'
+        form_type_id: 'BRIEF',
+        is_agree_to_receive_ads: true
     }
 }
 
