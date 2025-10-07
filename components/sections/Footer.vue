@@ -35,9 +35,8 @@ const onClickPhone = () => {
     </div>
     <div class="footer__row">
       <div>{{ config.legal.organization}}<br> ОГРН: {{ config.legal.ogrn }} ИНН: {{ config.legal.inn }}</div>
-      <div>Политика конфиценциальности</div>
-      <div>Оферта</div>
-      <div>Пользовательское соглашение</div>
+      <div><a href="/docs/privacy-policy.pdf">Политика конфиценциальности</a></div>
+      <div><a href="/docs/user-agreement.pdf">Пользовательское соглашение</a></div>
     </div>
   </section>
 </template>
