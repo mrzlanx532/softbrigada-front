@@ -156,6 +156,11 @@
       line-height: 1.2;
       margin-top: 16px;
       font-size: var(--font-size-description-1);
+      white-space: pre-line;
+
+      ul {
+        padding-left: 20px;
+      }
     }
   }
 
