@@ -20,8 +20,8 @@
             <div>лет опыта</div>
           </div>
           <div class="benefits__benefit">
-            <div>12</div>
-            <div>специалистов</div>
+            <div>3</div>
+            <div>млн. строк кода</div>
           </div>
           <div class="benefits__benefit">
             <div>25</div>
@@ -39,7 +39,6 @@
           <img src="/images/team/1.png" alt="team" />
         </div>
         <div class="benefits__team-2">
-          <img src="/images/team/2.png" alt="team-2" />
           <h3>
             <span>SoftBrigada - это люди,</span>
             <span>с которыми вы работаете</span>
