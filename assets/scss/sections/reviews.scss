@@ -41,6 +41,7 @@
       height: 164px;
       transition: height .5s ease-in-out;
       user-select: none;
+      border-radius: 50%;
 
       @media (min-width: 640px) {
         height: 191px;
