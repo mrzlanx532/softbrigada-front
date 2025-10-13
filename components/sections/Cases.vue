@@ -15,21 +15,34 @@ const linearGradientValue = 'linear-gradient(180deg, rgba(20, 21, 24, 0.8) 0%, r
 
 const cases = ref([
   {
-    title: 'Мобильное приложение Альфа-банк',
-    subtitle: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text.',
-    isFull: true
+    title: 'Сайт агенства по управлению репутацией',
+    subtitle: `Мы разработали проект с фирменным современным дизайном и оригинальными элементами, подчеркнув уникальность бренда. Архитектура гибкая и готова к расширению в медиа-платформу с SEO-контентом. Разработана удобная админ. панель для простого управления сайтом и контентом.`,
+    isFull: true,
+    img: '1.jpg',
+    link: 'https://digitaldyatel.ru'
   },
   {
     title: 'Веб-сайт жилого комплекса',
     subtitle: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text.',
-    isFull: false
+    isFull: false,
+    img: '2.png'
   },
   {
     title: 'Виджет для Алисы',
     subtitle: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text.',
-    isFull: false
+    isFull: false,
+    img: '3.png'
   },
 ])
+
+const openCase = (href: string) => {
+  const a = document.createElement('a')
+
+  a.href = href
+  a.target = '_blank'
+  a.click()
+  a.remove()
+}
 
 const onClickDiscussProject = () => {
   const { open, close } = useModal({
@@ -63,12 +76,15 @@ const onClickDiscussProject = () => {
     <div class="cases__wrapper --desktop">
       <div
           v-for="(_case, index) in cases"
-          :style="{'background-image': `${linearGradientValue}, url(/images/cases/${index + 1}.png)`}"
+          :style="{'background-image': `${linearGradientValue}, url(/images/cases/${_case.img})`}"
           class="cases__case"
           :class="{'--full': _case.isFull}"
       >
-        <h3>{{ _case.title }}</h3>
-        <p>{{ _case.subtitle }}</p>
+        <div>
+          <h3>{{ _case.title }}</h3>
+          <p>{{ _case.subtitle }}</p>
+        </div>
+        <Button v-if="_case.link" icon="send" @click="openCase(_case.link)">Посмотреть</Button>
       </div>
     </div>
     <div class="cases__wrapper --mobile">
@@ -78,7 +94,8 @@ const onClickDiscussProject = () => {
             <div class="cases__case">
               <h3>{{ _case.title }}</h3>
               <p>{{ _case.subtitle }}</p>
-              <div :style="{'background-image': `${linearGradientValue}, url(/images/cases/${index + 1}.png)`}"/>
+              <div :style="{'background-image': `${linearGradientValue}, url(/images/cases/${_case.img})`}"/>
+              <Button v-if="_case.link" icon="send" @click="openCase(_case.link)">Посмотреть</Button>
             </div>
           </splide-slide>
         </splide>
