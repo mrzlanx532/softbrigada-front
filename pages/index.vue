@@ -24,7 +24,7 @@ import DiscussWidget from '~/components/special/widgets/DiscussWidget.vue'
   <ReadyToDiscuss />
   <Roadmap />
   <Cases />
-  <TrustUs />
+<!--  <TrustUs />-->
   <Benefits />
   <Reviews />
   <OpenForm />

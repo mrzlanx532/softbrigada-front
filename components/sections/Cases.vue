@@ -22,16 +22,20 @@ const cases = ref([
     link: 'https://digitaldyatel.ru'
   },
   {
-    title: 'Веб-сайт жилого комплекса',
-    subtitle: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text.',
+    title: 'Международный маркетплейс услуг',
+    subtitle: `Мы разработали онлайн-платформу, объединяющую бизнес и специалистов в сфере внешнеэкономической деятельности.
+
+    Сервис позволяет размещать проекты, находить исполнителей, вести безопасные сделки и управлять взаимодействием через личный кабинет.
+
+    Реализована гибкая архитектура, каталог услуг и специалистов, а также система безопасных платежей с защитой обеих сторон`,
     isFull: false,
-    img: '2.png'
+    img: '2.jpg'
   },
   {
-    title: 'Виджет для Алисы',
-    subtitle: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text.',
+    title: 'ERP-система для страхового агента',
+    subtitle: 'Разработана внутренняя ERP-система для страхового брокера. Внедрён удобный калькулятор скоринга для подбора страховых продуктов по данным клиента и сравнения условий разных компаний. Также реализован модуль расчёта зарплат и генерации отчётов с выгрузками.',
     isFull: false,
-    img: '3.png'
+    img: '2.jpg'
   },
 ])
 
