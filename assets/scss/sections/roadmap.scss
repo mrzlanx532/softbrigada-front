@@ -3,6 +3,12 @@
   margin: 194px auto 0 auto;
   overflow-x: hidden;
   padding: 0 20px;
+  opacity: 0;
+  transition: opacity .3s;
+
+  &.--visible {
+    opacity: 1;
+  }
 
   @media (min-width: 640px) {
     display: block;

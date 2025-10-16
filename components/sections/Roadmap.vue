@@ -6,6 +6,7 @@ const pinnedContentRef = useTemplateRef('pinnedContentRef')
 
 const marginLeft = ref<undefined | string>(undefined)
 const dividerLength = ref(13)
+const sectionIsReady = ref(false)
 
 onMounted(() => {
 
@@ -44,11 +45,13 @@ onMounted(() => {
       }
     }
   })
+
+  sectionIsReady.value = true
 })
 </script>
 
 <template>
-  <section id="roadmap" class="roadmap" :style="{ 'margin-left': marginLeft }">
+  <section id="roadmap" class="roadmap" :class="{'--visible': sectionIsReady}" :style="{ 'margin-left': marginLeft }">
     <div ref="pinnedContentRef">
       <h2>
         Дорожная карта проекта
