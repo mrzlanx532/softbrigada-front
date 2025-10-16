@@ -89,6 +89,7 @@
             width: 100%;
             aspect-ratio: 1 / 1;
             background-size: cover;
+            display: none;
           }
         }
       }
@@ -148,7 +149,7 @@
     border-radius: 80px;
     background:
       linear-gradient(180deg, rgba(20, 21, 24, 80%) 0%, rgba(20, 21, 24, 0%) 100%),
-      url("/images/dev-types/1.png");
+      url("/images/dev-types/gradient.png");
     box-shadow: var(--box-shadow-1);
     padding: 64px;
     background-size: cover;
