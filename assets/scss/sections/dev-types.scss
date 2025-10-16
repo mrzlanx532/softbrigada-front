@@ -73,6 +73,11 @@
             margin: 16px 0 0 0;
             font-size: 14px;
             color: var(--color-2);
+            white-space: pre-line;
+
+            ul {
+              padding-left: 20px;
+            }
           }
 
           &:nth-child(3) {

@@ -134,7 +134,7 @@ const onClickDiscussDetails = () => {
       </div>
       <div class="dev-types__detail --mobile">
         <div>{{ types[activeType].title }}</div>
-        <div>{{ types[activeType].description }}</div>
+        <div v-html="types[activeType].description" />
         <div />
       </div>
       <Button class="dev-types__lead --mobile" icon="chat" @click="onClickDiscussDetails">Обсудить детали</Button>

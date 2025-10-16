@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import Button from '~/components/shared/form/Button.vue'
+import { useModal } from 'vue-final-modal'
+import FormModal from '~/components/modals/FormModal.vue'
+import ThankYouModal from '~/components/modals/ThankYouModal.vue'
 
 const props = withDefaults(defineProps<{
   isHeader?: boolean
@@ -53,6 +56,34 @@ const closeBurgerMenu = () => {
   document.documentElement.style.scrollBehavior = 'auto';
   document.documentElement.scrollTop = getY()
   document.documentElement.style.scrollBehavior = 'smooth';
+}
+
+const onClickGetSolution = () => {
+
+  closeBurgerMenu()
+
+  const { open, close } = useModal({
+    component: FormModal,
+    attrs: {
+      title: `Получить решение прямо сейчас`,
+      buttonText: 'Заказать консультацию',
+      onConfirm: () => {
+        close()
+
+        const thankYouModal = useModal({
+          component: ThankYouModal,
+          attrs: {
+            onConfirm: () => {
+              thankYouModal.close()
+            }
+          }
+        })
+        thankYouModal.open()
+      }
+    },
+  })
+
+  open()
 }
 
 const onClickMobileLogo = () => {
@@ -112,7 +143,7 @@ const onClickMobileLogo = () => {
         <a @click="onClickLink('cases', true)">наши кейсы</a>
       </div>
       <div class="menu-open-burger__buttons">
-        <Button icon="lightning" class="--white">Получить решение</Button>
+        <Button icon="lightning" class="--white" @click="onClickGetSolution">Получить решение</Button>
         <Button @click="onClickLookCases">Смотреть кейсы</Button>
       </div>
       <div class="menu-open-burger__contacts">
