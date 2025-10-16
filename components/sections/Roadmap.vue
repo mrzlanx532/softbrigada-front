@@ -5,7 +5,7 @@ const tableContainerRef = useTemplateRef('tableContainerRef')
 const pinnedContentRef = useTemplateRef('pinnedContentRef')
 
 const marginLeft = ref<undefined | string>(undefined)
-const dividerLength = ref(15)
+const dividerLength = ref(13)
 
 onMounted(() => {
 
@@ -19,16 +19,16 @@ onMounted(() => {
   tableContainerRef.value.children[2].style.width = rect.width + 'px'
   tableContainerRef.value.children[3].style.width = rect.width + 'px'
 
-  const scrollDelta = tableContainerRef.value.scrollWidth - tableContainerRef.value.clientWidth
+  const scrollDelta = (tableContainerRef.value.scrollWidth - tableContainerRef.value.clientWidth) + parseFloat(marginLeft.value)
 
   useGSAP().timeline({
     scrollTrigger: {
       trigger: pinnedContentRef.value,
       pin: true,
       start: 'center center',
-      end: '+=1000',
+      end: '+=1500',
       onUpdate: (self) => {
-        tableContainerRef.value.scrollLeft = self.progress.toFixed(3) * scrollDelta
+        tableContainerRef.value.scrollLeft = self.progress * scrollDelta
       }
     }
   })
@@ -55,11 +55,11 @@ onMounted(() => {
               <template v-if="index === 0">
                 Начало
               </template>
-              <template v-else-if="index === 14">
+              <template v-else-if="index === 12">
                 Сдача
               </template>
               <template v-else>
-                {{ index * 2 }} нед.
+                {{ index * 1 }} нед.
               </template>
             </td>
           </tr>
