@@ -21,7 +21,7 @@ onMounted(() => {
   tableContainerRef.value.children[3].style.width = rect.width + 'px'
 
   const scrollDelta = (tableContainerRef.value.scrollWidth - tableContainerRef.value.clientWidth) + parseFloat(marginLeft.value)
-  const deadZone = 600
+  const deadZone = 400
   const totalScroll = 1500
   const deadZoneProgress = deadZone / totalScroll
 
