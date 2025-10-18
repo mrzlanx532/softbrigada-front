@@ -21,9 +21,6 @@ onMounted(() => {
   tableContainerRef.value.children[3].style.width = rect.width + 'px'
 
   const scrollDelta = (tableContainerRef.value.scrollWidth - tableContainerRef.value.clientWidth) + parseFloat(marginLeft.value)
-  const deadZone = 400
-  const totalScroll = 1500
-  const deadZoneProgress = deadZone / totalScroll
 
   useGSAP().timeline({
     scrollTrigger: {
@@ -32,16 +29,7 @@ onMounted(() => {
       start: 'center center',
       end: '+=1500',
       onUpdate: (self) => {
-        let progress = self.progress
-
-        if (progress <= deadZoneProgress) {
-          tableContainerRef.value.scrollLeft = 0
-          return
-        }
-
-        const normalizedProgress = (progress - deadZoneProgress) / (1 - deadZoneProgress)
-
-        tableContainerRef.value.scrollLeft = normalizedProgress * scrollDelta
+        tableContainerRef.value.scrollLeft = self.progress * scrollDelta
       }
     }
   })
