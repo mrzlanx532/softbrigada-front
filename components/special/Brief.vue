@@ -25,6 +25,7 @@ const formData = ref<FormDataCreateBrief>({
   name: undefined,
   phone: undefined,
   email: undefined,
+  messenger: undefined,
   form_type_id: 'BRIEF',
   is_agree_to_receive_ads: true
 })
@@ -93,6 +94,7 @@ const onFormSubmit = async () => {
         <Input :is-required="true" v-model="formData.name" :errors="errors.name" label="Имя"/>
         <InputPhone :is-required="true" v-model="formData.phone" :errors="errors.phone" label="Телефон"/>
         <Input :is-required="true" v-model="formData.email" :errors="errors.email" label="Email"/>
+        <Input v-model="formData.messenger" :errors="errors.messenger" label="Telegram или WhatsApp" />
       </div>
       <Radio v-model="formData.source_id" :is-required="true" label="Откуда вы о нас узнали?" :errors="errors.source_id" :options="definitions.ContactsContactSourceDefinition" />
       <div class="form__action">

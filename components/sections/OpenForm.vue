@@ -27,6 +27,7 @@ const formData = ref<FormDataCreateBigForm>({
   name: undefined,
   phone: undefined,
   email: undefined,
+  messenger: undefined,
   description: undefined,
   budget_id: undefined,
   deadline_id: undefined,
@@ -81,6 +82,7 @@ const onFormSubmit = async () => {
             <InputPhone v-model="formData.phone" :errors="errors.phone" :is-required="true" label="Номер телефона" />
           </div>
           <Input v-model="formData.email" :errors="errors.email" :is-required="true" label="Email" />
+          <Input v-model="formData.messenger" :errors="errors.messenger" label="Telegram или WhatsApp" />
           <Input v-model="formData.description" :errors="errors.description" :is-required="true" label="Расскажите о вашем проекте" />
           <Radio v-model="formData.budget_id" :errors="errors.budget_id" :is-required="true" label="Бюджет" :options="definitions.ContactsContactBudgetDefinition" />
           <Radio v-model="formData.deadline_id" :errors="errors.deadline_id" :is-required="true" label="Сроки" :options="definitions.ContactsContactDeadlineDefinition" />

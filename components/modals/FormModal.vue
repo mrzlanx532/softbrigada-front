@@ -23,6 +23,7 @@ const formData = ref<FormDataCreateSmallForm>({
   name: undefined,
   phone: undefined,
   email: undefined,
+  messenger: undefined,
   form_type_id: 'SMALL_FORM',
   is_agree_to_receive_ads: true
 })
@@ -52,6 +53,7 @@ const onFormSubmit = async () => {
         <InputPhone v-model="formData.phone" :is-required="true" :errors="errors.phone" label="Номер телефона" />
       </div>
       <Input v-model="formData.email" :is-required="true" :errors="errors.email" label="Email" />
+      <Input v-model="formData.messenger" :errors="errors.messenger" label="Telegram или WhatsApp" />
       <Button type="submit" class="ready-to-discuss__button --without-icon-on-mobile"  icon="send">{{ props.buttonText }}</Button>
       <ProcessingPersonalDataAgree />
       <Checkbox :errors="errors.is_agree_to_receive_ads" class="--contrast" v-model="formData.is_agree_to_receive_ads">
