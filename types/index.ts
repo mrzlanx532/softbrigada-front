@@ -5,6 +5,7 @@ export interface CustomRuntimeConfigPublic {
     telegram: string,
     whatsapp: string,
     address: string,
+    yandexMetrikaId: string | undefined,
     legal: {
         organization: string,
         inn: string,
