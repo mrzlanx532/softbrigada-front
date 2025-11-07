@@ -20,7 +20,10 @@ export default defineNuxtConfig({
     'nuxt-yandex-metrika'
   ],
   yandexMetrika: {
-    id: runtimeConfigPublic.yandexMetrikaId
+    id: runtimeConfigPublic.yandexMetrikaId,
+    options: {
+      webvisor: true
+    }
   },
   css: ['~/assets/scss/app.scss'],
   app: {
