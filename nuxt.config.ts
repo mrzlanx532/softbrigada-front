@@ -5,7 +5,7 @@ import { type CustomRuntimeConfigPublic } from '~/types'
 export default defineNuxtConfig({
   experimental: {
     /** @ts-expect-error: Nuxt 3 пишет что такого типа нет, но он есть */
-    inlineSSRStyles: false
+    inlineSSRStyles: true // false стояло чтобы https://validator.w3.org/ не ругался, но скорость загрузки от этого меньше
   },
   runtimeConfig: {
     public: runtimeConfigPublic as unknown as CustomRuntimeConfigPublic
