@@ -28,6 +28,9 @@ export default defineNuxtConfig({
   css: ['~/assets/scss/app.scss'],
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'ru'
+      },
       link: [{ rel: 'icon', href: '/favicon.png' }],
       title: 'Разрабатываем IT-решения для бизнеса — от идеи до запуска',
       meta: [{

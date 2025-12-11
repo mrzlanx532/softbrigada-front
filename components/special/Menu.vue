@@ -98,8 +98,8 @@ const onClickMobileLogo = () => {
         <img height="40" src="/images/logo/43.svg" alt="logo">
       </div>
       <div class="menu-desktop__menu">
-        <a @click="onClickLink('dev-types')">что мы делаем</a>
-        <a @click="onClickLink('cases')">наши кейсы <span>+3</span></a>
+        <a href="#dev-types" @click.prevent="onClickLink('dev-types')">что мы делаем</a>
+        <a href="#cases" @click.prevent="onClickLink('cases')">наши кейсы <span>+3</span></a>
       </div>
     </div>
     <div class="menu-desktop__container --right">
