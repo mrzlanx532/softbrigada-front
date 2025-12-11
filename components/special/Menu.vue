@@ -139,8 +139,8 @@ const onClickMobileLogo = () => {
         </div>
       </div>
       <div class="menu-open-burger__anchor-links">
-        <a @click="onClickLink('dev-types', true)">что мы делаем</a>
-        <a @click="onClickLink('cases', true)">наши кейсы</a>
+        <a href="#dev-types" @click.prevent="onClickLink('dev-types', true)">что мы делаем</a>
+        <a href="#cases" @click.prevent="onClickLink('cases', true)">наши кейсы</a>
       </div>
       <div class="menu-open-burger__buttons">
         <Button icon="lightning" class="--white" @click="onClickGetSolution">Получить решение</Button>

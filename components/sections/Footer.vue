@@ -21,8 +21,8 @@ const onClickPhone = () => {
   <section id="footer" class="footer">
     <Menu :is-header="false" />
     <div class="footer__row --part-of-menu">
-      <a @click="onClickLink('dev-types')">что мы делаем</a>
-      <a @click="onClickLink('cases')">наши кейсы <span>+3</span></a>
+      <a href="#dev-types" @click.prevent="onClickLink('dev-types')">что мы делаем</a>
+      <a href="#cases" @click.prevent="onClickLink('cases')">наши кейсы <span>+3</span></a>
     </div>
     <div class="footer__row">
       <div>{{ config.address }}</div>
