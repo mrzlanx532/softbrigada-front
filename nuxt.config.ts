@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   },
   experimental: {
     /** @ts-expect-error: Nuxt 3 пишет что такого типа нет, но он есть */
-    inlineSSRStyles: true // false стояло чтобы https://validator.w3.org/ не ругался, но скорость загрузки от этого меньше
+    inlineSSRStyles: false
   },
   runtimeConfig: {
     public: runtimeConfigPublic as unknown as CustomRuntimeConfigPublic
