@@ -3,6 +3,9 @@ import runtimeConfigPublic from './config'
 import { type CustomRuntimeConfigPublic } from '~/types'
 
 export default defineNuxtConfig({
+  routeRules: {
+    '/': { static: true },
+  },
   experimental: {
     /** @ts-expect-error: Nuxt 3 пишет что такого типа нет, но он есть */
     inlineSSRStyles: true // false стояло чтобы https://validator.w3.org/ не ругался, но скорость загрузки от этого меньше
@@ -31,7 +34,10 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'ru'
       },
-      link: [{ rel: 'icon', href: '/favicon.png' }],
+      link: [
+        { rel: 'icon', href: '/favicon.png' },
+        { rel: 'preload', href: '/images/gradients/hero-section-gradient.png', as: 'image', fetchpriority: 'high'}
+      ],
       title: 'Разрабатываем IT-решения для бизнеса — от идеи до запуска',
       meta: [
         {
