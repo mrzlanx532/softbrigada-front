@@ -39,8 +39,6 @@ export default defineNuxtConfig({
         { rel: 'icon', href: '/favicon.png' },
         { rel: 'preload', href: '/images/logo/43.svg', as: 'image', fetchpriority: 'high'},
         { rel: 'preload', href: '/images/gradients/hero-section-gradient.png', as: 'image', fetchpriority: 'high'},
-        { rel: 'preload', href: '/fonts/Hauora-Medium.otf', as: 'font', type: 'font/otf', crossorigin: 'anonymous' },
-        { rel: 'preload', href: '/fonts/Hauora-SemiBold.otf', as: 'font', type: 'font/otf', crossorigin: 'anonymous' },
       ],
       title: 'Разрабатываем IT-решения для бизнеса — от идеи до запуска',
       meta: [
