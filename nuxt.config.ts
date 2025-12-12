@@ -21,7 +21,6 @@ export default defineNuxtConfig({
     '@nuxtjs/device',
     '@vue-final-modal/nuxt',
     'nuxt-yandex-metrika',
-    'nuxt-booster'
   ],
   yandexMetrika: {
     id: runtimeConfigPublic.yandexMetrikaId,
