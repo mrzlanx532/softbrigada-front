@@ -20,7 +20,8 @@ export default defineNuxtConfig({
     'nuxt-svgo',
     '@nuxtjs/device',
     '@vue-final-modal/nuxt',
-    'nuxt-yandex-metrika'
+    'nuxt-yandex-metrika',
+    'nuxt-booster'
   ],
   yandexMetrika: {
     id: runtimeConfigPublic.yandexMetrikaId,
